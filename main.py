@@ -4,7 +4,7 @@ This code is based on the implementation of An Tao (ta19@mails.tsinghua.edu.cn)
 
 import argparse
 
-from . import Reconstruction
+from autoencoder import Reconstruction
 
 
 def get_parser():
@@ -39,7 +39,7 @@ def get_parser():
                         help='Pooling type used for PointNet, [avg, max]')
     parser.add_argument('--eval', action='store_true',
                         help='Evaluate the model')
-    parser.add_argument('--model_path', type=str, default='../../../point_clouds/embedding/autoencoder/snapshot/Reconstruct_graph_1d_fold_uniform_k16\models/uniform_density_4210.pkl',
+    parser.add_argument('--model_path', type=str, default='',  #'../../../point_clouds/embedding/autoencoder/snapshot/Reconstruct_graph_1d_fold_uniform_k16\models/uniform_density_4210.pkl',
                         metavar='N', help='Path to load model')
     parser.add_argument('--dataset', type=str, default='uniform_density', metavar='N',
                         choices=['lidar', 'uniform_density', 'regular_distances'],
@@ -58,41 +58,13 @@ def get_parser():
     return args
 
 
-if __name__ == '__main__':
+def main():
     args = get_parser()
-    if args.eval == False:
-        reconstruction = Reconstruction(args)
+    reconstruction = Reconstruction(args)
+    reconstruction.run()
 
 
-        reconstruction.run()
-        import numpy as np
-        import torch
-        import matplotlib.pyplot as plt
-        data = np.load(
-            'C:/Users/nilsk/Projects/MabiPointLaserEnv/meshes/train_data/point_clouds/2500_point_clouds_360_norm.npy')
-        x = data[44, :, :]
-        x = torch.from_numpy(x)
-        x = torch.unsqueeze(x, 0)
-        x = x.permute(0, 2, 1)
-
-        batch_size = x.shape[0]
-        point_dim = x.shape[1]
-        num_points = x.shape[2]
-
-        x = x.transpose(2, 1).float()
-
-        reconstruction.model.eval()
-        embedding = reconstruction.model.encoder.forward(x)
-        reconstruction = reconstruction.model.decoder.forward(embedding)
-        print(reconstruction.shape)
-        fig = plt.figure()
-        ax1 = fig.add_subplot(111)
-        x = x.detach().numpy()
-        ax1.scatter(x[0, :, 0], x[0, :, 1], s=10, c='b', marker="s", label='true')
-        reconstruction = reconstruction.detach().numpy()
-        print(reconstruction.shape)
-        ax1.scatter(reconstruction[0, :, 0], reconstruction[0, :, 1], s=10, c='r', marker="o", label='reconstruction')
-        plt.legend(loc='upper left')
-        plt.show()
+if __name__ == '__main__':
+    main()
 
 

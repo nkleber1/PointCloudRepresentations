@@ -7,15 +7,16 @@ import os
 import sys
 import time
 import shutil
+import json
 import torch
 import torch.optim as optim
 import numpy as np
 import matplotlib.pyplot as plt
 
 from tensorboardX import SummaryWriter
-from . import ReconstructionNet
-from . import PointCloudDataset
-from . import Logger
+from .model import ReconstructionNet
+from .dataset import PointCloudDataset
+from .utils import Logger
 
 
 class Reconstruction(object):
@@ -37,8 +38,8 @@ class Reconstruction(object):
             self.experiment_id = file[-3]
         else:
             self.experiment_id = "Reconstruct" + time.strftime('%m%d%H%M%S')
-        snapshot_root = 'snapshot/%s' % self.experiment_id
-        tensorboard_root = 'tensorboard/%s' % self.experiment_id
+        snapshot_root = f'logging/snapshot/{str(self.experiment_id)}'
+        tensorboard_root = f'logging//tensorboard/{str(self.experiment_id)}'
         self.save_dir = os.path.join(snapshot_root, 'models/')
         self.plot_dir = os.path.join(snapshot_root, 'plot/')
         self.tboard_dir = tensorboard_root
@@ -66,6 +67,10 @@ class Reconstruction(object):
                 os.makedirs(self.plot_dir)
         sys.stdout = Logger(os.path.join(snapshot_root, 'log.txt'))
         self.writer = SummaryWriter(log_dir=self.tboard_dir)
+
+        jason_dir = os.path.join(snapshot_root, 'args.json')
+        with open(jason_dir, 'w') as fp:
+            json.dump(vars(args), fp, indent=5)
 
         # print args
         print(str(args))
