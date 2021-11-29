@@ -11,9 +11,9 @@ def rotate_pointcloud(pointcloud):
 class PointCloudDataset:
     def __init__(self, args):
         if args.dataset == 'lidar':
-            file = '../../../meshes/train_data/point_clouds/lidar_512.npy'
+            file = 'data/train_data/lidar_512.npy'
         elif args.dataset == 'uniform_density':
-            file = '../../../meshes/train_data/point_clouds/uniform_density_1024.npy'
+            file = 'data/train_data/uniform_density_2048.npy'
         elif args.dataset == 'regular_distances':
             pass
         np_data = np.load(file)
