@@ -169,9 +169,7 @@ class Reconstruction(object):
         loss_buf = []
         loss_per_point_buf = []
         num_batch = int(len(self.train_loader.dataset) / self.batch_size)
-        print(1)
         for iter, pts in enumerate(self.train_loader):
-            print(2)
             if not self.no_cuda:
                 pts = pts.cuda(self.first_gpu)
 
