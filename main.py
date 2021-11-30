@@ -11,6 +11,8 @@ def get_parser():
     parser = argparse.ArgumentParser(description='Unsupervised Point Cloud Feature Learning')
     parser.add_argument('--exp_name', type=str, default='graph_1d_fold_uniform_k16', metavar='N',
                         help='Name of the experiment')
+    parser.add_argument('--overwrite', action='store_true',
+                        help='Overwrites data from previous experiment with same name')
     parser.add_argument('--encoder', type=str, default='graph', metavar='N',
                         choices=['graph', 'pointnet++', 'pointnet', 'dense'],
                         help='Encoder architecture used, [graph, pointnet++, pointnet, dense]')

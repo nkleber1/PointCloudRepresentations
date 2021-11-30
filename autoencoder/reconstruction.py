@@ -48,6 +48,9 @@ class Reconstruction(object):
         if self.model_path == '':
             if not os.path.exists(self.save_dir):
                 os.makedirs(self.save_dir)
+            elif args.overwrite:
+                shutil.rmtree(self.save_dir)
+                os.makedirs(self.save_dir)
             else:
                 choose = input("Remove " + self.save_dir + " ? (y/n)")
                 if choose == "y":
