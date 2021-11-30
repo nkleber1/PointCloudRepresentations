@@ -1,6 +1,7 @@
 import torch
 import numpy as np
 
+
 def rotate_pointcloud(pointcloud):
     theta = np.pi * 2 * np.random.choice(24) / 24
     rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)], [np.sin(theta), np.cos(theta)]])

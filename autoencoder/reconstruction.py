@@ -208,9 +208,9 @@ class Reconstruction(object):
         torch.save(new_state_dict, save_dir + "_" + str(epoch) + '.pkl')
         print(f"Save model to {save_dir}_{str(epoch)}.pkl")
         if self.snapshot_pic:
-            self.plot_reconstruction(epoch)
+            self._plot_reconstruction(epoch)
 
-    def plot_reconstruction(self, epoch):
+    def _plot_reconstruction(self, epoch):
         x = self.test_data
         self.model.eval()
         embedding = self.model.encoder.forward(x)
