@@ -225,7 +225,7 @@ class Reconstruction(object):
         x = x.detach().cpu().numpy()
         subplot.scatter(x[0, :, 0], x[0, :, 1], s=10, c='b', marker="s", label='true')
         # plot reconstruction
-        reconstruction = reconstruction.detach().numpy()
+        reconstruction = reconstruction.cpu().detach().numpy()
         subplot.scatter(reconstruction[0, :, 0], reconstruction[0, :, 1], s=10, c='r', marker="o", label='reconstruction')
         plt.legend(loc='upper left')
         # save plot
