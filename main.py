@@ -52,9 +52,8 @@ def get_parser():
     # parser.add_argument('--dataset_root', type=str, default='../dataset', help="Dataset root path")
     # TODO make GPU availlebel
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0') # '3,4,5')
-    parser.add_argument('--no_cuda', type=bool, default=True, help='Enables CUDA training')
-    # parser.add_argument('--no_cuda', action='store_true',
-    #                     help='Enables CUDA training')
+    parser.add_argument('--no_cuda', action='store_true',
+                        help='Enables CUDA training')
     parser.add_argument('--workers', type=int, help='Number of data loading workers', default=0)
 
     args = parser.parse_args()
