@@ -1,0 +1,37 @@
+Namespace(batch_size=64, dataset='uniform_density', decoder='fold', dropout=0.2, encoder='graph', epochs=10240, eval=False, exp_name='graph_1d_fold_uniform_k16', feat_dims=128, gpu='0', k=16, model_path='', no_cuda=True, num_points=1024, overwrite=True, pooling='avg', rotate=False, shape='1d', snapshot_interval=10, workers=1)
+Training set size: 5000
+Training start!!
+1
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
