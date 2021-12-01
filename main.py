@@ -3,6 +3,7 @@ This code is based on the implementation of An Tao (ta19@mails.tsinghua.edu.cn)
 """
 
 import argparse
+import torch
 
 from autoencoder import Reconstruction
 
@@ -62,6 +63,14 @@ def get_parser():
 
 def main():
     args = get_parser()
+    if not args.no_cuda():
+        c = torch.cuda
+        print('CUDA Information:')
+        print('is_available:', c.is_available())
+        print('current_device:', c.current_device())
+        print('device:', c.device(0))
+        print('device_count:', c.device_count())
+        print('get_device_name:', c.get_device_name(0))
     reconstruction = Reconstruction(args)
     reconstruction.run()
 
