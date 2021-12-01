@@ -63,7 +63,7 @@ def get_parser():
 
 def main():
     args = get_parser()
-    if not args.no_cuda():
+    if not args.no_cuda:
         c = torch.cuda
         print('CUDA Information:')
         print('is_available:', c.is_available())
