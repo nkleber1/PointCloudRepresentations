@@ -67,10 +67,10 @@ def main():
         print('CUDA Information:')
         print('-- is_available: \t', c.is_available())
         print('-- current_device: \t', c.current_device())
-        print('-- device: \t', c.device(0))
+        print('-- device: \t\t', c.device(0))
         print('-- device_count: \t', c.device_count())
         print('-- get_device_name: \t', c.get_device_name(0))
-        print('-- no_cuda: \t', args.no_cuda)
+        print('-- no_cuda: \t\t', args.no_cuda)
     reconstruction = Reconstruction(args)
     reconstruction.run()
 
