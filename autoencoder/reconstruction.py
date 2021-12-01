@@ -78,7 +78,7 @@ class Reconstruction(object):
         # print args
         print(str(args))
 
-        # get gpu id
+        # get gpu id  # TODO Whats this? Does this work for Batch System?
         gids = ''.join(args.gpu.split())
         self.gpu_ids = [int(gid) for gid in gids.split(',')]
         self.first_gpu = self.gpu_ids[0]
