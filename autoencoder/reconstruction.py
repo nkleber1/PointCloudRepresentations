@@ -214,7 +214,7 @@ class Reconstruction(object):
             self._plot_reconstruction(epoch)
 
     def _plot_reconstruction(self, epoch):
-        x = self.test_data
+        x = self.test_data.cuda(self.first_gpu)
         self.model.eval()
         embedding = self.model.encoder.forward(x)
         reconstruction = self.model.decoder.forward(embedding)
