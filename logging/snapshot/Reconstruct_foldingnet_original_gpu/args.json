@@ -1,6 +1,6 @@
 {
      "exp_name": "foldingnet_original_gpu",
-     "overwrite": true,
+     "overwrite": false,
      "encoder": "graph",
      "decoder": "fold",
      "dropout": 0.2,
@@ -8,15 +8,15 @@
      "feat_dims": 512,
      "k": 16,
      "batch_size": 64,
-     "epochs": 1000,
+     "epochs": 10000,
      "snapshot_interval": 10,
      "shape": "1d",
      "pooling": "avg",
      "eval": false,
-     "model_path": "",
+     "model_path": "logging/snapshot/Reconstruct_foldingnet_original_gpu/models/uniform_density_1000.pkl",
      "dataset": "uniform_density",
      "rotate": false,
      "gpu": "0",
      "no_cuda": false,
-     "workers": 1
+     "workers": 0
 }
