@@ -32,7 +32,7 @@ def get_parser():
                         help='Size of batch)')
     parser.add_argument('--epochs', type=int, default=1000, metavar='N',
                         help='Number of episode to train ')
-    parser.add_argument('--snapshot_interval', type=int, default=10, metavar='N',
+    parser.add_argument('--snapshot_interval', type=int, default=100, metavar='N',
                         help='Save snapshot interval')
     parser.add_argument('--shape', type=str, default='1d', metavar='N',
                         choices=['1d', 'diagonal', 'circle', 'square', 'gaussian'],
@@ -49,9 +49,7 @@ def get_parser():
                         help='Encoder to use, [lidar, uniform_density, regular_distances]')
     parser.add_argument('--rotate', action='store_true',
                         help='rotate point clouds during training')
-    # parser.add_argument('--dataset_root', type=str, default='../dataset', help="Dataset root path")
-    # TODO make GPU availlebel
-    parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0') # '3,4,5')
+    parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
     parser.add_argument('--no_cuda', action='store_true',
                         help='Enables CUDA training')
     parser.add_argument('--workers', type=int, help='Number of data loading workers', default=0)
@@ -64,6 +62,7 @@ def main():
     args = get_parser()
     c = torch.cuda
     if c.is_available():
+        c.empty_cache()
         print('CUDA Information:')
         print('-- is_available: \t', c.is_available())
         print('-- current_device: \t', c.current_device())

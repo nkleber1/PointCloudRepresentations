@@ -67,7 +67,6 @@ class GraphEncoder(nn.Module):
             self.k = 16
         else:
             self.k = args.k
-        self.n = 360  # input point cloud size  # TODO !!!
         self.mlp1 = nn.Sequential(
             nn.Conv1d(6, 64, 1),  # TODO 12 if 3D
             nn.ReLU(),
