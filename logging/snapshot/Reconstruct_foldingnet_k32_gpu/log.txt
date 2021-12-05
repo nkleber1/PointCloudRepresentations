@@ -1,0 +1,1835 @@
+Namespace(batch_size=64, dataset='uniform_density', decoder='fold', dropout=0.2, encoder='graph', epochs=10000, eval=False, exp_name='foldingnet_k32_gpu', feat_dims=512, gpu='0', k=32, model_path='', no_cuda=False, num_points=1024, overwrite=True, pooling='avg', rotate=False, shape='1d', snapshot_interval=10, workers=0)
+Training set size: 5000
+Training start!!
+Epoch 1: Loss 0.46168977823815766, time 11.6116s
+Epoch 2: Loss 0.2077270450565634, time 11.3547s
+Epoch 3: Loss 0.20486141177766684, time 11.4686s
+Epoch 4: Loss 0.1946980892385863, time 11.4673s
+Epoch 5: Loss 0.16278460697282718, time 11.5013s
+Epoch 6: Loss 0.12086396176320842, time 11.5238s
+Epoch 7: Loss 0.10994442811683763, time 11.5502s
+Epoch 8: Loss 0.10795724551087316, time 11.5783s
+Epoch 9: Loss 0.10613627024466478, time 11.5593s
+Epoch 10: Loss 0.103964629665583, time 11.5762s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_10.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_10.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 11: Loss 0.100274841430821, time 11.5859s
+Epoch 12: Loss 0.09206521756286863, time 11.5826s
+Epoch 13: Loss 0.0715477530361165, time 11.5849s
+Epoch 14: Loss 0.049560070927903245, time 11.5799s
+Epoch 15: Loss 0.039729457778879734, time 11.6017s
+Epoch 16: Loss 0.03571458790993577, time 11.5868s
+Epoch 17: Loss 0.033565014636120466, time 11.5960s
+Epoch 18: Loss 0.031999705129456296, time 11.5865s
+Epoch 19: Loss 0.030417802649302574, time 11.6068s
+Epoch 20: Loss 0.02886585756558689, time 11.5960s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_20.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_20.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 21: Loss 0.027029829636169008, time 11.5847s
+Epoch 22: Loss 0.024550770966430442, time 11.5964s
+Epoch 23: Loss 0.022785469294301693, time 11.5982s
+Epoch 24: Loss 0.02184100361847425, time 11.5867s
+Epoch 25: Loss 0.021090852553496443, time 11.5917s
+Epoch 26: Loss 0.020375527565284997, time 11.5912s
+Epoch 27: Loss 0.019652161588067117, time 11.5882s
+Epoch 28: Loss 0.018783491776808152, time 11.5898s
+Epoch 29: Loss 0.01789689949077047, time 11.6014s
+Epoch 30: Loss 0.017005948803705883, time 11.6032s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_30.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_30.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 31: Loss 0.016175392752843378, time 11.5974s
+Epoch 32: Loss 0.015537748136852362, time 11.5941s
+Epoch 33: Loss 0.014901987477382528, time 11.5926s
+Epoch 34: Loss 0.014391779456040055, time 11.5911s
+Epoch 35: Loss 0.013983044702606865, time 11.5970s
+Epoch 36: Loss 0.013623055727869461, time 11.5822s
+Epoch 37: Loss 0.013230260268525704, time 11.5864s
+Epoch 38: Loss 0.012854653381141303, time 11.5889s
+Epoch 39: Loss 0.012583575189361184, time 11.5845s
+Epoch 40: Loss 0.01228352559471055, time 11.5976s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_40.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_40.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 41: Loss 0.012139706965241156, time 11.5821s
+Epoch 42: Loss 0.011857068098350606, time 11.5819s
+Epoch 43: Loss 0.011722475210723431, time 11.5862s
+Epoch 44: Loss 0.011552880134999374, time 11.5879s
+Epoch 45: Loss 0.011460537727497801, time 11.5941s
+Epoch 46: Loss 0.01127882221053484, time 11.5934s
+Epoch 47: Loss 0.011132682218287093, time 11.5918s
+Epoch 48: Loss 0.010982249562828979, time 11.5877s
+Epoch 49: Loss 0.010876679710477968, time 11.5891s
+Epoch 50: Loss 0.010718630078614136, time 11.5914s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_50.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_50.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 51: Loss 0.010576181981677212, time 11.5857s
+Epoch 52: Loss 0.010453451013699457, time 11.5776s
+Epoch 53: Loss 0.010336476300041416, time 11.5817s
+Epoch 54: Loss 0.010214821173208235, time 11.5821s
+Epoch 55: Loss 0.009978320532112936, time 11.5807s
+Epoch 56: Loss 0.00983804719569751, time 11.5799s
+Epoch 57: Loss 0.009656064219690293, time 11.5830s
+Epoch 58: Loss 0.009541865102239425, time 11.5809s
+Epoch 59: Loss 0.009375576414698382, time 11.5807s
+Epoch 60: Loss 0.009326177021441392, time 11.5804s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_60.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_60.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 61: Loss 0.00924591616361956, time 11.5790s
+Epoch 62: Loss 0.009095537825487554, time 11.5958s
+Epoch 63: Loss 0.009004072003255162, time 11.6005s
+Epoch 64: Loss 0.0089134280393018, time 11.6112s
+Epoch 65: Loss 0.008815511069378426, time 11.5920s
+Epoch 66: Loss 0.008771587628871202, time 11.5930s
+Epoch 67: Loss 0.008678931745853794, time 11.5916s
+Epoch 68: Loss 0.008608631640849518, time 11.5992s
+Epoch 69: Loss 0.008588173621204457, time 11.5896s
+Epoch 70: Loss 0.008462902384698155, time 11.5934s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_70.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_70.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 71: Loss 0.00838948676327267, time 11.5942s
+Epoch 72: Loss 0.008323140854982636, time 11.6134s
+Epoch 73: Loss 0.00825840236819526, time 11.6030s
+Epoch 74: Loss 0.008194911317263224, time 11.5970s
+Epoch 75: Loss 0.008077678944078522, time 11.5886s
+Epoch 76: Loss 0.008063495598285448, time 11.5820s
+Epoch 77: Loss 0.007962505400911727, time 11.5822s
+Epoch 78: Loss 0.00787719642475271, time 11.6016s
+Epoch 79: Loss 0.007790319820500533, time 11.5884s
+Epoch 80: Loss 0.007745399658532837, time 11.5929s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_80.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_80.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 81: Loss 0.007673956456747425, time 11.5921s
+Epoch 82: Loss 0.007619308409446119, time 11.5944s
+Epoch 83: Loss 0.007533433764607091, time 11.5857s
+Epoch 84: Loss 0.0074536621517537135, time 11.5854s
+Epoch 85: Loss 0.007451153688922619, time 11.5780s
+Epoch 86: Loss 0.007339149867508655, time 11.5738s
+Epoch 87: Loss 0.00726764717380976, time 11.5752s
+Epoch 88: Loss 0.007179932444079343, time 11.5777s
+Epoch 89: Loss 0.007126398894440712, time 11.5783s
+Epoch 90: Loss 0.00703382502970156, time 11.5911s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_90.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_90.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 91: Loss 0.006994813080152049, time 11.5943s
+Epoch 92: Loss 0.006892002046202557, time 11.5988s
+Epoch 93: Loss 0.006856937886840558, time 11.5990s
+Epoch 94: Loss 0.006808883392641061, time 11.5895s
+Epoch 95: Loss 0.006773741014708494, time 11.5837s
+Epoch 96: Loss 0.006690403193093931, time 11.5791s
+Epoch 97: Loss 0.006673320657072612, time 11.5881s
+Epoch 98: Loss 0.006599671518300436, time 11.5799s
+Epoch 99: Loss 0.006535272949516679, time 11.5840s
+Epoch 100: Loss 0.006489078477437643, time 11.5852s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_100.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_100.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 101: Loss 0.006421889840106515, time 11.5743s
+Epoch 102: Loss 0.0064066087162487585, time 11.5796s
+Epoch 103: Loss 0.006344112417295198, time 11.5824s
+Epoch 104: Loss 0.006274089825787593, time 11.5869s
+Epoch 105: Loss 0.006301360404490246, time 11.5837s
+Epoch 106: Loss 0.006282591008982043, time 11.5790s
+Epoch 107: Loss 0.006172839622897438, time 11.5790s
+Epoch 108: Loss 0.0061420992995270445, time 11.5914s
+Epoch 109: Loss 0.006109645821543151, time 11.5898s
+Epoch 110: Loss 0.006061737603932336, time 11.5841s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_110.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_110.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 111: Loss 0.0060218444500778675, time 11.5766s
+Epoch 112: Loss 0.0059479690551804965, time 11.5760s
+Epoch 113: Loss 0.005948164946800451, time 11.5814s
+Epoch 114: Loss 0.005909476318703139, time 11.5850s
+Epoch 115: Loss 0.0058527757116015764, time 11.5938s
+Epoch 116: Loss 0.005882834589780792, time 11.5892s
+Epoch 117: Loss 0.0058316624240030215, time 11.5827s
+Epoch 118: Loss 0.0057772090334350925, time 11.5879s
+Epoch 119: Loss 0.005850061856776099, time 11.5775s
+Epoch 120: Loss 0.0056990625397921124, time 11.5782s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_120.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_120.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 121: Loss 0.005702781367198199, time 11.5746s
+Epoch 122: Loss 0.005671175156979338, time 11.5838s
+Epoch 123: Loss 0.00560707285119032, time 11.5769s
+Epoch 124: Loss 0.005592181152793803, time 11.5788s
+Epoch 125: Loss 0.005566207045111569, time 11.5835s
+Epoch 126: Loss 0.00554814339317735, time 11.5740s
+Epoch 127: Loss 0.0054936119940285156, time 11.5783s
+Epoch 128: Loss 0.00547557946477274, time 11.5719s
+Epoch 129: Loss 0.005484442061544219, time 11.5679s
+Epoch 130: Loss 0.00549825490304988, time 11.5656s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_130.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_130.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 131: Loss 0.005414578798403845, time 11.5636s
+Epoch 132: Loss 0.005380169548907706, time 11.5702s
+Epoch 133: Loss 0.005381981708857973, time 11.5666s
+Epoch 134: Loss 0.0053863170765976924, time 11.5822s
+Epoch 135: Loss 0.00532136722379423, time 11.5734s
+Epoch 136: Loss 0.005278420737720555, time 11.5783s
+Epoch 137: Loss 0.005314802927041686, time 11.5815s
+Epoch 138: Loss 0.005243026691229566, time 11.5812s
+Epoch 139: Loss 0.005203114177801799, time 11.5764s
+Epoch 140: Loss 0.005263278405977814, time 11.5748s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_140.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_140.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 141: Loss 0.00516864679800936, time 11.5653s
+Epoch 142: Loss 0.005147114130845175, time 11.5792s
+Epoch 143: Loss 0.005156863854366909, time 11.5799s
+Epoch 144: Loss 0.005108408755151248, time 11.5816s
+Epoch 145: Loss 0.005117832741971257, time 11.5839s
+Epoch 146: Loss 0.005127591133276826, time 11.5759s
+Epoch 147: Loss 0.005090841420784687, time 11.5829s
+Epoch 148: Loss 0.005082031524787315, time 11.5915s
+Epoch 149: Loss 0.005011199516703999, time 11.5762s
+Epoch 150: Loss 0.004992802120462249, time 11.5761s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_150.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_150.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 151: Loss 0.004956019523588917, time 11.5756s
+Epoch 152: Loss 0.005014954688163074, time 11.5710s
+Epoch 153: Loss 0.004963655066396452, time 11.5743s
+Epoch 154: Loss 0.004925236351275227, time 11.5768s
+Epoch 155: Loss 0.00492791274099764, time 11.5748s
+Epoch 156: Loss 0.004860929963532599, time 11.5679s
+Epoch 157: Loss 0.004828375121696463, time 11.5602s
+Epoch 158: Loss 0.004824121065638205, time 11.5870s
+Epoch 159: Loss 0.004841674956982319, time 11.5841s
+Epoch 160: Loss 0.004775055433635282, time 11.5765s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_160.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_160.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 161: Loss 0.004745021592118317, time 11.5756s
+Epoch 162: Loss 0.004735185442009021, time 11.5824s
+Epoch 163: Loss 0.004723876765546023, time 11.5893s
+Epoch 164: Loss 0.004874089208160398, time 11.5693s
+Epoch 165: Loss 0.004687972430175147, time 11.5572s
+Epoch 166: Loss 0.004673342791509732, time 11.5557s
+Epoch 167: Loss 0.004657270140721923, time 11.5556s
+Epoch 168: Loss 0.004624946465821866, time 11.5588s
+Epoch 169: Loss 0.00465941405449876, time 11.5587s
+Epoch 170: Loss 0.004658410431009635, time 11.5641s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_170.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_170.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 171: Loss 0.004595815532699322, time 11.5614s
+Epoch 172: Loss 0.004605637446983093, time 11.5655s
+Epoch 173: Loss 0.004565156931411239, time 11.5594s
+Epoch 174: Loss 0.004520928527705984, time 11.5600s
+Epoch 175: Loss 0.004544106945749136, time 11.5606s
+Epoch 176: Loss 0.004541785765698627, time 11.5605s
+Epoch 177: Loss 0.004510731096644709, time 11.5602s
+Epoch 178: Loss 0.004476743286086506, time 11.5599s
+Epoch 179: Loss 0.004452398805024362, time 11.5615s
+Epoch 180: Loss 0.004458983008796939, time 11.5597s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_180.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_180.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 181: Loss 0.004418302868946774, time 11.5623s
+Epoch 182: Loss 0.004437625213655867, time 11.5592s
+Epoch 183: Loss 0.00438276511031981, time 11.5632s
+Epoch 184: Loss 0.004384522768374108, time 11.5601s
+Epoch 185: Loss 0.004402895908967792, time 11.5604s
+Epoch 186: Loss 0.0043724545784577535, time 11.5648s
+Epoch 187: Loss 0.004341389038570555, time 11.5618s
+Epoch 188: Loss 0.004319591998841755, time 11.5706s
+Epoch 189: Loss 0.004320292084483737, time 11.5758s
+Epoch 190: Loss 0.004299849195883291, time 11.5913s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_190.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_190.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 191: Loss 0.004263808561748341, time 11.5847s
+Epoch 192: Loss 0.0042445334919751915, time 11.5761s
+Epoch 193: Loss 0.004256643269423254, time 11.5808s
+Epoch 194: Loss 0.004252370714380913, time 11.5816s
+Epoch 195: Loss 0.004241637078031332, time 11.5811s
+Epoch 196: Loss 0.004243782279376365, time 11.5748s
+Epoch 197: Loss 0.004211948627511723, time 11.5737s
+Epoch 198: Loss 0.004189178215699341, time 11.5684s
+Epoch 199: Loss 0.004187422133672723, time 11.5730s
+Epoch 200: Loss 0.004158683825590754, time 11.5759s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_200.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_200.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 201: Loss 0.004153729244385835, time 11.5681s
+Epoch 202: Loss 0.0041580134295398676, time 11.5706s
+Epoch 203: Loss 0.004130063686060095, time 11.5765s
+Epoch 204: Loss 0.004167364407743362, time 11.5693s
+Epoch 205: Loss 0.004128325203009233, time 11.5762s
+Epoch 206: Loss 0.004084387513413978, time 11.5697s
+Epoch 207: Loss 0.0041167364777006865, time 11.5731s
+Epoch 208: Loss 0.004090530345440382, time 11.5702s
+Epoch 209: Loss 0.004099236652800295, time 11.5744s
+Epoch 210: Loss 0.004027471244718314, time 11.5746s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_210.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_210.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 211: Loss 0.0040241065751938036, time 11.5677s
+Epoch 212: Loss 0.004018476213729362, time 11.5733s
+Epoch 213: Loss 0.003999712219744732, time 11.5699s
+Epoch 214: Loss 0.003994621166626368, time 11.5677s
+Epoch 215: Loss 0.004163349121720589, time 11.5692s
+Epoch 216: Loss 0.003971926615974288, time 11.5725s
+Epoch 217: Loss 0.003985548643188999, time 11.5678s
+Epoch 218: Loss 0.0039859999794972754, time 11.5801s
+Epoch 219: Loss 0.003977609898517781, time 11.5733s
+Epoch 220: Loss 0.003981355806117099, time 11.5737s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_220.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_220.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 221: Loss 0.003953398981933258, time 11.5891s
+Epoch 222: Loss 0.003938997869491813, time 11.5816s
+Epoch 223: Loss 0.004005751135623483, time 11.5697s
+Epoch 224: Loss 0.00395835476192127, time 11.5644s
+Epoch 225: Loss 0.003918254701199623, time 11.5659s
+Epoch 226: Loss 0.0038862120418343693, time 11.5705s
+Epoch 227: Loss 0.003916028212119318, time 11.5723s
+Epoch 228: Loss 0.0038721326936059924, time 11.5667s
+Epoch 229: Loss 0.003862421775437137, time 11.5712s
+Epoch 230: Loss 0.0038204387676182994, time 11.5697s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_230.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_230.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 231: Loss 0.003860318139519637, time 11.5703s
+Epoch 232: Loss 0.003820671643943915, time 11.5730s
+Epoch 233: Loss 0.003833857601467237, time 11.5656s
+Epoch 234: Loss 0.0038265784987973495, time 11.5668s
+Epoch 235: Loss 0.0037774098123411967, time 11.5742s
+Epoch 236: Loss 0.003765821081506607, time 11.5792s
+Epoch 237: Loss 0.0037583170968544066, time 11.5732s
+Epoch 238: Loss 0.0038022359323251665, time 11.5750s
+Epoch 239: Loss 0.003727665326124812, time 11.5776s
+Epoch 240: Loss 0.0037817345085536143, time 11.5791s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_240.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_240.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 241: Loss 0.0037553076546851406, time 11.5663s
+Epoch 242: Loss 0.0037708256837228147, time 11.5654s
+Epoch 243: Loss 0.003690454991728869, time 11.5687s
+Epoch 244: Loss 0.003705454539710986, time 11.5752s
+Epoch 245: Loss 0.0036918468356332917, time 11.5806s
+Epoch 246: Loss 0.0036571374648586624, time 11.5799s
+Epoch 247: Loss 0.003652591289601678, time 11.5743s
+Epoch 248: Loss 0.0036724075159983403, time 11.5757s
+Epoch 249: Loss 0.0036252374853644096, time 11.5755s
+Epoch 250: Loss 0.003624326310745334, time 11.5721s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_250.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_250.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 251: Loss 0.0036516808783134467, time 11.5648s
+Epoch 252: Loss 0.0036002526791394937, time 11.5665s
+Epoch 253: Loss 0.0036220754654429665, time 11.5740s
+Epoch 254: Loss 0.0036242447161304327, time 11.5826s
+Epoch 255: Loss 0.0035733423826485116, time 11.5589s
+Epoch 256: Loss 0.0035487487875337747, time 11.5611s
+Epoch 257: Loss 0.0035500628637927995, time 11.5658s
+Epoch 258: Loss 0.0035096303680675883, time 11.5762s
+Epoch 259: Loss 0.0035195714669579146, time 11.5769s
+Epoch 260: Loss 0.0034971118431620864, time 11.5708s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_260.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_260.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 261: Loss 0.0034994981001143025, time 11.5806s
+Epoch 262: Loss 0.0034636548717352973, time 11.5609s
+Epoch 263: Loss 0.0033887919164527964, time 11.5665s
+Epoch 264: Loss 0.003398678860114298, time 11.5668s
+Epoch 265: Loss 0.0033535422688008203, time 11.5713s
+Epoch 266: Loss 0.0033077150480114396, time 11.5792s
+Epoch 267: Loss 0.0032565022473919052, time 11.5748s
+Epoch 268: Loss 0.003258290440890396, time 11.5721s
+Epoch 269: Loss 0.0032749877902944397, time 11.5702s
+Epoch 270: Loss 0.003210419273929364, time 11.5697s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_270.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_270.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 271: Loss 0.003170972378317361, time 11.5647s
+Epoch 272: Loss 0.0031817494648437995, time 11.5742s
+Epoch 273: Loss 0.003174371137269006, time 11.5710s
+Epoch 274: Loss 0.0030944968715215784, time 11.5711s
+Epoch 275: Loss 0.0030593395393777967, time 11.5701s
+Epoch 276: Loss 0.003087444416957589, time 11.5730s
+Epoch 277: Loss 0.0030221455815967312, time 11.5808s
+Epoch 278: Loss 0.0030445190617384367, time 11.5839s
+Epoch 279: Loss 0.0030383265247904473, time 11.5917s
+Epoch 280: Loss 0.003002591113945988, time 11.5796s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_280.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_280.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 281: Loss 0.0029506928871733526, time 11.5799s
+Epoch 282: Loss 0.0029690015524672935, time 11.5710s
+Epoch 283: Loss 0.0029301624538824907, time 11.5694s
+Epoch 284: Loss 0.0029509360367827166, time 11.5755s
+Epoch 285: Loss 0.0029113193969478052, time 11.5746s
+Epoch 286: Loss 0.002875501606790231, time 11.5805s
+Epoch 287: Loss 0.0028629562658363883, time 11.5733s
+Epoch 288: Loss 0.0028836939673976903, time 11.5668s
+Epoch 289: Loss 0.002874733204511289, time 11.5753s
+Epoch 290: Loss 0.002860619719700204, time 11.5795s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_290.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_290.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 291: Loss 0.002844326333673317, time 11.5702s
+Epoch 292: Loss 0.0028604982443643096, time 11.5715s
+Epoch 293: Loss 0.00283910036698585, time 11.5731s
+Epoch 294: Loss 0.002788667289298499, time 11.5795s
+Epoch 295: Loss 0.0027746309557947317, time 11.5891s
+Epoch 296: Loss 0.0027838093383367396, time 11.5845s
+Epoch 297: Loss 0.002777015280473647, time 11.5724s
+Epoch 298: Loss 0.002773753516567588, time 11.5754s
+Epoch 299: Loss 0.0027926728045391037, time 11.5814s
+Epoch 300: Loss 0.0027690017544310776, time 11.5788s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_300.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_300.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 301: Loss 0.002722902003531285, time 11.5762s
+Epoch 302: Loss 0.0027142814670017435, time 11.5753s
+Epoch 303: Loss 0.0027229492184175533, time 11.5837s
+Epoch 304: Loss 0.0027985129125204077, time 11.5697s
+Epoch 305: Loss 0.002712247515601236, time 11.5795s
+Epoch 306: Loss 0.0026926485282999665, time 11.5801s
+Epoch 307: Loss 0.002691697843573233, time 11.5881s
+Epoch 308: Loss 0.002647169397796115, time 11.6016s
+Epoch 309: Loss 0.002662964214208312, time 11.5769s
+Epoch 310: Loss 0.0026859760485571822, time 11.5739s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_310.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_310.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 311: Loss 0.002664074256037704, time 11.5738s
+Epoch 312: Loss 0.0026584700360758632, time 11.5830s
+Epoch 313: Loss 0.0026594937692066252, time 11.5749s
+Epoch 314: Loss 0.002616723975250674, time 11.5661s
+Epoch 315: Loss 0.0026000545417618807, time 11.5744s
+Epoch 316: Loss 0.0026009765069024, time 11.5711s
+Epoch 317: Loss 0.0026109174171704327, time 11.5747s
+Epoch 318: Loss 0.0026051306797197395, time 11.5746s
+Epoch 319: Loss 0.0025805096065366195, time 11.5738s
+Epoch 320: Loss 0.002563871807990525, time 11.5693s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_320.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_320.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 321: Loss 0.002593264260765495, time 11.5739s
+Epoch 322: Loss 0.0026142430024610574, time 11.5779s
+Epoch 323: Loss 0.002581216003288975, time 11.5764s
+Epoch 324: Loss 0.002583498874593738, time 11.5910s
+Epoch 325: Loss 0.002549009402415161, time 11.5803s
+Epoch 326: Loss 0.0025605934862153535, time 11.5848s
+Epoch 327: Loss 0.0025549082393475065, time 11.5762s
+Epoch 328: Loss 0.0025199779977615262, time 11.5747s
+Epoch 329: Loss 0.0025219956421753086, time 11.5770s
+Epoch 330: Loss 0.002527870842744891, time 11.5741s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_330.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_330.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 331: Loss 0.0025822690723440317, time 11.5726s
+Epoch 332: Loss 0.002531913819036128, time 11.5717s
+Epoch 333: Loss 0.002516120286139695, time 11.5727s
+Epoch 334: Loss 0.0025134404017472098, time 11.5635s
+Epoch 335: Loss 0.0025270407388717693, time 11.5996s
+Epoch 336: Loss 0.0025263547063274663, time 11.5947s
+Epoch 337: Loss 0.002538522576126329, time 11.5890s
+Epoch 338: Loss 0.0025207855008524856, time 11.5749s
+Epoch 339: Loss 0.0024735811910639176, time 11.5776s
+Epoch 340: Loss 0.0024492502900701064, time 11.5749s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_340.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_340.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 341: Loss 0.0024671806740910523, time 11.5647s
+Epoch 342: Loss 0.0024902510192964366, time 11.5595s
+Epoch 343: Loss 0.0024687765281105156, time 11.5644s
+Epoch 344: Loss 0.002456487300864692, time 11.5813s
+Epoch 345: Loss 0.002420300999111083, time 11.5775s
+Epoch 346: Loss 0.0024287518628878825, time 11.5766s
+Epoch 347: Loss 0.0024536020948427812, time 11.5662s
+Epoch 348: Loss 0.0025118579472786498, time 11.5853s
+Epoch 349: Loss 0.0024412975188262197, time 11.5772s
+Epoch 350: Loss 0.002411788395057798, time 11.5756s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_350.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_350.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 351: Loss 0.0024411548326923687, time 11.5708s
+Epoch 352: Loss 0.0024018743616245875, time 11.5805s
+Epoch 353: Loss 0.0023657693711840373, time 11.5824s
+Epoch 354: Loss 0.002386648436312717, time 11.5765s
+Epoch 355: Loss 0.00239941736320741, time 11.5765s
+Epoch 356: Loss 0.002376974580582538, time 11.5819s
+Epoch 357: Loss 0.0023928213510161288, time 11.5813s
+Epoch 358: Loss 0.002368631208303703, time 11.5676s
+Epoch 359: Loss 0.002402188288802399, time 11.5837s
+Epoch 360: Loss 0.0025209070321856233, time 11.5819s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_360.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_360.png
+Epoch 361: Loss 0.0024311445602598967, time 11.5841s
+Epoch 362: Loss 0.0023466493997758233, time 11.5773s
+Epoch 363: Loss 0.002352116930466499, time 11.5793s
+Epoch 364: Loss 0.0023523343154494476, time 11.5808s
+Epoch 365: Loss 0.0023460900720468237, time 11.5722s
+Epoch 366: Loss 0.00239905236801722, time 11.5751s
+Epoch 367: Loss 0.002331456159539167, time 11.5858s
+Epoch 368: Loss 0.0023265319096832243, time 11.5945s
+Epoch 369: Loss 0.002334844151915558, time 11.5721s
+Epoch 370: Loss 0.0023215140932227804, time 11.5644s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_370.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_370.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 371: Loss 0.0023526514258126645, time 11.5677s
+Epoch 372: Loss 0.00231267252194259, time 11.5700s
+Epoch 373: Loss 0.0023478650535114958, time 11.5729s
+Epoch 374: Loss 0.0023065262029825745, time 11.5796s
+Epoch 375: Loss 0.002355503539121533, time 11.5846s
+Epoch 376: Loss 0.0022846007096298227, time 11.5785s
+Epoch 377: Loss 0.002329037625702169, time 11.5798s
+Epoch 378: Loss 0.0022876480781426063, time 11.5704s
+Epoch 379: Loss 0.0023187306745322657, time 11.5810s
+Epoch 380: Loss 0.002277131860669042, time 11.5726s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_380.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_380.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 381: Loss 0.0022991317093351716, time 11.5698s
+Epoch 382: Loss 0.002276190270705125, time 11.5679s
+Epoch 383: Loss 0.002270639615238031, time 11.5730s
+Epoch 384: Loss 0.002343744637085054, time 11.5848s
+Epoch 385: Loss 0.002367468852523266, time 11.5997s
+Epoch 386: Loss 0.0022778627584258073, time 11.5746s
+Epoch 387: Loss 0.0022609770132959645, time 11.5718s
+Epoch 388: Loss 0.002244642771385563, time 11.5685s
+Epoch 389: Loss 0.0022728349376157446, time 11.5754s
+Epoch 390: Loss 0.002263082687955208, time 11.5812s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_390.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_390.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 391: Loss 0.0022719605343970413, time 11.5734s
+Epoch 392: Loss 0.0022287214538848758, time 11.5725s
+Epoch 393: Loss 0.002282898706756827, time 11.5797s
+Epoch 394: Loss 0.0022495231525589345, time 11.6018s
+Epoch 395: Loss 0.002208202393928873, time 11.5822s
+Epoch 396: Loss 0.0022755156763345948, time 11.5718s
+Epoch 397: Loss 0.002279483068136121, time 11.5800s
+Epoch 398: Loss 0.0022482499568664198, time 11.5830s
+Epoch 399: Loss 0.0021947423523716344, time 11.5788s
+Epoch 400: Loss 0.002272243190061631, time 11.5731s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_400.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_400.png
+Epoch 401: Loss 0.002208750636045691, time 11.5755s
+Epoch 402: Loss 0.0021771986663409308, time 11.5769s
+Epoch 403: Loss 0.002184832128961394, time 11.5802s
+Epoch 404: Loss 0.0021836483118690174, time 11.5893s
+Epoch 405: Loss 0.002208838404725082, time 11.5772s
+Epoch 406: Loss 0.0022217143596668693, time 11.5726s
+Epoch 407: Loss 0.0022046239637693132, time 11.5734s
+Epoch 408: Loss 0.002214630255424064, time 11.5767s
+Epoch 409: Loss 0.0021816849829393286, time 11.5885s
+Epoch 410: Loss 0.002159765329141217, time 11.5960s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_410.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_410.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 411: Loss 0.0021550716298832733, time 11.5611s
+Epoch 412: Loss 0.0022046571447148543, time 11.5630s
+Epoch 413: Loss 0.0022552412333367747, time 11.5656s
+Epoch 414: Loss 0.002200593913262828, time 11.5583s
+Epoch 415: Loss 0.0021675858477902704, time 11.5659s
+Epoch 416: Loss 0.0022724589411776417, time 11.5747s
+Epoch 417: Loss 0.0021346704507559018, time 11.5693s
+Epoch 418: Loss 0.0021378017116125813, time 11.5747s
+Epoch 419: Loss 0.002146037669389662, time 11.5812s
+Epoch 420: Loss 0.002208810782242755, time 11.5681s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_420.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_420.png
+Epoch 421: Loss 0.002203134025588537, time 11.5561s
+Epoch 422: Loss 0.0021446788178084864, time 11.5585s
+Epoch 423: Loss 0.002190486159576457, time 11.5700s
+Epoch 424: Loss 0.002121910068966873, time 11.5736s
+Epoch 425: Loss 0.0021118453130585767, time 11.5754s
+Epoch 426: Loss 0.002168930205663878, time 11.5750s
+Epoch 427: Loss 0.002131555084274681, time 11.5724s
+Epoch 428: Loss 0.002182979573631258, time 11.5688s
+Epoch 429: Loss 0.0021393015904092715, time 11.5657s
+Epoch 430: Loss 0.002103604566780379, time 11.5669s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_430.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_430.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 431: Loss 0.0021318886565380507, time 11.5722s
+Epoch 432: Loss 0.002160521501732719, time 11.5796s
+Epoch 433: Loss 0.002120043330492829, time 11.5676s
+Epoch 434: Loss 0.002176950278226286, time 11.5807s
+Epoch 435: Loss 0.0021049093876529157, time 11.5860s
+Epoch 436: Loss 0.002109414592821481, time 11.5885s
+Epoch 437: Loss 0.002088479992058246, time 11.5898s
+Epoch 438: Loss 0.002081665284843243, time 11.5756s
+Epoch 439: Loss 0.0021536371208686097, time 11.5777s
+Epoch 440: Loss 0.002119625548690652, time 11.5759s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_440.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_440.png
+Epoch 441: Loss 0.002074525371242515, time 11.5711s
+Epoch 442: Loss 0.002073044653265749, time 11.5814s
+Epoch 443: Loss 0.002074696681362023, time 11.5834s
+Epoch 444: Loss 0.0022457593063163702, time 11.5779s
+Epoch 445: Loss 0.002134562549593894, time 11.5840s
+Epoch 446: Loss 0.002144648860388471, time 11.5797s
+Epoch 447: Loss 0.0020647003603480236, time 11.5905s
+Epoch 448: Loss 0.0020232479087271596, time 11.5882s
+Epoch 449: Loss 0.0020485049046581917, time 11.5840s
+Epoch 450: Loss 0.0020370073852282538, time 11.5834s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_450.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_450.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 451: Loss 0.0020419599107448956, time 11.5863s
+Epoch 452: Loss 0.0020229349379233216, time 11.5856s
+Epoch 453: Loss 0.002079774671281346, time 11.5774s
+Epoch 454: Loss 0.00202300324166618, time 11.5817s
+Epoch 455: Loss 0.002045228050968645, time 11.5733s
+Epoch 456: Loss 0.002062705579571886, time 11.5733s
+Epoch 457: Loss 0.0020570211190600656, time 11.5795s
+Epoch 458: Loss 0.002044140076105589, time 11.5897s
+Epoch 459: Loss 0.002063773014682899, time 11.5951s
+Epoch 460: Loss 0.0020394231354128097, time 11.5703s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_460.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_460.png
+Epoch 461: Loss 0.0021174397346080294, time 11.5734s
+Epoch 462: Loss 0.002183669944119911, time 11.5657s
+Epoch 463: Loss 0.00213778034737481, time 11.5725s
+Epoch 464: Loss 0.0019898668102495656, time 11.5723s
+Epoch 465: Loss 0.0019874392641720043, time 11.5718s
+Epoch 466: Loss 0.0020134679739558007, time 11.5814s
+Epoch 467: Loss 0.002053845926155513, time 11.5864s
+Epoch 468: Loss 0.0020124309149547187, time 11.5788s
+Epoch 469: Loss 0.001993778220280604, time 11.5780s
+Epoch 470: Loss 0.002076177744716524, time 11.5697s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_470.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_470.png
+Epoch 471: Loss 0.0020407200614108315, time 11.5710s
+Epoch 472: Loss 0.002011382428831951, time 11.5710s
+Epoch 473: Loss 0.0020044962153475307, time 11.5755s
+Epoch 474: Loss 0.0019774220554494076, time 11.5814s
+Epoch 475: Loss 0.0020058806223022647, time 11.5854s
+Epoch 476: Loss 0.001988417462333801, time 11.5849s
+Epoch 477: Loss 0.0019702836388539335, time 11.5809s
+Epoch 478: Loss 0.0020280729970434987, time 11.5769s
+Epoch 479: Loss 0.002054750337265432, time 11.5775s
+Epoch 480: Loss 0.001962049593087993, time 11.5782s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_480.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_480.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 481: Loss 0.002007109607434301, time 11.5701s
+Epoch 482: Loss 0.0020085800751525012, time 11.5777s
+Epoch 483: Loss 0.0020347493334122216, time 11.5689s
+Epoch 484: Loss 0.001976624659124078, time 11.5760s
+Epoch 485: Loss 0.001960799149959643, time 11.5606s
+Epoch 486: Loss 0.0019903040958547825, time 11.5661s
+Epoch 487: Loss 0.001944731655339062, time 11.5651s
+Epoch 488: Loss 0.0019462706809981337, time 11.5630s
+Epoch 489: Loss 0.00199181321732806, time 11.5662s
+Epoch 490: Loss 0.0020252369168137874, time 11.5643s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_490.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_490.png
+Epoch 491: Loss 0.0019274897154279147, time 11.5623s
+Epoch 492: Loss 0.0019301790961423959, time 11.5660s
+Epoch 493: Loss 0.0019430822429035, time 11.5611s
+Epoch 494: Loss 0.001963893181306923, time 11.5697s
+Epoch 495: Loss 0.0019305084000895672, time 11.5868s
+Epoch 496: Loss 0.001958083559219619, time 11.5871s
+Epoch 497: Loss 0.00207351279279948, time 11.5721s
+Epoch 498: Loss 0.0019981350345961465, time 11.5690s
+Epoch 499: Loss 0.0019182151275955117, time 11.5722s
+Epoch 500: Loss 0.001951491457993707, time 11.5847s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_500.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_500.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 501: Loss 0.0019514617967696366, time 11.5577s
+Epoch 502: Loss 0.0019156717867708376, time 11.5551s
+Epoch 503: Loss 0.0019174332362437573, time 11.5640s
+Epoch 504: Loss 0.0019450983381830156, time 11.5671s
+Epoch 505: Loss 0.0019588691224432494, time 11.5739s
+Epoch 506: Loss 0.001923665743250447, time 11.5723s
+Epoch 507: Loss 0.0019304737370590902, time 11.5686s
+Epoch 508: Loss 0.00191216265596302, time 11.5705s
+Epoch 509: Loss 0.0019975088737887343, time 11.5667s
+Epoch 510: Loss 0.0020214845735839083, time 11.5719s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_510.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_510.png
+Epoch 511: Loss 0.001945625475970321, time 11.5722s
+Epoch 512: Loss 0.0018957356546189094, time 11.5802s
+Epoch 513: Loss 0.001912873675803583, time 11.5708s
+Epoch 514: Loss 0.0019082412620287246, time 11.5713s
+Epoch 515: Loss 0.0018954949712828744, time 11.5757s
+Epoch 516: Loss 0.0018764896072591714, time 11.5879s
+Epoch 517: Loss 0.0018691993779001782, time 11.5745s
+Epoch 518: Loss 0.001870993595338969, time 11.5785s
+Epoch 519: Loss 0.0019719043961737917, time 11.5766s
+Epoch 520: Loss 0.0021023744554406246, time 11.5778s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_520.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_520.png
+Epoch 521: Loss 0.0018798495997244468, time 11.5910s
+Epoch 522: Loss 0.0018921388194180105, time 11.5821s
+Epoch 523: Loss 0.0018814968133471976, time 11.5716s
+Epoch 524: Loss 0.0018955603591166437, time 11.5797s
+Epoch 525: Loss 0.001865524785737566, time 11.5738s
+Epoch 526: Loss 0.001861628526644899, time 11.5715s
+Epoch 527: Loss 0.001924180174452736, time 11.5797s
+Epoch 528: Loss 0.0018787817790797804, time 11.5919s
+Epoch 529: Loss 0.0019081455914751637, time 11.5814s
+Epoch 530: Loss 0.0018546284552917027, time 11.5848s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_530.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_530.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 531: Loss 0.0018587910168276676, time 11.5701s
+Epoch 532: Loss 0.0019107969364304614, time 11.5756s
+Epoch 533: Loss 0.0018592047710649527, time 11.5796s
+Epoch 534: Loss 0.0018398916922418307, time 11.5726s
+Epoch 535: Loss 0.001884531956409175, time 11.5863s
+Epoch 536: Loss 0.0018479741503384343, time 11.5877s
+Epoch 537: Loss 0.0018701034136075244, time 11.5800s
+Epoch 538: Loss 0.0018961256523940806, time 11.5825s
+Epoch 539: Loss 0.001990505699561968, time 11.5911s
+Epoch 540: Loss 0.001833939312366309, time 11.5794s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_540.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_540.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 541: Loss 0.0018366023609296808, time 11.5774s
+Epoch 542: Loss 0.0018646021758919418, time 11.5723s
+Epoch 543: Loss 0.0018627322065243143, time 11.5841s
+Epoch 544: Loss 0.0018301629826066946, time 11.5756s
+Epoch 545: Loss 0.0018218710500587816, time 11.5734s
+Epoch 546: Loss 0.0019075935424668006, time 11.5760s
+Epoch 547: Loss 0.0018317418941443998, time 11.5775s
+Epoch 548: Loss 0.0019048165373026713, time 11.5806s
+Epoch 549: Loss 0.001799124062777485, time 11.5742s
+Epoch 550: Loss 0.0018077051113035436, time 11.5711s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_550.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_550.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 551: Loss 0.001825434229442779, time 11.5777s
+Epoch 552: Loss 0.0018934891621812094, time 11.5779s
+Epoch 553: Loss 0.0018092592484818747, time 11.5764s
+Epoch 554: Loss 0.0018305879125306737, time 11.5700s
+Epoch 555: Loss 0.0017877419013530016, time 11.5735s
+Epoch 556: Loss 0.0018399439072766918, time 11.5716s
+Epoch 557: Loss 0.0018247175058040508, time 11.5834s
+Epoch 558: Loss 0.0018361893156838096, time 11.5840s
+Epoch 559: Loss 0.001791781087146624, time 11.5915s
+Epoch 560: Loss 0.0017911949341592108, time 11.5672s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_560.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_560.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 561: Loss 0.001842888576108255, time 11.5696s
+Epoch 562: Loss 0.0018301673120777772, time 11.5703s
+Epoch 563: Loss 0.0017916054072159141, time 11.5730s
+Epoch 564: Loss 0.0017752341338126813, time 11.5793s
+Epoch 565: Loss 0.00180111072284812, time 11.5719s
+Epoch 566: Loss 0.0018552422418135301, time 11.5764s
+Epoch 567: Loss 0.0020333780053136516, time 11.5768s
+Epoch 568: Loss 0.0018025731159111815, time 11.5765s
+Epoch 569: Loss 0.0017728444558709766, time 11.5762s
+Epoch 570: Loss 0.0017733948277250593, time 11.5645s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_570.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_570.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 571: Loss 0.001812320866082689, time 11.5711s
+Epoch 572: Loss 0.0017783226179330363, time 11.5866s
+Epoch 573: Loss 0.001939380895847431, time 11.5987s
+Epoch 574: Loss 0.0017834534204367524, time 11.5905s
+Epoch 575: Loss 0.0017642477463527075, time 11.5846s
+Epoch 576: Loss 0.0017398274652851463, time 11.5812s
+Epoch 577: Loss 0.0018048859477673858, time 11.5715s
+Epoch 578: Loss 0.0018385888082476309, time 11.5671s
+Epoch 579: Loss 0.001763977569600131, time 11.5723s
+Epoch 580: Loss 0.0017484513688331494, time 11.5800s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_580.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_580.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 581: Loss 0.0017520765729006852, time 11.5826s
+Epoch 582: Loss 0.0017637234892920132, time 11.5906s
+Epoch 583: Loss 0.0017244611099388899, time 11.5824s
+Epoch 584: Loss 0.0017355719604824162, time 11.5945s
+Epoch 585: Loss 0.001832817027586972, time 11.5838s
+Epoch 586: Loss 0.0017624338676186303, time 11.5723s
+Epoch 587: Loss 0.0017326145345946374, time 11.5792s
+Epoch 588: Loss 0.0021079921501075635, time 11.5876s
+Epoch 589: Loss 0.0018818322333353985, time 11.5763s
+Epoch 590: Loss 0.0017165435803022614, time 11.5794s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_590.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_590.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 591: Loss 0.0017437704148425283, time 11.5708s
+Epoch 592: Loss 0.0017035963393960006, time 11.5778s
+Epoch 593: Loss 0.0017120615679393463, time 11.5696s
+Epoch 594: Loss 0.0017076773278686347, time 11.5735s
+Epoch 595: Loss 0.001706957010643651, time 11.5700s
+Epoch 596: Loss 0.0017286908230375899, time 11.5755s
+Epoch 597: Loss 0.0017764225246272745, time 11.5805s
+Epoch 598: Loss 0.0017031459900391395, time 11.5821s
+Epoch 599: Loss 0.0017038774888452637, time 11.5727s
+Epoch 600: Loss 0.0018956074483775169, time 11.5676s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_600.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_600.png
+Epoch 601: Loss 0.0017747571481881027, time 11.5674s
+Epoch 602: Loss 0.0017187165599640553, time 11.5725s
+Epoch 603: Loss 0.0016751690072160732, time 11.5725s
+Epoch 604: Loss 0.0016930340059820705, time 11.5650s
+Epoch 605: Loss 0.0016865372043279813, time 11.5703s
+Epoch 606: Loss 0.0016916513321788603, time 11.5855s
+Epoch 607: Loss 0.0017102098098331238, time 11.5823s
+Epoch 608: Loss 0.0016970299633773916, time 11.5879s
+Epoch 609: Loss 0.0016783195405187603, time 11.5795s
+Epoch 610: Loss 0.0017890115305368754, time 11.5736s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_610.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_610.png
+Epoch 611: Loss 0.0017297064570144197, time 11.5766s
+Epoch 612: Loss 0.0016802321877065292, time 11.5769s
+Epoch 613: Loss 0.0017617677292002577, time 11.5786s
+Epoch 614: Loss 0.0016888688781513843, time 11.5852s
+Epoch 615: Loss 0.0017171827547585213, time 11.5830s
+Epoch 616: Loss 0.0016686982063346695, time 11.5842s
+Epoch 617: Loss 0.001657366974403068, time 11.5879s
+Epoch 618: Loss 0.0016743622529040432, time 11.5858s
+Epoch 619: Loss 0.0017009438752326406, time 11.5892s
+Epoch 620: Loss 0.0017428960025979536, time 11.5720s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_620.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_620.png
+Epoch 621: Loss 0.0017879484132001518, time 11.5710s
+Epoch 622: Loss 0.0016979956548127547, time 11.5739s
+Epoch 623: Loss 0.0016372596979129447, time 11.5813s
+Epoch 624: Loss 0.0016538497322840216, time 11.5766s
+Epoch 625: Loss 0.00169013029508163, time 11.5823s
+Epoch 626: Loss 0.0016696382012981567, time 11.5768s
+Epoch 627: Loss 0.0017872444395258835, time 11.5754s
+Epoch 628: Loss 0.0016933490114752203, time 11.5868s
+Epoch 629: Loss 0.0016323137605456705, time 11.5890s
+Epoch 630: Loss 0.0016339302617066269, time 11.5682s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_630.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_630.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 631: Loss 0.0016540137784190098, time 11.5670s
+Epoch 632: Loss 0.0016678088645618763, time 11.5749s
+Epoch 633: Loss 0.0016150457261032956, time 11.5701s
+Epoch 634: Loss 0.001630644299623356, time 11.5712s
+Epoch 635: Loss 0.0017907053196826314, time 11.5717s
+Epoch 636: Loss 0.0016466192322741912, time 11.5774s
+Epoch 637: Loss 0.0016168732657701461, time 11.5752s
+Epoch 638: Loss 0.0017780560203990016, time 11.5669s
+Epoch 639: Loss 0.001669472880489075, time 11.5785s
+Epoch 640: Loss 0.001612185509035458, time 11.5771s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_640.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_640.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 641: Loss 0.0016630548037753642, time 11.5841s
+Epoch 642: Loss 0.0016109438488168548, time 11.5786s
+Epoch 643: Loss 0.001617035758534234, time 11.5783s
+Epoch 644: Loss 0.0016069445739532644, time 11.5997s
+Epoch 645: Loss 0.0016076843924024674, time 11.5749s
+Epoch 646: Loss 0.0016681230582791982, time 11.5774s
+Epoch 647: Loss 0.0016315249848486031, time 11.5860s
+Epoch 648: Loss 0.001601487135476303, time 11.5742s
+Epoch 649: Loss 0.0015912318732618955, time 11.5808s
+Epoch 650: Loss 0.0015977912249420829, time 11.5812s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_650.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_650.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 651: Loss 0.0017334289923958668, time 11.5699s
+Epoch 652: Loss 0.0016987915482383834, time 11.5686s
+Epoch 653: Loss 0.0016532053005339318, time 11.5800s
+Epoch 654: Loss 0.001591186796217756, time 11.5782s
+Epoch 655: Loss 0.0015928370430859254, time 11.5824s
+Epoch 656: Loss 0.001580203075442298, time 11.5801s
+Epoch 657: Loss 0.0015776434272624952, time 11.5937s
+Epoch 658: Loss 0.001601706381262386, time 11.5865s
+Epoch 659: Loss 0.0015877148442639368, time 11.5753s
+Epoch 660: Loss 0.001582246795414558, time 11.5790s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_660.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_660.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 661: Loss 0.0017250616610333135, time 11.5800s
+Epoch 662: Loss 0.0015882699438326555, time 11.5891s
+Epoch 663: Loss 0.001611935154938646, time 11.5878s
+Epoch 664: Loss 0.0016119298000180434, time 11.5777s
+Epoch 665: Loss 0.0015577029247467607, time 11.5777s
+Epoch 666: Loss 0.0015523822965613225, time 11.5816s
+Epoch 667: Loss 0.0015747972111633235, time 11.5801s
+Epoch 668: Loss 0.0015670427473415207, time 11.5954s
+Epoch 669: Loss 0.0016560435900759376, time 11.5830s
+Epoch 670: Loss 0.0015636924167953526, time 11.5731s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_670.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_670.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 671: Loss 0.0015988630318905144, time 11.5667s
+Epoch 672: Loss 0.001666272383645955, time 11.5744s
+Epoch 673: Loss 0.0015499978982018237, time 11.5680s
+Epoch 674: Loss 0.0015788122527507617, time 11.5800s
+Epoch 675: Loss 0.0016541118248029835, time 11.5698s
+Epoch 676: Loss 0.0015586970778862957, time 11.5742s
+Epoch 677: Loss 0.001531972407652183, time 11.5779s
+Epoch 678: Loss 0.0015658874374510768, time 11.5854s
+Epoch 679: Loss 0.0015464833188990625, time 11.5753s
+Epoch 680: Loss 0.0015292635141087908, time 11.5846s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_680.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_680.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 681: Loss 0.0015716877577331247, time 11.5758s
+Epoch 682: Loss 0.0015563851784578748, time 11.5818s
+Epoch 683: Loss 0.0016095383756623096, time 11.5774s
+Epoch 684: Loss 0.001525553392616242, time 11.5832s
+Epoch 685: Loss 0.0015381716465860417, time 11.5791s
+Epoch 686: Loss 0.001538637696170024, time 11.5710s
+Epoch 687: Loss 0.0016582785667910512, time 11.5803s
+Epoch 688: Loss 0.0016667639499211896, time 11.5886s
+Epoch 689: Loss 0.0015163145715494557, time 11.5814s
+Epoch 690: Loss 0.0015818538745464403, time 11.5747s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_690.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_690.png
+Epoch 691: Loss 0.001540820430772662, time 11.5679s
+Epoch 692: Loss 0.0015375041984952986, time 11.5694s
+Epoch 693: Loss 0.0017230474423982581, time 11.5723s
+Epoch 694: Loss 0.0014926207550621557, time 11.5732s
+Epoch 695: Loss 0.0015258548642756253, time 11.5865s
+Epoch 696: Loss 0.0015226028497843662, time 11.5865s
+Epoch 697: Loss 0.0015196794864303091, time 11.5788s
+Epoch 698: Loss 0.0015033002208941911, time 11.5856s
+Epoch 699: Loss 0.0015290062263006745, time 11.5744s
+Epoch 700: Loss 0.0015017997679415548, time 11.5948s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_700.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_700.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 701: Loss 0.0015408949483675246, time 11.6103s
+Epoch 702: Loss 0.0014897142660353169, time 11.5738s
+Epoch 703: Loss 0.001547595467624738, time 11.5628s
+Epoch 704: Loss 0.0016376637058668547, time 11.5698s
+Epoch 705: Loss 0.0015244504550687048, time 11.5658s
+Epoch 706: Loss 0.0015674527478293822, time 11.5637s
+Epoch 707: Loss 0.001522670787703128, time 11.5708s
+Epoch 708: Loss 0.0015003179086525511, time 11.5641s
+Epoch 709: Loss 0.001482049480325224, time 11.5733s
+Epoch 710: Loss 0.0015058298156850182, time 11.5731s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_710.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_710.png
+Epoch 711: Loss 0.0015023210635953996, time 11.5684s
+Epoch 712: Loss 0.0015012723170117698, time 11.5636s
+Epoch 713: Loss 0.0015119229026339194, time 11.5694s
+Epoch 714: Loss 0.0015174594812413466, time 11.5739s
+Epoch 715: Loss 0.001484305872301913, time 11.5651s
+Epoch 716: Loss 0.0015585871449821994, time 11.5779s
+Epoch 717: Loss 0.0015829592218174588, time 11.5705s
+Epoch 718: Loss 0.0014603758353115167, time 11.5681s
+Epoch 719: Loss 0.0014512286502337437, time 11.5758s
+Epoch 720: Loss 0.0014623332108500637, time 11.5752s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_720.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_720.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 721: Loss 0.0014690443813724183, time 11.5628s
+Epoch 722: Loss 0.0014960936256286487, time 11.5922s
+Epoch 723: Loss 0.0014501187395557903, time 11.5907s
+Epoch 724: Loss 0.001536271186166773, time 11.5897s
+Epoch 725: Loss 0.0014734088621526675, time 11.5848s
+Epoch 726: Loss 0.0014837483289324431, time 11.5857s
+Epoch 727: Loss 0.0015067565391176157, time 11.5753s
+Epoch 728: Loss 0.0014599928815843231, time 11.5758s
+Epoch 729: Loss 0.001542364441291606, time 11.5693s
+Epoch 730: Loss 0.0015301690696623719, time 11.5775s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_730.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_730.png
+Epoch 731: Loss 0.0014598465622609033, time 11.5672s
+Epoch 732: Loss 0.0014341004771958518, time 11.5648s
+Epoch 733: Loss 0.001577107676030785, time 11.5771s
+Epoch 734: Loss 0.0014236322674116332, time 11.5798s
+Epoch 735: Loss 0.001435027629081042, time 11.5808s
+Epoch 736: Loss 0.0014391425119114662, time 11.5823s
+Epoch 737: Loss 0.001529815175557285, time 11.5852s
+Epoch 738: Loss 0.0014434182991368012, time 11.5669s
+Epoch 739: Loss 0.0014501756231766194, time 11.5762s
+Epoch 740: Loss 0.0014718123943739442, time 11.5665s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_740.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_740.png
+Epoch 741: Loss 0.0014546177544501387, time 11.5677s
+Epoch 742: Loss 0.001452860727838441, time 11.5670s
+Epoch 743: Loss 0.001786040996689102, time 11.5775s
+Epoch 744: Loss 0.0014287904770661712, time 11.5767s
+Epoch 745: Loss 0.0014198575569670411, time 11.5826s
+Epoch 746: Loss 0.001461365759001361, time 11.5764s
+Epoch 747: Loss 0.0014979427619955113, time 11.5675s
+Epoch 748: Loss 0.0014538292182149672, time 11.5741s
+Epoch 749: Loss 0.0014626859363810973, time 11.5721s
+Epoch 750: Loss 0.0014259325529380903, time 11.5831s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_750.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_750.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 751: Loss 0.0014585105365560731, time 11.5725s
+Epoch 752: Loss 0.0014227317678196874, time 11.5806s
+Epoch 753: Loss 0.0014189560881070202, time 11.5835s
+Epoch 754: Loss 0.0014180924735677464, time 11.5738s
+Epoch 755: Loss 0.001437662833383531, time 11.5837s
+Epoch 756: Loss 0.0014600387035391613, time 11.5747s
+Epoch 757: Loss 0.001433881684176954, time 11.5923s
+Epoch 758: Loss 0.0017757836826546472, time 11.5801s
+Epoch 759: Loss 0.001400251275288012, time 11.5806s
+Epoch 760: Loss 0.0014083536506278287, time 11.5784s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_760.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_760.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 761: Loss 0.0014079924156341136, time 11.5822s
+Epoch 762: Loss 0.0013948844604288475, time 11.5861s
+Epoch 763: Loss 0.0014054642071434638, time 11.5842s
+Epoch 764: Loss 0.0014385526706582477, time 11.5771s
+Epoch 765: Loss 0.001449732382154045, time 11.5802s
+Epoch 766: Loss 0.0014754385419213508, time 11.5778s
+Epoch 767: Loss 0.002591795211398526, time 11.5749s
+Epoch 768: Loss 0.002439172371678184, time 11.5814s
+Epoch 769: Loss 0.002328662233813253, time 11.5824s
+Epoch 770: Loss 0.002312061325109069, time 11.5743s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_770.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_770.png
+Epoch 771: Loss 0.0022420232155495852, time 11.5705s
+Epoch 772: Loss 0.002258399252402537, time 11.5721s
+Epoch 773: Loss 0.002228733910508513, time 11.5792s
+Epoch 774: Loss 0.00219963360990433, time 11.5806s
+Epoch 775: Loss 0.002200412096476324, time 11.5840s
+Epoch 776: Loss 0.002155119598890313, time 11.5902s
+Epoch 777: Loss 0.002144627767111045, time 11.5912s
+Epoch 778: Loss 0.002106454728290592, time 11.5755s
+Epoch 779: Loss 0.002146086381281184, time 11.5709s
+Epoch 780: Loss 0.0022105820885199253, time 11.5610s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_780.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_780.png
+Epoch 781: Loss 0.002063147047287018, time 11.5660s
+Epoch 782: Loss 0.00208966665285274, time 11.5771s
+Epoch 783: Loss 0.0020450490749370355, time 11.5748s
+Epoch 784: Loss 0.0020421849400883755, time 11.5736s
+Epoch 785: Loss 0.0020046803810710345, time 11.5687s
+Epoch 786: Loss 0.002022499083195035, time 11.5805s
+Epoch 787: Loss 0.002001843617453912, time 11.5844s
+Epoch 788: Loss 0.0020414203356751066, time 11.5765s
+Epoch 789: Loss 0.0019886962182693113, time 11.5755s
+Epoch 790: Loss 0.0019754412922200664, time 11.5740s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_790.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_790.png
+Epoch 791: Loss 0.001958221224390112, time 11.5829s
+Epoch 792: Loss 0.0019981465331879973, time 11.5879s
+Epoch 793: Loss 0.002001127684039441, time 11.5719s
+Epoch 794: Loss 0.001939476137027392, time 11.5679s
+Epoch 795: Loss 0.0019248276996821213, time 11.5928s
+Epoch 796: Loss 0.0019195328331758751, time 11.5844s
+Epoch 797: Loss 0.001867056797926102, time 11.5744s
+Epoch 798: Loss 0.001872230826249299, time 11.5692s
+Epoch 799: Loss 0.0018796515360008925, time 11.5731s
+Epoch 800: Loss 0.0018776908444676878, time 11.5767s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_800.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_800.png
+Epoch 801: Loss 0.0018548032665283336, time 11.5710s
+Epoch 802: Loss 0.0018989127969274982, time 11.5726s
+Epoch 803: Loss 0.0018320386872709364, time 11.5687s
+Epoch 804: Loss 0.0018742529040237865, time 11.5725s
+Epoch 805: Loss 0.0018121230932132376, time 11.5799s
+Epoch 806: Loss 0.0018100587907541967, time 11.5852s
+Epoch 807: Loss 0.0018090025880639264, time 11.5670s
+Epoch 808: Loss 0.0017731453611108746, time 11.5692s
+Epoch 809: Loss 0.00180273185041291, time 11.5741s
+Epoch 810: Loss 0.0018149032613006125, time 11.5646s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_810.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_810.png
+Epoch 811: Loss 0.001749570627735126, time 11.5576s
+Epoch 812: Loss 0.0017571830145773019, time 11.5709s
+Epoch 813: Loss 0.001827890174043412, time 11.5798s
+Epoch 814: Loss 0.0017273701333935974, time 11.5850s
+Epoch 815: Loss 0.001628606016172945, time 11.5733s
+Epoch 816: Loss 0.0015696322028171507, time 11.5803s
+Epoch 817: Loss 0.0015952326685243251, time 11.5809s
+Epoch 818: Loss 0.0017616024540731377, time 11.5773s
+Epoch 819: Loss 0.001729849504919935, time 11.5709s
+Epoch 820: Loss 0.0014903463958909947, time 11.5758s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_820.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_820.png
+Epoch 821: Loss 0.0014786960831931733, time 11.5779s
+Epoch 822: Loss 0.001408291459702474, time 11.5738s
+Epoch 823: Loss 0.0014295723496293767, time 11.5823s
+Epoch 824: Loss 0.0015358174386614037, time 11.5864s
+Epoch 825: Loss 0.0014013465550283112, time 11.5828s
+Epoch 826: Loss 0.0014021120734492175, time 11.5833s
+Epoch 827: Loss 0.001400028448257171, time 11.5815s
+Epoch 828: Loss 0.001448001213374701, time 11.5775s
+Epoch 829: Loss 0.0013848788904754115, time 11.5785s
+Epoch 830: Loss 0.0013687317336974311, time 11.5863s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_830.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_830.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 831: Loss 0.0013684093804080982, time 11.5819s
+Epoch 832: Loss 0.0013523741269372168, time 11.5724s
+Epoch 833: Loss 0.0013467917155070654, time 11.5812s
+Epoch 834: Loss 0.0013470525970856388, time 11.5720s
+Epoch 835: Loss 0.0016707927390160863, time 11.5764s
+Epoch 836: Loss 0.00134316561861506, time 11.5851s
+Epoch 837: Loss 0.0013147601113607517, time 11.5743s
+Epoch 838: Loss 0.0013331288285406094, time 11.5725s
+Epoch 839: Loss 0.001391295843560225, time 11.5815s
+Epoch 840: Loss 0.0013797221131714155, time 11.5771s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_840.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_840.png
+Epoch 841: Loss 0.001338301586978951, time 11.5772s
+Epoch 842: Loss 0.0012987270345985065, time 11.5859s
+Epoch 843: Loss 0.0013284423046662837, time 11.5861s
+Epoch 844: Loss 0.0012999492538267677, time 11.5830s
+Epoch 845: Loss 0.0012854205616130907, time 11.5840s
+Epoch 846: Loss 0.0013618308660659727, time 11.5869s
+Epoch 847: Loss 0.0012975685989935115, time 11.5750s
+Epoch 848: Loss 0.001324788131235356, time 11.5757s
+Epoch 849: Loss 0.0012992780872611801, time 11.5767s
+Epoch 850: Loss 0.0013209953981516529, time 11.5774s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_850.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_850.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 851: Loss 0.0012923896265189647, time 11.5732s
+Epoch 852: Loss 0.001320601543197939, time 11.5749s
+Epoch 853: Loss 0.0012867473322998354, time 11.5707s
+Epoch 854: Loss 0.0012834685796774524, time 11.5685s
+Epoch 855: Loss 0.0012886830567989404, time 11.5686s
+Epoch 856: Loss 0.0013795996422266376, time 11.5674s
+Epoch 857: Loss 0.0012814568087113785, time 11.5711s
+Epoch 858: Loss 0.0012830723223683153, time 11.5742s
+Epoch 859: Loss 0.0013139709639451407, time 11.5690s
+Epoch 860: Loss 0.0012760600500631063, time 11.5781s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_860.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_860.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 861: Loss 0.0013658293744672938, time 11.5761s
+Epoch 862: Loss 0.0013042462247724444, time 11.5787s
+Epoch 863: Loss 0.0012871397018529875, time 11.5870s
+Epoch 864: Loss 0.0012595339634387955, time 11.5805s
+Epoch 865: Loss 0.0013368949154097163, time 11.5758s
+Epoch 866: Loss 0.001246322965569193, time 11.5746s
+Epoch 867: Loss 0.0014180584217177092, time 11.5760s
+Epoch 868: Loss 0.0012628546605753135, time 11.5693s
+Epoch 869: Loss 0.0012495913415708096, time 11.5693s
+Epoch 870: Loss 0.0012278913240658731, time 11.5827s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_870.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_870.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 871: Loss 0.0012615095460021138, time 11.5881s
+Epoch 872: Loss 0.001248425839445259, time 11.5770s
+Epoch 873: Loss 0.0012439847303056335, time 11.5843s
+Epoch 874: Loss 0.0012356672786718495, time 11.5804s
+Epoch 875: Loss 0.001246611988157199, time 11.5808s
+Epoch 876: Loss 0.0012308645341766386, time 11.5736s
+Epoch 877: Loss 0.0012725135521474, time 11.5805s
+Epoch 878: Loss 0.001266721140002372, time 11.5807s
+Epoch 879: Loss 0.0012358622028657436, time 11.5799s
+Epoch 880: Loss 0.0012356051213632609, time 11.5795s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_880.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_880.png
+Epoch 881: Loss 0.0013552791020122676, time 11.5793s
+Epoch 882: Loss 0.00121938714244008, time 11.5810s
+Epoch 883: Loss 0.0012417418721627114, time 11.5793s
+Epoch 884: Loss 0.0012386004577532317, time 11.5767s
+Epoch 885: Loss 0.0012925916861247601, time 11.5769s
+Epoch 886: Loss 0.0013128894910251698, time 11.5845s
+Epoch 887: Loss 0.0012457534813401702, time 11.5963s
+Epoch 888: Loss 0.0012397487138330206, time 11.5807s
+Epoch 889: Loss 0.001207623002450925, time 11.5891s
+Epoch 890: Loss 0.0011978001375034263, time 11.5746s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_890.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_890.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 891: Loss 0.001199970470374462, time 11.5653s
+Epoch 892: Loss 0.001241316681409467, time 11.5779s
+Epoch 893: Loss 0.0012189790750544258, time 11.5714s
+Epoch 894: Loss 0.00117988802221474, time 11.5884s
+Epoch 895: Loss 0.0012438789312506707, time 11.5864s
+Epoch 896: Loss 0.0012197114578433499, time 11.5798s
+Epoch 897: Loss 0.0012154255999558712, time 11.5829s
+Epoch 898: Loss 0.00119675984502994, time 11.5808s
+Epoch 899: Loss 0.001233411929643819, time 11.5785s
+Epoch 900: Loss 0.001195334459881923, time 11.5898s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_900.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_900.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 901: Loss 0.0012576824164274444, time 11.5798s
+Epoch 902: Loss 0.0012216286607015926, time 11.5787s
+Epoch 903: Loss 0.001183304148416707, time 11.5834s
+Epoch 904: Loss 0.001205798846104365, time 11.5788s
+Epoch 905: Loss 0.0012054347132533034, time 11.5791s
+Epoch 906: Loss 0.0012031678591863711, time 11.5801s
+Epoch 907: Loss 0.00126030587051889, time 11.5768s
+Epoch 908: Loss 0.0012569717460170482, time 11.5877s
+Epoch 909: Loss 0.0012216197995062257, time 11.5820s
+Epoch 910: Loss 0.0011838764398759585, time 11.5878s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_910.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_910.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 911: Loss 0.0011640509836968104, time 11.5750s
+Epoch 912: Loss 0.0011825718682279952, time 11.5768s
+Epoch 913: Loss 0.001194788143591354, time 11.5797s
+Epoch 914: Loss 0.0011809868389914473, time 11.5857s
+Epoch 915: Loss 0.001169426873609235, time 11.5811s
+Epoch 916: Loss 0.0011893213066954719, time 11.5990s
+Epoch 917: Loss 0.00122635509550595, time 11.5873s
+Epoch 918: Loss 0.001188677911354889, time 11.5924s
+Epoch 919: Loss 0.0012015034087279317, time 11.5953s
+Epoch 920: Loss 0.0011485325748357286, time 11.5875s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_920.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_920.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 921: Loss 0.0012381204943278734, time 11.5780s
+Epoch 922: Loss 0.0011799905947969542, time 11.5755s
+Epoch 923: Loss 0.0011874023486736314, time 11.5799s
+Epoch 924: Loss 0.0012112727522838249, time 11.5921s
+Epoch 925: Loss 0.0011721234009719065, time 11.5904s
+Epoch 926: Loss 0.0011682198469488753, time 11.5888s
+Epoch 927: Loss 0.0011470577944087785, time 11.5788s
+Epoch 928: Loss 0.0011647369596912655, time 11.5731s
+Epoch 929: Loss 0.001200596514213948, time 11.5751s
+Epoch 930: Loss 0.001197026204944093, time 11.5742s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_930.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_930.png
+Epoch 931: Loss 0.0011817772341877386, time 11.5715s
+Epoch 932: Loss 0.001258513773791492, time 11.5687s
+Epoch 933: Loss 0.0016281376878327183, time 11.5760s
+Epoch 934: Loss 0.001178623302552342, time 11.5773s
+Epoch 935: Loss 0.0011925322682997566, time 11.5722s
+Epoch 936: Loss 0.0011365730061248841, time 11.5734s
+Epoch 937: Loss 0.0011662487403888999, time 11.5773s
+Epoch 938: Loss 0.001170691422148478, time 11.5792s
+Epoch 939: Loss 0.0011506141111832348, time 11.5926s
+Epoch 940: Loss 0.0011892052994719766, time 11.5716s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_940.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_940.png
+Epoch 941: Loss 0.0011987488354332273, time 11.5816s
+Epoch 942: Loss 0.0011371369983874191, time 11.5858s
+Epoch 943: Loss 0.0011248400834937215, time 11.5805s
+Epoch 944: Loss 0.0011452971421597713, time 11.5853s
+Epoch 945: Loss 0.0012185028221832494, time 11.5876s
+Epoch 946: Loss 0.0011456578905853336, time 11.5983s
+Epoch 947: Loss 0.0011113436017303338, time 11.5794s
+Epoch 948: Loss 0.0011396931946318879, time 11.5781s
+Epoch 949: Loss 0.0011937961898172344, time 11.5780s
+Epoch 950: Loss 0.0011401844098191426, time 11.5794s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_950.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_950.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 951: Loss 0.0011558700794990682, time 11.5814s
+Epoch 952: Loss 0.0011507443624292205, time 11.5806s
+Epoch 953: Loss 0.0011337636025030096, time 11.5846s
+Epoch 954: Loss 0.001253379576454894, time 11.5969s
+Epoch 955: Loss 0.0012067718065897875, time 11.5813s
+Epoch 956: Loss 0.0011962012428704861, time 11.5812s
+Epoch 957: Loss 0.001169317461442662, time 11.5854s
+Epoch 958: Loss 0.0010957350813315097, time 11.5830s
+Epoch 959: Loss 0.001110497177976384, time 11.5935s
+Epoch 960: Loss 0.0011582907824924428, time 11.5788s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_960.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_960.png
+Epoch 961: Loss 0.0012017904266514638, time 11.5747s
+Epoch 962: Loss 0.001125396547442644, time 11.5782s
+Epoch 963: Loss 0.0011191918309100114, time 11.5857s
+Epoch 964: Loss 0.0011151944308488665, time 11.5789s
+Epoch 965: Loss 0.0011759793703242417, time 11.5926s
+Epoch 966: Loss 0.0011288658118971825, time 11.5745s
+Epoch 967: Loss 0.0010981034259812882, time 11.5846s
+Epoch 968: Loss 0.001091058790400813, time 11.5912s
+Epoch 969: Loss 0.0015501094999711348, time 11.5763s
+Epoch 970: Loss 0.0012089386718683653, time 11.5865s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_970.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_970.png
+Epoch 971: Loss 0.0011167808032824505, time 11.5787s
+Epoch 972: Loss 0.0010911367941924808, time 11.5806s
+Epoch 973: Loss 0.001114858504859259, time 11.5870s
+Epoch 974: Loss 0.0011901291749658227, time 11.5701s
+Epoch 975: Loss 0.0011445940295352211, time 11.5724s
+Epoch 976: Loss 0.0010983521360800825, time 11.5708s
+Epoch 977: Loss 0.0011305217351174996, time 11.5805s
+Epoch 978: Loss 0.0011281352801487156, time 11.6043s
+Epoch 979: Loss 0.0011675269965559856, time 11.5904s
+Epoch 980: Loss 0.0011213021737868202, time 11.5772s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_980.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_980.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 981: Loss 0.0010918942480893287, time 11.5765s
+Epoch 982: Loss 0.0011055079677261565, time 11.5616s
+Epoch 983: Loss 0.0011033588186675635, time 11.5614s
+Epoch 984: Loss 0.0010882354801214193, time 11.5663s
+Epoch 985: Loss 0.0012133772062400026, time 11.5620s
+Epoch 986: Loss 0.0011134142506664289, time 11.5634s
+Epoch 987: Loss 0.0011231804128789308, time 11.5617s
+Epoch 988: Loss 0.0011139131229241156, time 11.5635s
+Epoch 989: Loss 0.0011146913378910586, time 11.5645s
+Epoch 990: Loss 0.0011151393649280307, time 11.5667s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_990.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_990.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 991: Loss 0.0010869152541124981, time 11.5659s
+Epoch 992: Loss 0.001095962539002818, time 11.5632s
+Epoch 993: Loss 0.001079549802311761, time 11.5667s
+Epoch 994: Loss 0.001096215173697889, time 11.5660s
+Epoch 995: Loss 0.0010817544888469238, time 11.5643s
+Epoch 996: Loss 0.0011033752131499822, time 11.5630s
+Epoch 997: Loss 0.0010882805216146775, time 11.5615s
+Epoch 998: Loss 0.0010869160498627993, time 11.5671s
+Epoch 999: Loss 0.001209778203356339, time 11.5666s
+Epoch 1000: Loss 0.001077850710098113, time 11.5680s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1000.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1000.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1001: Loss 0.0011188146257419375, time 11.5625s
+Epoch 1002: Loss 0.0017998129782588162, time 11.5615s
+Epoch 1003: Loss 0.0015183160287074603, time 11.5683s
+Epoch 1004: Loss 0.0014815234547463257, time 11.5696s
+Epoch 1005: Loss 0.001482762063851969, time 11.5656s
+Epoch 1006: Loss 0.0015792426943507848, time 11.5672s
+Epoch 1007: Loss 0.0014067155038613732, time 11.5755s
+Epoch 1008: Loss 0.001370195535533248, time 11.5753s
+Epoch 1009: Loss 0.0013560868447493244, time 11.5758s
+Epoch 1010: Loss 0.0013667514438658386, time 11.5718s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1010.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1010.png
+Epoch 1011: Loss 0.0013893366917670127, time 11.5765s
+Epoch 1012: Loss 0.0013254573757508238, time 11.5769s
+Epoch 1013: Loss 0.0013137652472035865, time 11.5750s
+Epoch 1014: Loss 0.0011712739988645727, time 11.5847s
+Epoch 1015: Loss 0.0011084573398656625, time 11.5810s
+Epoch 1016: Loss 0.0010882931897015888, time 11.5776s
+Epoch 1017: Loss 0.0011713967586372378, time 11.5850s
+Epoch 1018: Loss 0.0010946806399755864, time 11.5873s
+Epoch 1019: Loss 0.001103829394265585, time 11.5756s
+Epoch 1020: Loss 0.0010740916459096147, time 11.5765s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1020.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1020.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1021: Loss 0.0010804281451391598, time 11.5866s
+Epoch 1022: Loss 0.001083246342722869, time 11.5844s
+Epoch 1023: Loss 0.0010786573656781612, time 11.5771s
+Epoch 1024: Loss 0.0010913851141525857, time 11.5822s
+Epoch 1025: Loss 0.0010665771120398813, time 11.5882s
+Epoch 1026: Loss 0.001129160396632432, time 11.5845s
+Epoch 1027: Loss 0.001073586805156267, time 11.5809s
+Epoch 1028: Loss 0.0010497815747851436, time 11.5886s
+Epoch 1029: Loss 0.001076414355200633, time 11.5797s
+Epoch 1030: Loss 0.001069796196099583, time 11.5859s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1030.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1030.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1031: Loss 0.0010551594780195104, time 11.5905s
+Epoch 1032: Loss 0.001068573215014089, time 11.5779s
+Epoch 1033: Loss 0.0010871119175365643, time 11.5751s
+Epoch 1034: Loss 0.0011260170470024282, time 11.5748s
+Epoch 1035: Loss 0.0011164067608534205, time 11.5762s
+Epoch 1036: Loss 0.0010544986713123567, time 11.5811s
+Epoch 1037: Loss 0.0010385805998097727, time 11.5759s
+Epoch 1038: Loss 0.001056076370620263, time 11.5738s
+Epoch 1039: Loss 0.0010396988223943435, time 11.5776s
+Epoch 1040: Loss 0.0010427982377660568, time 11.5777s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1040.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1040.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1041: Loss 0.001033360248319569, time 11.5700s
+Epoch 1042: Loss 0.0012188153854413607, time 11.5805s
+Epoch 1043: Loss 0.0010481967555382584, time 11.5720s
+Epoch 1044: Loss 0.001071870607903074, time 11.5726s
+Epoch 1045: Loss 0.001025984785353759, time 11.5767s
+Epoch 1046: Loss 0.001038821800567705, time 11.5817s
+Epoch 1047: Loss 0.0011018452892533823, time 11.5848s
+Epoch 1048: Loss 0.0012495655360516703, time 11.5807s
+Epoch 1049: Loss 0.0010503607905614249, time 11.5952s
+Epoch 1050: Loss 0.001052578039359761, time 11.5845s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1050.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1050.png
+Epoch 1051: Loss 0.0010513360807347949, time 11.5850s
+Epoch 1052: Loss 0.0010142674078520895, time 11.5832s
+Epoch 1053: Loss 0.0010192975533766602, time 11.5898s
+Epoch 1054: Loss 0.0010387426900936739, time 11.5848s
+Epoch 1055: Loss 0.0010394159832651008, time 11.5837s
+Epoch 1056: Loss 0.0010409677083253318, time 11.5756s
+Epoch 1057: Loss 0.0010080658742285605, time 11.5760s
+Epoch 1058: Loss 0.001029161763262546, time 11.5778s
+Epoch 1059: Loss 0.0010407270303311393, time 11.5754s
+Epoch 1060: Loss 0.0010484262659506212, time 11.5842s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1060.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1060.png
+Epoch 1061: Loss 0.0010507104054824272, time 11.5846s
+Epoch 1062: Loss 0.0010199452171255421, time 11.5899s
+Epoch 1063: Loss 0.0010333835201476454, time 11.5898s
+Epoch 1064: Loss 0.0010200977090398392, time 11.5804s
+Epoch 1065: Loss 0.0013210687263576974, time 11.5777s
+Epoch 1066: Loss 0.001080275701117242, time 11.5766s
+Epoch 1067: Loss 0.001034216816784649, time 11.5811s
+Epoch 1068: Loss 0.000993783992259834, time 11.5860s
+Epoch 1069: Loss 0.0010052424147459855, time 11.5803s
+Epoch 1070: Loss 0.0010411289291783483, time 11.5746s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1070.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1070.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1071: Loss 0.0010461014740779124, time 11.5687s
+Epoch 1072: Loss 0.0010884857635769722, time 11.5787s
+Epoch 1073: Loss 0.0010025041893307308, time 11.5855s
+Epoch 1074: Loss 0.0010187401511055076, time 11.5686s
+Epoch 1075: Loss 0.001204333925336788, time 11.5737s
+Epoch 1076: Loss 0.0010279536778122023, time 11.5704s
+Epoch 1077: Loss 0.00098896581757684, time 11.5619s
+Epoch 1078: Loss 0.0010186386767323896, time 11.5658s
+Epoch 1079: Loss 0.001021146547447896, time 11.5760s
+Epoch 1080: Loss 0.0010187561561860426, time 11.5754s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1080.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1080.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1081: Loss 0.0009959467115319817, time 11.5681s
+Epoch 1082: Loss 0.0010102155616159162, time 11.5819s
+Epoch 1083: Loss 0.0010094810641942476, time 11.5853s
+Epoch 1084: Loss 0.001015519259753195, time 11.5735s
+Epoch 1085: Loss 0.0010071445274523376, time 11.5628s
+Epoch 1086: Loss 0.0010327676324397798, time 11.5637s
+Epoch 1087: Loss 0.0010158784270855375, time 11.5750s
+Epoch 1088: Loss 0.001016258281991593, time 11.5774s
+Epoch 1089: Loss 0.0009744752670381854, time 11.5830s
+Epoch 1090: Loss 0.0010321981612890605, time 11.5760s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1090.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1090.png
+Epoch 1091: Loss 0.0009831288294156401, time 11.5675s
+Epoch 1092: Loss 0.0010152223261730463, time 11.5708s
+Epoch 1093: Loss 0.0010182002437362872, time 11.5733s
+Epoch 1094: Loss 0.001048023962965412, time 11.5755s
+Epoch 1095: Loss 0.0009943274425599088, time 11.5839s
+Epoch 1096: Loss 0.001005681252248491, time 11.5803s
+Epoch 1097: Loss 0.0009850594067733877, time 11.5860s
+Epoch 1098: Loss 0.0010004271697871905, time 11.5931s
+Epoch 1099: Loss 0.000990506412263936, time 11.5829s
+Epoch 1100: Loss 0.0009766026767327367, time 11.5820s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1100.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1100.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1101: Loss 0.0010280585658067507, time 11.5788s
+Epoch 1102: Loss 0.001034744283003155, time 11.5774s
+Epoch 1103: Loss 0.001010531097517166, time 11.5747s
+Epoch 1104: Loss 0.000967836808015392, time 11.5751s
+Epoch 1105: Loss 0.0010009446661017505, time 11.5813s
+Epoch 1106: Loss 0.0009915563080804659, time 11.5753s
+Epoch 1107: Loss 0.0009704329674110064, time 11.5755s
+Epoch 1108: Loss 0.0010758254922413608, time 11.5740s
+Epoch 1109: Loss 0.0011736838894165298, time 11.5736s
+Epoch 1110: Loss 0.0009600987231109846, time 11.5687s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1110.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1110.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1111: Loss 0.001001080602909957, time 11.5628s
+Epoch 1112: Loss 0.001000856035359534, time 11.5748s
+Epoch 1113: Loss 0.0009570851792357391, time 11.5842s
+Epoch 1114: Loss 0.0010120438788892242, time 11.5828s
+Epoch 1115: Loss 0.0009497691721720267, time 11.5695s
+Epoch 1116: Loss 0.0009697803636553072, time 11.5812s
+Epoch 1117: Loss 0.0009934928554074863, time 11.5826s
+Epoch 1118: Loss 0.0009774112987554562, time 11.5787s
+Epoch 1119: Loss 0.0009642087790342873, time 11.5787s
+Epoch 1120: Loss 0.0010048878107284773, time 11.5815s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1120.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1120.png
+Epoch 1121: Loss 0.0009493955928254636, time 11.5756s
+Epoch 1122: Loss 0.0009949100472746253, time 11.5738s
+Epoch 1123: Loss 0.00107152538001611, time 11.5770s
+Epoch 1124: Loss 0.0009769675849798383, time 11.5779s
+Epoch 1125: Loss 0.0009479362149560777, time 11.5804s
+Epoch 1126: Loss 0.0009505879224198458, time 11.5842s
+Epoch 1127: Loss 0.0010474071637366286, time 11.5806s
+Epoch 1128: Loss 0.0009647909204823354, time 11.5827s
+Epoch 1129: Loss 0.0010202027802227384, time 11.5799s
+Epoch 1130: Loss 0.0009693910453993167, time 11.5726s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1130.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1130.png
+Epoch 1131: Loss 0.0009726242240941258, time 11.5703s
+Epoch 1132: Loss 0.0009628339109520864, time 11.5747s
+Epoch 1133: Loss 0.0009428243605196005, time 11.5696s
+Epoch 1134: Loss 0.0009384325365985367, time 11.5707s
+Epoch 1135: Loss 0.0009634471967222487, time 11.5722s
+Epoch 1136: Loss 0.000974415504901163, time 11.5795s
+Epoch 1137: Loss 0.0009379939062305714, time 11.5834s
+Epoch 1138: Loss 0.0009571299497686516, time 11.5932s
+Epoch 1139: Loss 0.0009737679783823676, time 11.5911s
+Epoch 1140: Loss 0.0009976413286632941, time 11.5923s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1140.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1140.png
+Epoch 1141: Loss 0.0010291185628628664, time 11.5863s
+Epoch 1142: Loss 0.0009349345646229797, time 11.5799s
+Epoch 1143: Loss 0.0009692159114417302, time 11.5753s
+Epoch 1144: Loss 0.0009584099594415225, time 11.5826s
+Epoch 1145: Loss 0.0009696167558276896, time 11.5739s
+Epoch 1146: Loss 0.0009495856091556953, time 11.5758s
+Epoch 1147: Loss 0.0009837329028103549, time 11.5837s
+Epoch 1148: Loss 0.0009306709033796635, time 11.5792s
+Epoch 1149: Loss 0.0009674444090821073, time 11.5695s
+Epoch 1150: Loss 0.0009655620364171653, time 11.5703s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1150.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1150.png
+Epoch 1151: Loss 0.0009475146575766038, time 11.5719s
+Epoch 1152: Loss 0.0009740773511791154, time 11.5768s
+Epoch 1153: Loss 0.0009599789861763556, time 11.5765s
+Epoch 1154: Loss 0.0009488292140488313, time 11.5786s
+Epoch 1155: Loss 0.0009280586317903657, time 11.5831s
+Epoch 1156: Loss 0.0009629123929307407, time 11.5925s
+Epoch 1157: Loss 0.0009692555988432921, time 11.5921s
+Epoch 1158: Loss 0.0009691340948640711, time 11.5929s
+Epoch 1159: Loss 0.0009383671013789422, time 11.5926s
+Epoch 1160: Loss 0.0009461144501891553, time 11.6015s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1160.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1160.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1161: Loss 0.0011368519040797188, time 11.5946s
+Epoch 1162: Loss 0.0009396981058901624, time 11.5812s
+Epoch 1163: Loss 0.0009198615569149769, time 11.5789s
+Epoch 1164: Loss 0.0009209917964343029, time 11.5678s
+Epoch 1165: Loss 0.0009338487375489306, time 11.5916s
+Epoch 1166: Loss 0.000968384694439194, time 11.5926s
+Epoch 1167: Loss 0.0010300636436286253, time 11.5877s
+Epoch 1168: Loss 0.0009406658613028689, time 11.5708s
+Epoch 1169: Loss 0.0009498613452924935, time 11.5739s
+Epoch 1170: Loss 0.0009345095641498419, time 11.5817s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1170.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1170.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1171: Loss 0.0010126689712360761, time 11.5836s
+Epoch 1172: Loss 0.0009439083689726488, time 11.5875s
+Epoch 1173: Loss 0.0010018464061063183, time 11.5802s
+Epoch 1174: Loss 0.0012353894759788873, time 11.5800s
+Epoch 1175: Loss 0.0009210613396687763, time 11.5875s
+Epoch 1176: Loss 0.000907351067798106, time 11.5730s
+Epoch 1177: Loss 0.0009174592631995749, time 11.5759s
+Epoch 1178: Loss 0.0009243668690124892, time 11.5864s
+Epoch 1179: Loss 0.0009299014727960789, time 11.5834s
+Epoch 1180: Loss 0.000921236781795403, time 11.5743s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1180.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1180.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1181: Loss 0.001012511183069341, time 11.5744s
+Epoch 1182: Loss 0.0010707839524750657, time 11.5743s
+Epoch 1183: Loss 0.0009415447108684803, time 11.5828s
+Epoch 1184: Loss 0.0009109429138103983, time 11.5734s
+Epoch 1185: Loss 0.0009390537844767464, time 11.5770s
+Epoch 1186: Loss 0.0009072634210600813, time 11.5756s
+Epoch 1187: Loss 0.0008995973866483008, time 11.5771s
+Epoch 1188: Loss 0.0009173545940363591, time 11.5772s
+Epoch 1189: Loss 0.0010236487536001478, time 11.5789s
+Epoch 1190: Loss 0.0009423771233384828, time 11.5780s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1190.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1190.png
+Epoch 1191: Loss 0.0009251209259581387, time 11.5764s
+Epoch 1192: Loss 0.000938009313761575, time 11.5829s
+Epoch 1193: Loss 0.0009272215044998293, time 11.5784s
+Epoch 1194: Loss 0.0009128203953740105, time 11.5817s
+Epoch 1195: Loss 0.0010104817866946017, time 11.5776s
+Epoch 1196: Loss 0.0009204153224967326, time 11.5890s
+Epoch 1197: Loss 0.000889415407326379, time 11.5860s
+Epoch 1198: Loss 0.0008979671354010654, time 11.5842s
+Epoch 1199: Loss 0.0009355748608661226, time 11.5843s
+Epoch 1200: Loss 0.0010043431690133684, time 11.5849s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1200.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1200.png
+Epoch 1201: Loss 0.0010781053817850138, time 11.5801s
+Epoch 1202: Loss 0.0009293303086497538, time 11.5924s
+Epoch 1203: Loss 0.0009090661711709374, time 11.5790s
+Epoch 1204: Loss 0.0009492903512562154, time 11.5895s
+Epoch 1205: Loss 0.000898541704327151, time 11.5810s
+Epoch 1206: Loss 0.001000496533425242, time 11.5876s
+Epoch 1207: Loss 0.0013334152374941195, time 11.5810s
+Epoch 1208: Loss 0.0011290398403697153, time 11.5813s
+Epoch 1209: Loss 0.000932315922978841, time 11.5893s
+Epoch 1210: Loss 0.0009173450059820368, time 11.5880s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1210.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1210.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1211: Loss 0.0010111130721707935, time 11.5925s
+Epoch 1212: Loss 0.0009262991534572543, time 11.5774s
+Epoch 1213: Loss 0.0008824708841334368, time 11.5716s
+Epoch 1214: Loss 0.0008883046021661426, time 11.5749s
+Epoch 1215: Loss 0.0009508105719725813, time 11.5810s
+Epoch 1216: Loss 0.0009161155041649088, time 11.5848s
+Epoch 1217: Loss 0.0008875113995554209, time 11.5787s
+Epoch 1218: Loss 0.0009118387326130296, time 11.5828s
+Epoch 1219: Loss 0.0008928904984414553, time 11.5796s
+Epoch 1220: Loss 0.0008932454577835772, time 11.5763s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1220.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1220.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1221: Loss 0.0008918175670352198, time 11.5768s
+Epoch 1222: Loss 0.0008913323909848857, time 11.5735s
+Epoch 1223: Loss 0.0012009145691622449, time 11.5713s
+Epoch 1224: Loss 0.0012594631066637208, time 11.5743s
+Epoch 1225: Loss 0.0009428051438866348, time 11.5825s
+Epoch 1226: Loss 0.0008961992879667839, time 11.5772s
+Epoch 1227: Loss 0.0009324417539424251, time 11.5814s
+Epoch 1228: Loss 0.000896571357690293, time 11.5779s
+Epoch 1229: Loss 0.0008712905343795855, time 11.5950s
+Epoch 1230: Loss 0.0009168024772418592, time 11.5718s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1230.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1230.png
+Epoch 1231: Loss 0.0008982340009482223, time 11.5730s
+Epoch 1232: Loss 0.0010046027066581, time 11.5768s
+Epoch 1233: Loss 0.0009346911201070805, time 11.5865s
+Epoch 1234: Loss 0.0008829952890158018, time 11.5835s
+Epoch 1235: Loss 0.0008755611650692888, time 11.5762s
+Epoch 1236: Loss 0.0008859357837502125, time 11.5959s
+Epoch 1237: Loss 0.0009028210302467069, time 11.5699s
+Epoch 1238: Loss 0.000884904908392095, time 11.5686s
+Epoch 1239: Loss 0.000988265789037311, time 11.5950s
+Epoch 1240: Loss 0.0009887181330196667, time 11.5886s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1240.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1240.png
+Epoch 1241: Loss 0.0008968625525661002, time 11.5904s
+Epoch 1242: Loss 0.0008929272759204754, time 11.6032s
+Epoch 1243: Loss 0.0008917574803352274, time 11.6175s
+Epoch 1244: Loss 0.0009091808580383776, time 11.5863s
+Epoch 1245: Loss 0.0009458680443585072, time 11.5847s
+Epoch 1246: Loss 0.0008877674526611602, time 11.5710s
+Epoch 1247: Loss 0.0008838293706273212, time 11.5707s
+Epoch 1248: Loss 0.0009225925325292245, time 11.5776s
+Epoch 1249: Loss 0.0009061114948583307, time 11.5809s
+Epoch 1250: Loss 0.00088227584720825, time 11.5854s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1250.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1250.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1251: Loss 0.000891800285991181, time 11.5734s
+Epoch 1252: Loss 0.0009250016015426763, time 11.5800s
+Epoch 1253: Loss 0.0008827682287591403, time 11.5849s
+Epoch 1254: Loss 0.0008727104524283116, time 11.5850s
+Epoch 1255: Loss 0.00088758639533727, time 11.5853s
+Epoch 1256: Loss 0.0010169376429432673, time 11.5806s
+Epoch 1257: Loss 0.0009454181708861142, time 11.5765s
+Epoch 1258: Loss 0.0008681639308725849, time 11.5804s
+Epoch 1259: Loss 0.0008543269423977177, time 11.5820s
+Epoch 1260: Loss 0.0008566947673230809, time 11.5828s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1260.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1260.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1261: Loss 0.0009162469720615286, time 11.5732s
+Epoch 1262: Loss 0.000909868003251591, time 11.5771s
+Epoch 1263: Loss 0.0008479254008963398, time 11.5777s
+Epoch 1264: Loss 0.0008752884860319982, time 11.5779s
+Epoch 1265: Loss 0.0008930663423114633, time 11.5750s
+Epoch 1266: Loss 0.0008793556863807519, time 11.5767s
+Epoch 1267: Loss 0.0009180709703171867, time 11.5756s
+Epoch 1268: Loss 0.000861451827554044, time 11.5835s
+Epoch 1269: Loss 0.0008639756758119675, time 11.5808s
+Epoch 1270: Loss 0.0008576245283298312, time 11.5804s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1270.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1270.png
+Epoch 1271: Loss 0.0008810866318158275, time 11.5860s
+Epoch 1272: Loss 0.0008777444373559843, time 11.5693s
+Epoch 1273: Loss 0.0008766487413203886, time 11.5760s
+Epoch 1274: Loss 0.0010575461153477382, time 11.5707s
+Epoch 1275: Loss 0.0008666619162599827, time 11.5751s
+Epoch 1276: Loss 0.0008736837049651467, time 11.5716s
+Epoch 1277: Loss 0.0009179291261221529, time 11.5749s
+Epoch 1278: Loss 0.0008588195145697498, time 11.5748s
+Epoch 1279: Loss 0.0008496956193717963, time 11.5747s
+Epoch 1280: Loss 0.000861723621227024, time 11.5780s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1280.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1280.png
+Epoch 1281: Loss 0.000933319075096434, time 11.5790s
+Epoch 1282: Loss 0.0008713315244538628, time 11.5895s
+Epoch 1283: Loss 0.000875824765092988, time 11.5918s
+Epoch 1284: Loss 0.0008894975574928796, time 11.5903s
+Epoch 1285: Loss 0.0008889240368572948, time 11.5837s
+Epoch 1286: Loss 0.0008691329362763893, time 11.5831s
+Epoch 1287: Loss 0.000876827801532065, time 11.5864s
+Epoch 1288: Loss 0.0008417699001383189, time 11.5817s
+Epoch 1289: Loss 0.0008673555314573282, time 11.5802s
+Epoch 1290: Loss 0.0009095482898454618, time 11.5903s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1290.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1290.png
+Epoch 1291: Loss 0.0008563513022440757, time 11.5881s
+Epoch 1292: Loss 0.0008984978686166408, time 11.5925s
+Epoch 1293: Loss 0.0008311304648751629, time 11.5851s
+Epoch 1294: Loss 0.0008466902883027833, time 11.5855s
+Epoch 1295: Loss 0.0008596947163017762, time 11.5905s
+Epoch 1296: Loss 0.0008603945150499857, time 11.5787s
+Epoch 1297: Loss 0.0010234841703337064, time 11.5693s
+Epoch 1298: Loss 0.0008650642347778489, time 11.5698s
+Epoch 1299: Loss 0.0008569187749931707, time 11.5692s
+Epoch 1300: Loss 0.00083975552447152, time 11.5740s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1300.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1300.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1301: Loss 0.0008811040562607018, time 11.5734s
+Epoch 1302: Loss 0.0009148695398029235, time 11.5674s
+Epoch 1303: Loss 0.0008894380587639428, time 11.5666s
+Epoch 1304: Loss 0.0008466509997894798, time 11.5737s
+Epoch 1305: Loss 0.0008530888425170067, time 11.5758s
+Epoch 1306: Loss 0.0008481162354494504, time 11.5737s
+Epoch 1307: Loss 0.0008456342903524342, time 11.5706s
+Epoch 1308: Loss 0.0008265727068462609, time 11.5895s
+Epoch 1309: Loss 0.0008651613934949937, time 11.5814s
+Epoch 1310: Loss 0.000911114258283478, time 11.5861s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1310.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1310.png
+Epoch 1311: Loss 0.0008916272383914152, time 11.5848s
+Epoch 1312: Loss 0.0008832968206327598, time 11.5950s
+Epoch 1313: Loss 0.000820772130708387, time 11.5832s
+Epoch 1314: Loss 0.0008411669416229323, time 11.5868s
+Epoch 1315: Loss 0.0008405787137902896, time 11.5763s
+Epoch 1316: Loss 0.0008489757373227585, time 11.5827s
+Epoch 1317: Loss 0.0008626342688457262, time 11.5835s
+Epoch 1318: Loss 0.0009124122888455463, time 11.5808s
+Epoch 1319: Loss 0.0008143502073156164, time 11.6095s
+Epoch 1320: Loss 0.0008555792600522113, time 11.6042s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1320.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1320.png
+Epoch 1321: Loss 0.0008367974428265486, time 11.6068s
+Epoch 1322: Loss 0.0008441020425702327, time 11.6011s
+Epoch 1323: Loss 0.0008609936759760014, time 11.5883s
+Epoch 1324: Loss 0.0008530728058459213, time 11.6021s
+Epoch 1325: Loss 0.0008528519832953528, time 11.5781s
+Epoch 1326: Loss 0.0010394890180382217, time 11.5735s
+Epoch 1327: Loss 0.0008342913758117245, time 11.5670s
+Epoch 1328: Loss 0.0008283426492958318, time 11.5792s
+Epoch 1329: Loss 0.0008867110362050973, time 11.5886s
+Epoch 1330: Loss 0.0008386706243913114, time 11.5793s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1330.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1330.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1331: Loss 0.0008388119379479933, time 11.5852s
+Epoch 1332: Loss 0.0008089503287551394, time 11.5749s
+Epoch 1333: Loss 0.0008520618294029721, time 11.5856s
+Epoch 1334: Loss 0.0008276635839874986, time 11.5833s
+Epoch 1335: Loss 0.0008296001952324252, time 11.5738s
+Epoch 1336: Loss 0.0008438418049599586, time 11.5826s
+Epoch 1337: Loss 0.0008410048174459628, time 11.5769s
+Epoch 1338: Loss 0.0008626655750809225, time 11.5743s
+Epoch 1339: Loss 0.0008513821431515219, time 11.5918s
+Epoch 1340: Loss 0.000827789826825544, time 11.5988s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1340.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1340.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1341: Loss 0.0008640830184751532, time 11.5822s
+Epoch 1342: Loss 0.0008332809581438999, time 11.5882s
+Epoch 1343: Loss 0.0009649094846983782, time 11.5765s
+Epoch 1344: Loss 0.0008260300793741016, time 11.5713s
+Epoch 1345: Loss 0.0008663636568898359, time 11.5709s
+Epoch 1346: Loss 0.0008253124144659201, time 11.5751s
+Epoch 1347: Loss 0.0008045487053164788, time 11.5782s
+Epoch 1348: Loss 0.0008401165344631535, time 11.5853s
+Epoch 1349: Loss 0.0008475332545953556, time 11.5848s
+Epoch 1350: Loss 0.0008287408680281501, time 11.5944s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1350.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1350.png
+Epoch 1351: Loss 0.0008424249158279169, time 11.6018s
+Epoch 1352: Loss 0.0008475810720045945, time 11.5823s
+Epoch 1353: Loss 0.0008141678165573674, time 11.5856s
+Epoch 1354: Loss 0.0008394246443124677, time 11.5812s
+Epoch 1355: Loss 0.0008036655913950003, time 11.5796s
+Epoch 1356: Loss 0.0008643724006244063, time 11.5890s
+Epoch 1357: Loss 0.0008430949908156608, time 11.5795s
+Epoch 1358: Loss 0.0008330882839708224, time 11.5780s
+Epoch 1359: Loss 0.0008298659926874245, time 11.5830s
+Epoch 1360: Loss 0.0008142529180917382, time 11.5815s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1360.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1360.png
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_best.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_best.png
+Epoch 1361: Loss 0.0009209860467699746, time 11.5796s
+Epoch 1362: Loss 0.000843064771092768, time 11.5827s
+Epoch 1363: Loss 0.0012873383611919581, time 11.5762s
+Epoch 1364: Loss 0.0011963219535861258, time 11.5734s
+Epoch 1365: Loss 0.001050800122460645, time 11.5817s
+Epoch 1366: Loss 0.0008328627932026888, time 11.5789s
+Epoch 1367: Loss 0.0008266624860845718, time 11.5832s
+Epoch 1368: Loss 0.0008257464966235706, time 11.5840s
+Epoch 1369: Loss 0.0008330057578491448, time 11.5731s
+Epoch 1370: Loss 0.00082089834923184, time 11.5785s
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/models/uniform_density_1370.pkl
+Save model to logging/snapshot/Reconstruct_foldingnet_k32_gpu/plot/uniform_density_1370.png
+Epoch 1371: Loss 0.0008090785400620721, time 11.5778s
+Epoch 1372: Loss 0.0008012054342912109, time 11.5775s
+Epoch 1373: Loss 0.0008792745130345862, time 11.5782s
+Epoch 1374: Loss 0.0007996248039696955, time 11.5781s
+Epoch 1375: Loss 0.0008260972405153127, time 11.5726s
+Epoch 1376: Loss 0.0008060551577106212, time 11.5738s
+Epoch 1377: Loss 0.0008686536431601389, time 11.5745s
+Epoch 1378: Loss 0.000815673492173959, time 11.5742s

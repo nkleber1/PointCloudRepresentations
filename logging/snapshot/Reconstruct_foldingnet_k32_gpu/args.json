@@ -1,0 +1,22 @@
+{
+     "exp_name": "foldingnet_k32_gpu",
+     "overwrite": true,
+     "encoder": "graph",
+     "decoder": "fold",
+     "dropout": 0.2,
+     "num_points": 1024,
+     "feat_dims": 512,
+     "k": 32,
+     "batch_size": 64,
+     "epochs": 10000,
+     "snapshot_interval": 10,
+     "shape": "1d",
+     "pooling": "avg",
+     "eval": false,
+     "model_path": "",
+     "dataset": "uniform_density",
+     "rotate": false,
+     "gpu": "0",
+     "no_cuda": false,
+     "workers": 0
+}
