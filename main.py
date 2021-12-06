@@ -30,7 +30,7 @@ def get_parser():
                         help='Num of nearest neighbors to use for KNN')
     parser.add_argument('--batch_size', type=int, default=64, metavar='batch_size',
                         help='Size of batch)')
-    parser.add_argument('--epochs', type=int, default=1000, metavar='N',
+    parser.add_argument('--epochs', type=int, default=1000000, metavar='N',
                         help='Number of episode to train ')
     parser.add_argument('--snapshot_interval', type=int, default=100, metavar='N',
                         help='Save snapshot interval')
