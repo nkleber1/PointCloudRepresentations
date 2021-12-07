@@ -65,6 +65,18 @@ class FoldDecoder(nn.Module):
             e2 = np.vstack((x1, x))
             e3 = np.vstack((x, x0))
             points = np.hstack((e0, e1, e2, e3))
+        elif self.args.shape == 'little_square':
+            n_points = int(n_points / 4)
+            x = np.linspace(0.25, 0.75, n_points + 2)
+            x = x[1:n_points+1]
+            x0 = np.zeros(n_points)
+            x1 = np.ones(n_points)
+            e0 = np.vstack((x0, x))
+            e1 = np.vstack((x, x1))
+            x = np.flip(x)
+            e2 = np.vstack((x1, x))
+            e3 = np.vstack((x, x0))
+            points = np.hstack((e0, e1, e2, e3))
         elif self.args.shape == 'gaussian':
             x = np.random.normal(loc=0.5, scale=0.2, size=n_points * 2)
             points = np.reshape(x, (2, -1))
