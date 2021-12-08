@@ -21,18 +21,18 @@ class FoldDecoder(nn.Module):
         else:  # eventually add case for 3D
             point_dim = 2
         self.folding1 = nn.Sequential(
-            nn.Conv1d(args.feat_dims + point_dim, args.feat_dims, 1),
+            nn.Conv1d(args.feat_dims + point_dim, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(args.feat_dims, args.feat_dims, 1),
+            nn.Conv1d(512, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(args.feat_dims, 2, 1),
+            nn.Conv1d(512, 2, 1),
         )
         self.folding2 = nn.Sequential(
-            nn.Conv1d(args.feat_dims + 2, args.feat_dims, 1),
+            nn.Conv1d(args.feat_dims + 2, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(args.feat_dims, args.feat_dims, 1),
+            nn.Conv1d(512, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(args.feat_dims, 2, 1),  # changed to 2D
+            nn.Conv1d(512, 2, 1),  # changed to 2D
         )
 
     def build_grid(self, batch_size):
