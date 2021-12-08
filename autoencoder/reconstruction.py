@@ -118,7 +118,7 @@ class Reconstruction(object):
 
         # initialize optimizer
         self.parameter = self.model.parameters()
-        self.optimizer = optim.Adam(self.parameter, lr=0.0001 * 16 / args.batch_size, betas=(0.9, 0.999),
+        self.optimizer = optim.Adam(self.parameter, lr=args.lr / args.batch_size, betas=(0.9, 0.999),
                                     weight_decay=1e-6)
 
     def run(self):

@@ -22,6 +22,8 @@ def get_parser():
                         help='Decoder architecture used, [fold, upsampling, dense]')
     parser.add_argument('--dropout', type=float, default=0.2,
                         help='dropout rate')  # TODO Wo?
+    parser.add_argument('--lr', type=float, default=0.0016,
+                        help='Learning Rate')
     parser.add_argument('--num_points', type=int, default=1024,  # TODO automatic
                         help='Num of points to use')
     parser.add_argument('--feat_dims', type=int, default=512, metavar='N',
