@@ -373,7 +373,7 @@ class PointnetSAModule(nn.Module):
         return new_xyz, torch.cat(new_features_list, dim=1)
 
 
-class PointNet2ClassificationSSG(pl.LightningModule):
+class PointNet2CudaEncoder(pl.LightningModule):
     def __init__(self, args):
         super().__init__()
         self.SA_modules = nn.ModuleList()
@@ -404,7 +404,9 @@ class PointNet2ClassificationSSG(pl.LightningModule):
         self.fc_layer = nn.Sequential(
             nn.Linear(1024, 512, bias=False),
             nn.BatchNorm1d(512),
-            nn.ReLU(True)
+            nn.ReLU(True),
+            nn.Linear(512, args.feat_dims, bias=False),
+            nn.BatchNorm1d(args.feat_dims)
         )
 
     def forward(self, pointcloud):
@@ -424,7 +426,4 @@ class PointNet2ClassificationSSG(pl.LightningModule):
             xyz, features = module(xyz, features)
 
         return self.fc_layer(features.squeeze(-1))
-
-
-model = PointNet2ClassificationSSG(None)
 
