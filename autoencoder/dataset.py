@@ -19,6 +19,8 @@ class PointCloudDataset:
             file = 'data/train_data/overfit.npy'
         elif args.dataset == 'easy':
             file = 'data/train_data/easy.npy'
+        elif args.dataset == 'medium':
+            file = 'data/train_data/medium.npy'
         np_data = np.load(file)
         self.data = torch.from_numpy(np_data)
         if args.dataset == 'lidar':
