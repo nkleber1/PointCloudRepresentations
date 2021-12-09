@@ -80,9 +80,9 @@ class GraphEncoder(nn.Module):
         self.linear2 = nn.Linear(128, 128)
         self.conv2 = nn.Conv1d(128, 1024, 1)
         self.mlp2 = nn.Sequential(
-            nn.Conv1d(1024, args.feat_dims, 1),
+            nn.Conv1d(1024, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(args.feat_dims, args.feat_dims, 1),
+            nn.Conv1d(512, args.feat_dims, 1),
         )
 
     def graph_layer(self, x, idx):
