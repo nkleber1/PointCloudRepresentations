@@ -44,7 +44,7 @@ def get_parser():
                         help='Pooling type used for PointNet, [avg, max]')
     parser.add_argument('--eval', action='store_true',
                         help='Evaluate the model')
-    parser.add_argument('--model_path', type=str, default='Reconstruct_foldingnet_k32_gpu',
+    parser.add_argument('--model_path', type=str, default='',
                         metavar='N', help='Path to load model')
     parser.add_argument('--dataset', type=str, default='uniform_density', metavar='N',
                         choices=['lidar', 'uniform_density', 'overfit', 'easy', 'medium'],
@@ -52,10 +52,10 @@ def get_parser():
     parser.add_argument('--rotate', action='store_true',
                         help='rotate point clouds during training')
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
-    # parser.add_argument('--no_cuda', action='store_true',
+    parser.add_argument('--no_cuda', action='store_true',
+                         help='Enables CUDA training')
+    # parser.add_argument('--no_cuda', type=int, default=True,
     #                     help='Enables CUDA training')
-    parser.add_argument('--no_cuda', type=int, default=True,
-                        help='Enables CUDA training')
     parser.add_argument('--workers', type=int, help='Number of data loading workers', default=0)
 
     args = parser.parse_args()
