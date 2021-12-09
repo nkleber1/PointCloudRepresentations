@@ -82,11 +82,11 @@ class PointnetSAModule(nn.Module):
         xyz_flipped = xyz.transpose(1, 2).contiguous()
         new_xyz = (
             pointnet2_utils.gather_operation(
-                xyz_flipped, pointnet2_utils.furthest_point_sample(xyz, self.npoint)
+                xyz_flipped, pointnet2_utils.furthest_point_sample(xyz, self.n_point)
             )
             .transpose(1, 2)
             .contiguous()
-            if self.npoint is not None
+            if self.n_point is not None
             else None
         )
 
