@@ -140,6 +140,12 @@ class PointNet2CudaEncoder(pl.LightningModule):
             nn.BatchNorm1d(args.feat_dims)
         )
 
+    def _break_up_pc(self, pc):
+        xyz = pc[..., 0:3].contiguous()
+        features = pc[..., 3:].transpose(1, 2).contiguous() if pc.size(-1) > 3 else None
+
+        return xyz, features
+
     def forward(self, pointcloud):
         """
             Forward pass of the network
