@@ -42,7 +42,7 @@ class PointnetSAModule(nn.Module):
     """
 
     def __init__(
-        self, mlp, n_point=None, radius=None, n_sample=None, bn=True, use_xyz=False):  # TODO what does use_xyz doe
+        self, mlp, n_point=None, radius=None, n_sample=None, bn=True, use_xyz=True):  # TODO what does use_xyz doe
         # type: (PointnetSAModule, List[int], int, float, int, bool, bool) -> None
         super(PointnetSAModule, self).__init__()
 
