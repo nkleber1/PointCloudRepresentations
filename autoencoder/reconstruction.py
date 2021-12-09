@@ -30,8 +30,15 @@ class Reconstruction(object):
         self.no_cuda = args.no_cuda
         self.model_path = args.model_path
 
+        if self.model_path[:12] == 'Reconstruct_':
+            self.model_path = 'logging/snapshot/{}/models/latest'.format(self.model_path)
+        if self.model_path[-6:] == 'latest':
+            path = self.model_path[:-6]
+            latest_model = os.listdir(path)[-2]
+            self.model_path = os.path.join(path, latest_model)
+
         # create exp directory
-        file = [f for f in args.model_path.split('/')]
+        file = [f for f in self.model_path.split('/')]
         if args.exp_name != None:
             self.experiment_id = "Reconstruct_" + args.exp_name
         elif file[-2] == 'models':
@@ -107,7 +114,7 @@ class Reconstruction(object):
         # initialize model
         self.model = ReconstructionNet(args)
         if self.model_path != '':
-            self._load_pretrain(args.model_path)
+            self._load_pretrain(self.model_path)
 
         # load model to gpu
         if not self.no_cuda:

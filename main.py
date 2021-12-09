@@ -10,7 +10,7 @@ from autoencoder import Reconstruction
 
 def get_parser():
     parser = argparse.ArgumentParser(description='Unsupervised Point Cloud Feature Learning')
-    parser.add_argument('--exp_name', type=str, default='graph_1d_fold_uniform_k16_featdim_512', metavar='N',
+    parser.add_argument('--exp_name', type=str, default=None, metavar='N',
                         help='Name of the experiment')
     parser.add_argument('--overwrite', action='store_true',
                         help='Overwrites data from previous experiment with same name')
@@ -44,7 +44,7 @@ def get_parser():
                         help='Pooling type used for PointNet, [avg, max]')
     parser.add_argument('--eval', action='store_true',
                         help='Evaluate the model')
-    parser.add_argument('--model_path', type=str, default='',  #'../../../point_clouds/embedding/autoencoder/snapshot/Reconstruct_graph_1d_fold_uniform_k16\models/uniform_density_4210.pkl',
+    parser.add_argument('--model_path', type=str, default='Reconstruct_foldingnet_k32_gpu',
                         metavar='N', help='Path to load model')
     parser.add_argument('--dataset', type=str, default='uniform_density', metavar='N',
                         choices=['lidar', 'uniform_density', 'overfit', 'easy', 'medium'],
@@ -52,7 +52,9 @@ def get_parser():
     parser.add_argument('--rotate', action='store_true',
                         help='rotate point clouds during training')
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
-    parser.add_argument('--no_cuda', action='store_true',
+    # parser.add_argument('--no_cuda', action='store_true',
+    #                     help='Enables CUDA training')
+    parser.add_argument('--no_cuda', type=int, default=True,
                         help='Enables CUDA training')
     parser.add_argument('--workers', type=int, help='Number of data loading workers', default=0)
 
