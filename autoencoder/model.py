@@ -1,5 +1,5 @@
 import torch.nn as nn
-from . import GraphEncoder, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, DenseDecoder, PointNet2CudaEncoder
+from . import GraphEncoder, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, DenseDecoder  # , PointNet2CudaEncoder
 from .loss import ChamferLoss
 
 
@@ -10,8 +10,8 @@ class ReconstructionNet(nn.Module):
             self.encoder = GraphEncoder(args)
         elif args.encoder == 'pointnet++':
             self.encoder = PointNet2Encoder(args)
-        elif args.encoder == 'pointnet2cuda':
-            self.encoder = PointNet2CudaEncoder(args)
+        # elif args.encoder == 'pointnet2cuda':
+        #     self.encoder = PointNet2CudaEncoder(args)
         elif args.encoder == 'pointnet':
             self.encoder = PointNetEncoder(args)
         elif args.encoder == 'dense':
