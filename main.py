@@ -21,10 +21,14 @@ def get_parser():
                         choices=['fold', 'upsampling', 'dense'],
                         help='Decoder architecture used, [fold, upsampling, dense]')
     parser.add_argument('--dropout', type=float, default=0.2,
-                        help='dropout rate')  # TODO Wo?
+                        help='dropout rate')
     parser.add_argument('--lr', type=float, default=0.0016,
                         help='Learning Rate')
-    parser.add_argument('--num_points', type=int, default=1024,  # TODO automatic
+    parser.add_argument('--lr_scheduler_gamma', type=float, default=1,
+                        help='multiplies lr by lr_scheduler_gamma all lr_scheduler_step')
+    parser.add_argument('--lr_scheduler_steps', type=int, default=100,
+                        help='multiplies lr by lr_scheduler_gamma all lr_scheduler_step')
+    parser.add_argument('--num_points', type=int, default=1024,
                         help='Num of points to use')
     parser.add_argument('--feat_dims', type=int, default=512, metavar='N',
                         help='Number of dims for feature')

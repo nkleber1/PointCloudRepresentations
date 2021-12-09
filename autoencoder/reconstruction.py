@@ -10,6 +10,7 @@ import shutil
 import json
 import torch
 import torch.optim as optim
+from torch.optim import lr_scheduler
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -128,6 +129,8 @@ class Reconstruction(object):
         self.optimizer = optim.Adam(self.parameter, lr=args.lr / args.batch_size, betas=(0.9, 0.999),
                                     weight_decay=1e-6)
 
+        self.lr_scheduler = lr_scheduler.StepLR(self.optimizer, args.lr_scheduler_steps, args.lr_scheduler_gamma)
+
     def run(self):
         self.train_hist = {
             'loss': [],
@@ -160,6 +163,8 @@ class Reconstruction(object):
                 self.writer.add_scalar('Train Loss', self.train_hist['loss'][-1], epoch)
                 self.writer.add_scalar('Train Loss (per point)', self.train_hist['loss_per_point'][-1], epoch)
                 self.writer.add_scalar('Learning Rate', self._get_lr(), epoch)
+
+            self.lr_scheduler.step()
 
         # finish all epoch
         self._snapshot(epoch + 1)
