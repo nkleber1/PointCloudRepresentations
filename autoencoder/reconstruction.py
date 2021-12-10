@@ -237,6 +237,7 @@ class Reconstruction(object):
             dir = self.plot_dir
             x = self.dataset.test_data
         if not self.no_cuda:
+            print('#######################################################')
             x.cuda(self.first_gpu)
         self.model.eval()
         reconstruction, _ = self.model.forward(x)
@@ -282,7 +283,6 @@ class Reconstruction(object):
         self.model.eval()
         pts = self.dataset.get_eval_data()
         if not self.no_cuda:
-            print('#######################################################')
             pts = pts.cuda(self.first_gpu)
 
         # forward
