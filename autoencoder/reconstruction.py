@@ -9,6 +9,7 @@ import time
 import shutil
 import json
 import torch
+import math
 import torch.optim as optim
 from torch.optim import lr_scheduler
 import numpy as np
@@ -51,6 +52,7 @@ class Reconstruction(object):
         snapshot_root = f'logging/snapshot/{str(self.experiment_id)}'
         tensorboard_root = f'logging//tensorboard/{str(self.experiment_id)}'
         self.model_dir = os.path.join(snapshot_root, 'models/')
+        self.eval_model_dir = os.path.join(snapshot_root, 'eval_models/')
         self.plot_dir = os.path.join(snapshot_root, 'plot/')
         self.eval_plot_dir = os.path.join(snapshot_root, 'eval_plot/')
         self.tboard_dir = tensorboard_root
@@ -84,6 +86,11 @@ class Reconstruction(object):
             else:
                 shutil.rmtree(self.eval_plot_dir)
                 os.makedirs(self.eval_plot_dir)
+            if not os.path.exists(self.eval_model_dir):
+                os.makedirs(self.eval_model_dir)
+            elif args.overwrite:
+                shutil.rmtree(self.eval_model_dir)
+                os.makedirs(self.eval_model_dir)
         sys.stdout = Logger(os.path.join(snapshot_root, 'log.txt'))
         self.writer = SummaryWriter(log_dir=self.tboard_dir)
 
@@ -144,7 +151,8 @@ class Reconstruction(object):
             'eval_time': [],
             'eval_loss': []
         }
-        best_loss = 1000000000
+        best_loss = math.inf
+        best_eval_loss = math.inf
         print('Training start!!')
         start_time = time.time()
         self.model.train()
@@ -160,13 +168,18 @@ class Reconstruction(object):
             # save snapeshot
             if (epoch + 1) % self.snapshot_interval == 0:
                 self._snapshot(epoch + 1)
+                self._plot_reconstruction(epoch)
                 if loss < best_loss:
                     best_loss = loss
                     self._snapshot('best')
 
             # eval model
             if (epoch + 1) % self.eval_interval == 0:
-                self._eval(epoch + 1)
+                eval_loss = self._eval(epoch + 1)
+                self._plot_reconstruction(epoch, eval=True)
+                if eval_loss < best_eval_loss:
+                    best_eval_loss = loss
+                    self._snapshot('best', eval=True)
 
             # save tensorboard
             if self.writer:
@@ -219,7 +232,7 @@ class Reconstruction(object):
         print(f'Epoch {epoch + 1}: Loss {np.mean(loss_per_point_buf)}, time {epoch_time:.4f}s')
         return np.mean(loss_buf)
 
-    def _snapshot(self, epoch):
+    def _snapshot(self, epoch, eval=False):
         state_dict = self.model.state_dict()
         from collections import OrderedDict
         new_state_dict = OrderedDict()
@@ -229,11 +242,13 @@ class Reconstruction(object):
             else:
                 name = key
             new_state_dict[name] = val
-        save_dir = os.path.join(self.model_dir, self.dataset_name)
+        if eval:
+            model_dir = self.eval_model_dir
+        else:
+            model_dir = self.model_dir
+        save_dir = os.path.join(model_dir, self.dataset_name)
         torch.save(new_state_dict, save_dir + "_" + str(epoch) + '.pkl')
         print(f"Save model to {save_dir}_{str(epoch)}.pkl")
-        if self.snapshot_plot:
-            self._plot_reconstruction(epoch)
 
     def _plot_reconstruction(self, epoch, eval=False):
         if eval:
@@ -312,7 +327,6 @@ class Reconstruction(object):
         print(f'Eval Epoch {epoch}: Loss {np.mean(loss_buf)}, time {eval_time:.4f}s')
         if self.writer:
             self.writer.add_scalar('Eval Loss', self.train_hist['eval_loss'][-1], epoch)
-        if self.eval_plot:
-            self._plot_reconstruction(epoch, eval=True)
+        return np.mean(loss_buf)
 
 
