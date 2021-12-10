@@ -236,8 +236,8 @@ class Reconstruction(object):
         else:
             dir = self.plot_dir
             x = self.dataset.test_data
-        # if not self.no_cuda:
-        #     x.cuda(self.first_gpu)
+        if not self.no_cuda:
+            x.cuda(self.first_gpu)
         self.model.eval()
         reconstruction, _ = self.model.forward(x)
         self._plot(x, reconstruction, dir, epoch)
