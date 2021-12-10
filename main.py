@@ -10,12 +10,12 @@ from autoencoder import Reconstruction
 
 def get_parser():
     parser = argparse.ArgumentParser(description='Unsupervised Point Cloud Feature Learning')
-    parser.add_argument('--exp_name', type=str, default=None, metavar='N',
+    parser.add_argument('--exp_name', type=str, default='test123', metavar='N',
                         help='Name of the experiment')
     parser.add_argument('--overwrite', action='store_true',
                         help='Overwrites data from previous experiment with same name')
     parser.add_argument('--encoder', type=str, default='graph', metavar='N',
-                        choices=['graph', 'pointnet++', 'pointnet2cuda','pointnet', 'dense'],
+                        choices=['graph', 'pointnet++', 'pointnet2cuda', 'pointnet', 'dense'],
                         help='Encoder architecture used, [graph, pointnet++, pointnet, dense]')
     parser.add_argument('--decoder', type=str, default='fold', metavar='N',
                         choices=['fold', 'upsampling', 'dense'],
@@ -38,8 +38,14 @@ def get_parser():
                         help='Size of batch)')
     parser.add_argument('--epochs', type=int, default=1000000, metavar='N',
                         help='Number of episode to train ')
+    parser.add_argument('--no_snapshot_plot', action='store_false',
+                        help='save a plot after snapshot')
     parser.add_argument('--snapshot_interval', type=int, default=100, metavar='N',
                         help='Save snapshot interval')
+    parser.add_argument('--no_eval_plot', action='store_false',
+                        help='save a plot after eval')
+    parser.add_argument('--eval_interval', type=int, default=100, metavar='N',
+                        help='Evaluation interval')
     parser.add_argument('--shape', type=str, default='1d', metavar='N',
                         choices=['1d', 'diagonal', 'circle', 'square', 'little_square', 'gaussian'],
                         help='Shape of points to input decoder, [1d, diagonal, circle, square, gaussian]')
@@ -50,16 +56,16 @@ def get_parser():
                         help='Evaluate the model')
     parser.add_argument('--model_path', type=str, default='',
                         metavar='N', help='Path to load model')
-    parser.add_argument('--dataset', type=str, default='uniform_density', metavar='N',
+    parser.add_argument('--dataset', type=str, default='overfit', metavar='N',
                         choices=['lidar', 'uniform_density', 'overfit', 'easy', 'medium'],
                         help='Encoder to use, [lidar, uniform_density, overfit, easy, medium]')
     parser.add_argument('--rotate', action='store_true',
                         help='rotate point clouds during training')
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
-    parser.add_argument('--no_cuda', action='store_true',
-                         help='Enables CUDA training')
-    # parser.add_argument('--no_cuda', type=int, default=True,
-    #                     help='Enables CUDA training')
+    # parser.add_argument('--no_cuda', action='store_true',
+    #                      help='Enables CUDA training')
+    parser.add_argument('--no_cuda', type=int, default=True,
+                        help='Enables CUDA training')
     parser.add_argument('--workers', type=int, help='Number of data loading workers', default=0)
 
     args = parser.parse_args()

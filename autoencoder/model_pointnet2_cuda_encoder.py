@@ -56,7 +56,7 @@ class PointnetSAModule(nn.Module):
             else pointnet2_utils.GroupAll(use_xyz)
         )
         if use_xyz:
-            mlp[0] += 3
+            mlp[0] += 2
         self.mlps.append(build_shared_mlp(mlp, bn))
 
     def forward(

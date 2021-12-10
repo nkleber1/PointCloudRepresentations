@@ -27,7 +27,9 @@ class Reconstruction(object):
         self.epochs = args.epochs
         self.batch_size = args.batch_size
         self.snapshot_interval = args.snapshot_interval
-        self.snapshot_pic = True  # TODO add to args
+        self.eval_interval = args.eval_interval
+        self.snapshot_plot = not args.no_snapshot_plot
+        self.eval_plot = not args.no_eval_plot
         self.no_cuda = args.no_cuda
         self.model_path = args.model_path
 
@@ -48,22 +50,23 @@ class Reconstruction(object):
             self.experiment_id = "Reconstruct" + time.strftime('%m%d%H%M%S')
         snapshot_root = f'logging/snapshot/{str(self.experiment_id)}'
         tensorboard_root = f'logging//tensorboard/{str(self.experiment_id)}'
-        self.save_dir = os.path.join(snapshot_root, 'models/')
+        self.model_dir = os.path.join(snapshot_root, 'models/')
         self.plot_dir = os.path.join(snapshot_root, 'plot/')
+        self.eval_plot_dir = os.path.join(snapshot_root, 'eval_plot/')
         self.tboard_dir = tensorboard_root
 
         # check arguments
         if self.model_path == '':
-            if not os.path.exists(self.save_dir):
-                os.makedirs(self.save_dir)
+            if not os.path.exists(self.model_dir):
+                os.makedirs(self.model_dir)
             elif args.overwrite:
-                shutil.rmtree(self.save_dir)
-                os.makedirs(self.save_dir)
+                shutil.rmtree(self.model_dir)
+                os.makedirs(self.model_dir)
             else:
-                choose = input("Remove " + self.save_dir + " ? (y/n)")
+                choose = input("Remove " + self.model_dir + " ? (y/n)")
                 if choose == "y":
-                    shutil.rmtree(self.save_dir)
-                    os.makedirs(self.save_dir)
+                    shutil.rmtree(self.model_dir)
+                    os.makedirs(self.model_dir)
                 else:
                     sys.exit(0)
             if not os.path.exists(self.tboard_dir):
@@ -76,6 +79,11 @@ class Reconstruction(object):
             else:
                 shutil.rmtree(self.plot_dir)
                 os.makedirs(self.plot_dir)
+            if not os.path.exists(self.eval_plot_dir):
+                os.makedirs(self.eval_plot_dir)
+            else:
+                shutil.rmtree(self.eval_plot_dir)
+                os.makedirs(self.eval_plot_dir)
         sys.stdout = Logger(os.path.join(snapshot_root, 'log.txt'))
         self.writer = SummaryWriter(log_dir=self.tboard_dir)
 
@@ -91,21 +99,11 @@ class Reconstruction(object):
         self.gpu_ids = [int(gid) for gid in gids.split(',')]
         self.first_gpu = self.gpu_ids[0]
 
-        # generate dataset  # TODO use better dataset
-        self.train_dataset = PointCloudDataset(args)
-        self.test_data = self.train_dataset.test
+        # generate dataset
+        self.dataset = PointCloudDataset(args)
 
-        # self.train_dataset = Dataset(
-        #     root=args.dataset_root,
-        #     dataset_name=args.dataset,
-        #     split='all',
-        #     num_points=args.num_points,
-        #     random_translate=args.use_translate,
-        #     random_rotate=True,
-        #     random_jitter=args.use_jitter
-        # )
         self.train_loader = torch.utils.data.DataLoader(
-            self.train_dataset,
+            self.dataset,
             batch_size=args.batch_size,
             shuffle=True,
             num_workers=args.workers
@@ -136,7 +134,9 @@ class Reconstruction(object):
             'loss': [],
             'loss_per_point': [],
             'per_epoch_time': [],
-            'total_time': []
+            'total_time': [],
+            'eval_time': [],
+            'eval_loss': []
         }
         best_loss = 1000000000
         print('Training start!!')
@@ -157,6 +157,10 @@ class Reconstruction(object):
                 if loss < best_loss:
                     best_loss = loss
                     self._snapshot('best')
+
+            # eval model
+            if (epoch + 1) % self.eval_interval == 0:
+                self._eval(epoch + 1)
 
             # save tensorboard
             if self.writer:
@@ -219,33 +223,43 @@ class Reconstruction(object):
             else:
                 name = key
             new_state_dict[name] = val
-        save_dir = os.path.join(self.save_dir, self.dataset_name)
+        save_dir = os.path.join(self.model_dir, self.dataset_name)
         torch.save(new_state_dict, save_dir + "_" + str(epoch) + '.pkl')
         print(f"Save model to {save_dir}_{str(epoch)}.pkl")
-        if self.snapshot_pic:
+        if self.snapshot_plot:
             self._plot_reconstruction(epoch)
 
-    def _plot_reconstruction(self, epoch):
-        x = self.test_data.cuda(self.first_gpu)
+    def _plot_reconstruction(self, epoch, unseen_data=False):
+        if unseen_data:
+            dir = self.eval_plot_dir
+            x = self.dataset.unseen_test
+        else:
+            dir = self.plot_dir
+            x = self.dataset.test_data
+        if not self.no_cuda:
+            x.cuda(self.first_gpu)
         self.model.eval()
-        embedding = self.model.encoder.forward(x)
-        reconstruction = self.model.decoder.forward(embedding)
+        reconstruction, _ = self.model.forward(x)
+        self._plot(x, reconstruction, dir, epoch)
+        self.model.train()
+
+    def _plot(self, gt, reconstruction, dir, epoch):
         # make plot
         fig = plt.figure()
         subplot = fig.add_subplot(111)
         # plot ground truth
-        x = x.detach().cpu().numpy()
-        subplot.scatter(x[0, :, 0], x[0, :, 1], s=10, c='b', marker="s", label='true')
+        gt = gt.detach().cpu().numpy()
+        subplot.scatter(gt[0, :, 0], gt[0, :, 1], s=10, c='b', marker="s", label='true')
         # plot reconstruction
         reconstruction = reconstruction.cpu().detach().numpy()
-        subplot.scatter(reconstruction[0, :, 0], reconstruction[0, :, 1], s=10, c='r', marker="o", label='reconstruction')
+        subplot.scatter(reconstruction[0, :, 0], reconstruction[0, :, 1], s=10, c='r', marker="o",
+                        label='reconstruction')
         plt.legend(loc='upper left')
         # save plot
-        save_dir = os.path.join(self.plot_dir, self.dataset_name)
+        save_dir = os.path.join(dir, self.dataset_name)
         save_dir = save_dir + "_" + str(epoch) + '.png'
         plt.savefig(save_dir)
         print(f"Save model to {save_dir}")
-        self.model.train()
 
     def _load_pretrain(self, pretrain):
         state_dict = torch.load(pretrain, map_location='cpu')
@@ -262,3 +276,36 @@ class Reconstruction(object):
 
     def _get_lr(self, group=0):
         return self.optimizer.param_groups[group]['lr']
+
+    def _eval(self, epoch):
+        eval_start_time = time.time()
+        self.model.eval()
+        pts = self.dataset.get_eval_data()
+        if not self.no_cuda:
+            pts = pts.cuda(self.first_gpu)
+
+        # forward
+        output, _ = self.model(pts)
+
+        # loss
+        if len(self.gpu_ids) != 1:  # multiple gpus
+            loss = self.model.module.get_loss(pts, output)
+        else:
+            loss = self.model.get_loss(pts, output)
+        loss = loss.detach().cpu().numpy() / self.args.num_points / pts.shape[0]
+        self.model.train()
+
+        self._plot_reconstruction(epoch, unseen_data=True)
+
+        # finish one epoch
+        eval_time = time.time() - eval_start_time
+        self.train_hist['eval_time'].append(eval_time)
+        self.train_hist['eval_loss'].append(loss)
+        print(f'Eval Epoch {epoch}: Loss {loss}, time {eval_time:.4f}s')
+        if self.writer:
+            self.writer.add_scalar('Eval Loss', self.train_hist['eval_loss'][-1], epoch)
+
+        if self.eval_plot:
+            self._plot_reconstruction(epoch, unseen_data=True)
+
+
