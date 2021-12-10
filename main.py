@@ -10,7 +10,7 @@ from autoencoder import Reconstruction
 
 def get_parser():
     parser = argparse.ArgumentParser(description='Unsupervised Point Cloud Feature Learning')
-    parser.add_argument('--exp_name', type=str, default='test123', metavar='N',
+    parser.add_argument('--exp_name', type=str, default=None, metavar='N',
                         help='Name of the experiment')
     parser.add_argument('--overwrite', action='store_true',
                         help='Overwrites data from previous experiment with same name')
@@ -22,15 +22,15 @@ def get_parser():
                         help='Decoder architecture used, [fold, upsampling, dense]')
     parser.add_argument('--dropout', type=float, default=0.2,
                         help='dropout rate')
-    parser.add_argument('--lr', type=float, default=0.0016,
+    parser.add_argument('--lr', type=float, default=0.01,
                         help='Learning Rate')
-    parser.add_argument('--lr_scheduler_gamma', type=float, default=1,
+    parser.add_argument('--lr_scheduler_gamma', type=float, default=0.99,
                         help='multiplies lr by lr_scheduler_gamma all lr_scheduler_step')
     parser.add_argument('--lr_scheduler_steps', type=int, default=100,
                         help='multiplies lr by lr_scheduler_gamma all lr_scheduler_step')
     parser.add_argument('--num_points', type=int, default=1024,
                         help='Num of points to use')
-    parser.add_argument('--feat_dims', type=int, default=512, metavar='N',
+    parser.add_argument('--feat_dims', type=int, default=32, metavar='N',
                         help='Number of dims for feature')
     parser.add_argument('--k', type=int, default=16, metavar='N',
                         help='Num of nearest neighbors to use for KNN')
