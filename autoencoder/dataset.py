@@ -27,7 +27,7 @@ class PointCloudDataset:
             file = 'data/train_data/medium.npy'
             eval_file = 'data/eval_data/medium.npy'
         np_data = np.load(file)
-        np_eval_data = np.load(eval_file)
+        np_eval_data = np.load(eval_file)[:10]
         self.data = torch.from_numpy(np_data)
         self.eval_data = torch.from_numpy(np_eval_data)
         self.test = torch.unsqueeze(self.data[9], 0)
