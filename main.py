@@ -46,7 +46,7 @@ def get_parser():
                         help='save a plot after eval')
     parser.add_argument('--eval_interval', type=int, default=100, metavar='N',
                         help='Evaluation interval')
-    parser.add_argument('--shape', type=str, default='1d', metavar='N',
+    parser.add_argument('--shape', type=str, default='square', metavar='N',
                         choices=['1d', 'diagonal', 'circle', 'square', 'little_square', 'gaussian'],
                         help='Shape of points to input decoder, [1d, diagonal, circle, square, gaussian]')
     parser.add_argument('--pooling', type=str, default='avg', metavar='N',
