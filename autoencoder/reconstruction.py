@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 from tensorboardX import SummaryWriter
 from .model import ReconstructionNet
-from .dataset import PointCloudDataset
+from .dataset import PointCloudDataset, PointCloudEvalDataset
 from .utils import Logger
 
 
@@ -101,11 +101,17 @@ class Reconstruction(object):
 
         # generate dataset
         self.dataset = PointCloudDataset(args)
+        self.eval_dataset = PointCloudEvalDataset(args)
 
         self.train_loader = torch.utils.data.DataLoader(
             self.dataset,
             batch_size=args.batch_size,
             shuffle=True,
+            num_workers=args.workers
+        )
+        self.eval_loader = torch.utils.data.DataLoader(
+            self.eval_dataset,
+            batch_size=args.batch_size,
             num_workers=args.workers
         )
         print("Training set size:", self.train_loader.dataset.__len__())
@@ -229,21 +235,19 @@ class Reconstruction(object):
         if self.snapshot_plot:
             self._plot_reconstruction(epoch)
 
-    def _plot_reconstruction(self, epoch, unseen_data=False):
-        if unseen_data:
-            print('unseen_data')
+    def _plot_reconstruction(self, epoch, eval=False):
+        if eval:
             dir = self.eval_plot_dir
-            x = self.dataset.unseen_test
+            x = self.eval_dataset.get_plot_data()
         else:
-            print('seen_data')
             dir = self.plot_dir
-            x = self.dataset.test
+            x = self.dataset.get_plot_data()
         if not self.no_cuda:
             x.cuda(self.first_gpu)
         self.model.eval()
         reconstruction, _ = self.model.forward(x)
-        self._plot(x, reconstruction, dir, epoch)
         self.model.train()
+        self._plot(x, reconstruction, dir, epoch)
 
     def _plot(self, gt, reconstruction, dir, epoch):
         # make plot
@@ -281,33 +285,34 @@ class Reconstruction(object):
 
     def _eval(self, epoch):
         eval_start_time = time.time()
+        loss_buf = []
         self.model.eval()
-        pts = self.dataset.get_eval_data()
-        if not self.no_cuda:
-            pts = pts.cuda(self.first_gpu)
 
-        # forward
-        output, _ = self.model(pts)
+        for _, pts in enumerate(self.eval_loader):
+            if not self.no_cuda:
+                pts = pts.cuda(self.first_gpu)
 
-        # loss
-        if len(self.gpu_ids) != 1:  # multiple gpus
-            loss = self.model.module.get_loss(pts, output)
-        else:
-            loss = self.model.get_loss(pts, output)
-        loss = loss.detach().cpu().numpy() / self.args.num_points / pts.shape[0]
+            # forward
+            self.optimizer.zero_grad()
+            output, _ = self.model(pts)
+
+            # loss
+            if len(self.gpu_ids) != 1:  # multiple gpus
+                loss = self.model.module.get_loss(pts, output)
+            else:
+                loss = self.model.get_loss(pts, output)
+            loss_buf.append(loss.detach().cpu().numpy() / self.args.num_points / self.args.batch_size)
+
         self.model.train()
-
-        self._plot_reconstruction(epoch, unseen_data=True)
 
         # finish one epoch
         eval_time = time.time() - eval_start_time
         self.train_hist['eval_time'].append(eval_time)
-        self.train_hist['eval_loss'].append(loss)
-        print(f'Eval Epoch {epoch}: Loss {loss}, time {eval_time:.4f}s')
+        self.train_hist['eval_loss'].append(np.mean(loss_buf))
+        print(f'Eval Epoch {epoch}: Loss {np.mean(loss_buf)}, time {eval_time:.4f}s')
         if self.writer:
             self.writer.add_scalar('Eval Loss', self.train_hist['eval_loss'][-1], epoch)
-
         if self.eval_plot:
-            self._plot_reconstruction(epoch, unseen_data=True)
+            self._plot_reconstruction(epoch, eval=True)
 
 
