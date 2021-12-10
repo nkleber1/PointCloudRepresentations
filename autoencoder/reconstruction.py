@@ -231,9 +231,11 @@ class Reconstruction(object):
 
     def _plot_reconstruction(self, epoch, unseen_data=False):
         if unseen_data:
+            print('unseen_data')
             dir = self.eval_plot_dir
             x = self.dataset.unseen_test
         else:
+            print('seen_data')
             dir = self.plot_dir
             x = self.dataset.test
         if not self.no_cuda:
