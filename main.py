@@ -62,10 +62,10 @@ def get_parser():
     parser.add_argument('--rotate', action='store_true',
                         help='rotate point clouds during training')
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
-    # parser.add_argument('--no_cuda', action='store_true',
-    #                      help='Enables CUDA training')
-    parser.add_argument('--no_cuda', type=int, default=True,
-                        help='Enables CUDA training')
+    parser.add_argument('--no_cuda', action='store_true',
+                         help='Enables CUDA training')
+    # parser.add_argument('--no_cuda', type=int, default=True,
+    #                     help='Enables CUDA training')
     parser.add_argument('--workers', type=int, help='Number of data loading workers', default=0)
 
     args = parser.parse_args()
