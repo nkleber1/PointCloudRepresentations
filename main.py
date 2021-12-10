@@ -32,7 +32,7 @@ def get_parser():
                         help='Num of points to use')
     parser.add_argument('--feat_dims', type=int, default=32, metavar='N',
                         help='Number of dims for feature')
-    parser.add_argument('--k', type=int, default=16, metavar='N',
+    parser.add_argument('--k', type=int, default=64, metavar='N',
                         help='Num of nearest neighbors to use for KNN')
     parser.add_argument('--batch_size', type=int, default=64, metavar='batch_size',
                         help='Size of batch)')
