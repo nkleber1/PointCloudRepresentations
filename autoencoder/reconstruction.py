@@ -140,7 +140,7 @@ class Reconstruction(object):
         self.optimizer = optim.Adam(self.parameter, lr=args.lr / args.batch_size, betas=(0.9, 0.999),
                                     weight_decay=1e-6)
 
-        self.lr_scheduler = lr_scheduler.StepLR(self.optimizer, args.lr_scheduler_steps, args.lr_scheduler_gamma)
+        self.lr_scheduler = lr_scheduler.StepLR(self.optimizer, args.lr_steps, args.lr_gamma)
 
     def run(self):
         self.train_hist = {
