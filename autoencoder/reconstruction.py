@@ -168,7 +168,7 @@ class Reconstruction(object):
             # save snapeshot
             if (epoch + 1) % self.snapshot_interval == 0:
                 self._snapshot(epoch + 1)
-                self._plot_reconstruction(epoch)
+                self._plot_reconstruction(epoch + 1)
                 if loss < best_loss:
                     best_loss = loss
                     self._snapshot('best')
@@ -176,7 +176,7 @@ class Reconstruction(object):
             # eval model
             if (epoch + 1) % self.eval_interval == 0:
                 eval_loss = self._eval(epoch + 1)
-                self._plot_reconstruction(epoch, eval=True)
+                self._plot_reconstruction(epoch + 1, eval=True)
                 if eval_loss < best_eval_loss:
                     best_eval_loss = loss
                     self._snapshot('best', eval=True)

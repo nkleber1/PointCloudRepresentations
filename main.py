@@ -24,9 +24,9 @@ def get_parser():
                         help='dropout rate')
     parser.add_argument('--lr', type=float, default=0.01,
                         help='Learning Rate')
-    parser.add_argument('--lr_scheduler_gamma', type=float, default=0.99,
+    parser.add_argument('--lr_gamma', type=float, default=0.99,
                         help='multiplies lr by lr_scheduler_gamma all lr_scheduler_step')
-    parser.add_argument('--lr_scheduler_steps', type=int, default=100,
+    parser.add_argument('--lr_steps', type=int, default=100,
                         help='multiplies lr by lr_scheduler_gamma all lr_scheduler_step')
     parser.add_argument('--num_points', type=int, default=1024,
                         help='Num of points to use')
