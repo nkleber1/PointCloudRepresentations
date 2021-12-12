@@ -5,9 +5,9 @@ import numpy as np
 def rotate_pointcloud(pointcloud):
     theta = np.pi * 2 * np.random.choice(24) / 24
     rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)], [np.sin(theta), np.cos(theta)]])
-    pointcloud[:, [0, 1]] = pointcloud[:, [0, 1]].dot(rotation_matrix)  # random rotation (x,z)
+    rotation_matrix = torch.from_numpy(rotation_matrix).float()
+    pointcloud = pointcloud.mm(rotation_matrix)  # random rotation (x,z)
     return pointcloud
-
 
 class PointCloudDataset:
     def __init__(self, args):
