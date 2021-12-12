@@ -203,7 +203,6 @@ class Reconstruction(object):
         epoch_start_time = time.time()
         loss_buf = []
         loss_per_point_buf = []
-        num_batch = int(len(self.train_loader.dataset) / self.batch_size)
         for iter, pts in enumerate(self.train_loader):
             if not self.no_cuda:
                 pts = pts.cuda(self.first_gpu)
