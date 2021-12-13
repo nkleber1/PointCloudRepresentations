@@ -29,7 +29,7 @@ class PointnetSAModule(nn.Module):
     r"""Pointnet set abstrction layer
     Parameters
     ----------
-    n_point : int
+    n_points : int
         Number of features
     radius : float
         Radius of ball
@@ -42,26 +42,24 @@ class PointnetSAModule(nn.Module):
     """
 
     def __init__(
-        self, mlp, n_point=None, radius=None, n_sample=None, bn=True, use_xyz=True):  # TODO what does use_xyz doe
+        self, mlp, n_points=None, radius=None, n_sample=None, bn=True, use_xyz=True):
         # type: (PointnetSAModule, List[int], int, float, int, bool, bool) -> None
         super(PointnetSAModule, self).__init__()
 
-        self.n_point = n_point
+        self.n_points = n_points
         self.groupers = nn.ModuleList()
         self.mlps = nn.ModuleList()
 
         self.groupers.append(
             pointnet2_utils.QueryAndGroup(radius, n_sample, use_xyz=use_xyz)
-            if n_point is not None
+            if n_points is not None
             else pointnet2_utils.GroupAll(use_xyz)
         )
         if use_xyz:
             mlp[0] += 2
         self.mlps.append(build_shared_mlp(mlp, bn))
 
-    def forward(
-        self, xyz: torch.Tensor, features: Optional[torch.Tensor]
-    ) -> Tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, xyz, points):
         r"""
         Parameters
         ----------
@@ -76,32 +74,31 @@ class PointnetSAModule(nn.Module):
         new_features : torch.Tensor
             (B,  \sum_k(mlps[k][-1]), npoint) tensor of the new_features descriptors
         """
-
         new_features_list = []
 
         xyz_flipped = xyz.transpose(1, 2).contiguous()
         new_xyz = (
             pointnet2_utils.gather_operation(
-                xyz_flipped, pointnet2_utils.furthest_point_sample(xyz, self.n_point)
+                xyz_flipped, pointnet2_utils.furthest_point_sample(xyz, self.n_points)
             )
             .transpose(1, 2)
             .contiguous()
-            if self.n_point is not None
+            if self.n_points is not None
             else None
         )
 
         for i in range(len(self.groupers)):
-            new_features = self.groupers[i](
-                xyz, new_xyz, features
+            new_points = self.groupers[i](
+                xyz, new_xyz, points
             )  # (B, C, npoint, nsample)
 
-            new_features = self.mlps[i](new_features)  # (B, mlp[-1], npoint, nsample)
-            new_features = F.max_pool2d(
-                new_features, kernel_size=[1, new_features.size(3)]
+            new_points = self.mlps[i](new_points)  # (B, mlp[-1], npoint, nsample)
+            new_points = F.max_pool2d(
+                new_points, kernel_size=[1, new_points.size(3)]
             )  # (B, mlp[-1], npoint, 1)
-            new_features = new_features.squeeze(-1)  # (B, mlp[-1], npoint)
+            new_points = new_points.squeeze(-1)  # (B, mlp[-1], npoint)
 
-            new_features_list.append(new_features)
+            new_points.append(new_points)
 
         return new_xyz, torch.cat(new_features_list, dim=1)
 
@@ -113,15 +110,15 @@ class PointNet2CudaEncoder(pl.LightningModule):
 
         self.SA_modules.append(
             PointnetSAModule(
-                n_point=512,
+                n_points=512,
                 radius=0.2,
                 n_sample=64,
-                mlp=[3, 64, 64, 128],
+                mlp=[2, 64, 64, 128],
             )
         )
         self.SA_modules.append(
             PointnetSAModule(
-                n_point=128,
+                n_points=128,
                 radius=0.4,
                 n_sample=64,
                 mlp=[128, 128, 128, 256],

@@ -204,7 +204,7 @@ class PointNetSetAbstraction(nn.Module):
 class PointNetSetAbstractionMsg(nn.Module):
     def __init__(self, npoint, radius_list, nsample_list, in_channel, mlp_list):
         super(PointNetSetAbstractionMsg, self).__init__()
-        self.npoint = npoint
+        self.n_points = npoint
         self.radius_list = radius_list
         self.nsample_list = nsample_list
         self.conv_blocks = nn.ModuleList()
@@ -234,7 +234,7 @@ class PointNetSetAbstractionMsg(nn.Module):
             points = points.permute(0, 2, 1)
 
         B, N, C = xyz.shape
-        S = self.npoint
+        S = self.n_points
         new_xyz = index_points(xyz, farthest_point_sample(xyz, S))
         new_points_list = []
         for i, radius in enumerate(self.radius_list):
