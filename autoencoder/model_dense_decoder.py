@@ -26,7 +26,7 @@ class DenseDecoder(nn.Module):
         pts = self.fc4(pts)
 
         # do reshaping
-        return pts.reshape(B, -1, self.m)
+        return pts.reshape(B, self.m, -1)
 
 
 # def get_parser():
