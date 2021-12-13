@@ -67,7 +67,7 @@ class PointNet2CudaEncoder(pl.LightningModule):
         for module in self.SA_modules:
             xyz, features = module(xyz, features)
 
-        features = self.fc_layer(features)  # .squeeze(-1))
+        features = self.fc_layer(features.squeeze(-1))
         # features = features.transpose(2, 1)
         return torch.unsqueeze(features, 1)
 
