@@ -3,7 +3,7 @@ PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
 This code is based on the implementation of Erik Wijmans
 https://github.com/erikwijmans/Pointnet2_PyTorch
 """
-
+import torch
 import torch.nn as nn
 from pointnet2_ops.pointnet2_modules import PointnetSAModule
 from typing import List, Optional, Tuple
@@ -69,6 +69,6 @@ class PointNet2CudaEncoder(pl.LightningModule):
             xyz, features = module(xyz, features)
 
         features = self.fc_layer(features.squeeze(-1))
-        feat = features.transpose(2, 1)
-        return feat
+        # features = features.transpose(2, 1)
+        return torch.unsqueeze(features, 1)
 
