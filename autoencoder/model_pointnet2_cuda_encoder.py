@@ -109,6 +109,13 @@ import pytorch_lightning as pl
 #         return new_xyz, torch.cat(new_features_list, dim=1)
 #
 #
+def _break_up_pc(pc):
+    xyz = pc[..., 0:3].contiguous()
+    features = pc[..., 3:].transpose(1, 2).contiguous() if pc.size(-1) > 3 else None
+
+    return xyz, features
+
+
 class PointNet2CudaEncoder(pl.LightningModule):
     def __init__(self, args):
         super().__init__()
@@ -144,12 +151,6 @@ class PointNet2CudaEncoder(pl.LightningModule):
             nn.BatchNorm1d(args.feat_dims)
         )
 
-    def _break_up_pc(self, pc):
-        xyz = pc[..., 0:3].contiguous()
-        features = pc[..., 3:].transpose(1, 2).contiguous() if pc.size(-1) > 3 else None
-
-        return xyz, features
-
     def forward(self, pointcloud):
         """
             Forward pass of the network
@@ -161,10 +162,11 @@ class PointNet2CudaEncoder(pl.LightningModule):
                 Each point in the point-cloud MUST
                 be formated as (x, y, z, features...)
         """
-        xyz, features = self._break_up_pc(pointcloud)
+        xyz, features = _break_up_pc(pointcloud)
 
         for module in self.SA_modules:
             xyz, features = module(xyz, features)
 
+        print(self.fc_layer(features.squeeze(-1)))
         return self.fc_layer(features.squeeze(-1))
 
