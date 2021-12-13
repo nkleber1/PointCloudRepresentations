@@ -88,10 +88,13 @@ class PointnetSAModule(nn.Module):
         )
 
         for i in range(len(self.groupers)):
+            print(i)
             new_points = self.groupers[i](
                 xyz, new_xyz, points
             )  # (B, C, npoint, nsample)
 
+            print(new_points.shape)
+            print(self.mlps[i].shape)
             new_points = self.mlps[i](new_points)  # (B, mlp[-1], npoint, nsample)
             new_points = F.max_pool2d(
                 new_points, kernel_size=[1, new_points.size(3)]
