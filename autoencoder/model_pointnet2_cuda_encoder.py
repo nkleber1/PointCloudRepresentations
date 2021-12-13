@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from pointnet2_ops import pointnet2_utils
-from pointnet2_ops.pointnet2_modules import PointnetSAModule:
+from pointnet2_ops.pointnet2_modules import PointnetSAModule
 from typing import List, Optional, Tuple
 import pytorch_lightning as pl
 
