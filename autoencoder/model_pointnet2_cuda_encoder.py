@@ -119,7 +119,7 @@ class PointNet2CudaEncoder(pl.LightningModule):
                 npoint=512,
                 radius=0.2,
                 nsample=64,
-                mlp=[0, 64, 64, 128],
+                mlp=[-1, 64, 64, 128],
                 # use_xyz=False
             )
         )
