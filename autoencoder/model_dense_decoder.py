@@ -19,7 +19,7 @@ class DenseDecoder(nn.Module):
     def forward(self, feat):
         B, _, _ = feat.shape
         # decoder
-        feat = feat.squeeze()
+        feat = feat.squeeze(dim=1)
         pts = F.relu(self.bn0(self.fc1(feat)))
         pts = F.relu(self.bn1(self.fc2(pts)))
         pts = F.relu(self.bn2(self.fc3(pts)))
