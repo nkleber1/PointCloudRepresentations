@@ -89,6 +89,7 @@ class PointnetSAModule(nn.Module):
 
         for i in range(len(self.groupers)):
             print(i)
+            print(points)
             new_points = self.groupers[i](
                 xyz, new_xyz, points
             )  # (B, C, npoint, nsample)
@@ -117,8 +118,8 @@ class PointNet2CudaEncoder(pl.LightningModule):
                 n_points=512,
                 radius=0.2,
                 n_sample=64,
-                mlp=[2, 64, 64, 128],
-                use_xyz=False
+                mlp=[0, 64, 64, 128],
+                # use_xyz=False
             )
         )
         self.SA_modules.append(
