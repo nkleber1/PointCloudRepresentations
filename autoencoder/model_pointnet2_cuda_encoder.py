@@ -116,18 +116,18 @@ class PointNet2CudaEncoder(pl.LightningModule):
 
         self.SA_modules.append(
             PointnetSAModule(
-                n_points=512,
+                npoint=512,
                 radius=0.2,
-                n_sample=64,
+                nsample=64,
                 mlp=[0, 64, 64, 128],
                 # use_xyz=False
             )
         )
         self.SA_modules.append(
             PointnetSAModule(
-                n_points=128,
+                npoint=128,
                 radius=0.4,
-                n_sample=64,
+                nsample=64,
                 mlp=[128, 128, 128, 256],
             )
         )
