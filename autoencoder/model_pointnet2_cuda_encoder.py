@@ -92,9 +92,10 @@ class PointnetSAModule(nn.Module):
             new_points = self.groupers[i](
                 xyz, new_xyz, points
             )  # (B, C, npoint, nsample)
-
+            # weight of size 64 4 1 1,
+            # expected input[64, 2, 512, 64]
+            # to have 4 channels, but got 2 channels instead
             print(new_points.shape)
-            print(self.mlps[i].weights.shape)
             new_points = self.mlps[i](new_points)  # (B, mlp[-1], npoint, nsample)
             new_points = F.max_pool2d(
                 new_points, kernel_size=[1, new_points.size(3)]
@@ -117,6 +118,7 @@ class PointNet2CudaEncoder(pl.LightningModule):
                 radius=0.2,
                 n_sample=64,
                 mlp=[2, 64, 64, 128],
+                use_xyz=False
             )
         )
         self.SA_modules.append(
