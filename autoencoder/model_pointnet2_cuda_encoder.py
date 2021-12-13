@@ -128,12 +128,12 @@ class PointNet2CudaEncoder(pl.LightningModule):
                 npoint=128,
                 radius=0.4,
                 nsample=64,
-                mlp=[128, 128, 128, 256],
+                mlp=[128-1, 128, 128, 256],
             )
         )
         self.SA_modules.append(
             PointnetSAModule(
-                mlp=[256, 256, 512, 1024]
+                mlp=[256-1, 256, 512, 1024]
             )
         )
         self.fc_layer = nn.Sequential(
