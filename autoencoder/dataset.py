@@ -30,7 +30,7 @@ class PointCloudDataset:
 
     def __getitem__(self, index):
         point_set = self.data[index][:self.n_points].float()
-        if self.rotate:
+        if not self.no_rotate:
             point_set = rotate_pointcloud(point_set)
         return point_set
 
