@@ -13,8 +13,8 @@ class PointCloudDataset:
     def __init__(self, args):
         if args.dataset == 'lidar':
             file = 'data/train_data/lidar_512.npy'
-        elif args.dataset == 'uniform_density':
-            file = 'data/train_data/uniform_density.npy'
+        elif args.dataset == 'uniform':
+            file = 'data/train_data/uniform.npy'
         elif args.dataset == 'overfit':
             file = 'data/train_data/overfit.npy'
         elif args.dataset == 'easy':
@@ -47,8 +47,8 @@ class PointCloudEvalDataset:
     def __init__(self, args):
         if args.dataset == 'lidar':
             file = 'data/eval_data/lidar_512.npy'
-        elif args.dataset == 'uniform_density':
-            file = 'data/eval_data/uniform_density_eval.npy'
+        elif args.dataset == 'uniform':
+            file = 'data/eval_data/uniform_eval.npy'
         elif args.dataset == 'overfit':
             file = 'data/eval_data/easy_eval.npy'
         elif args.dataset == 'easy':

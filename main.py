@@ -57,8 +57,8 @@ def get_parser():
     parser.add_argument('--model_path', type=str, default='',
                         metavar='N', help='Path to load model')
     parser.add_argument('--dataset', type=str, default='easy', metavar='N',
-                        choices=['lidar', 'uniform_density', 'overfit', 'easy', 'medium'],
-                        help='Encoder to use, [lidar, uniform_density, overfit, easy, medium]')
+                        choices=['lidar', 'uniform', 'overfit', 'easy', 'medium'],
+                        help='Encoder to use, [lidar, uniform, overfit, easy, medium]')
     parser.add_argument('--rotate', action='store_true',
                         help='rotate point clouds during training')
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
