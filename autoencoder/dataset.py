@@ -26,7 +26,7 @@ class PointCloudDataset:
         self.n_clouds = np_data.shape[0]
         self.n_points = np_data.shape[1]
         self.point_dim = np_data.shape[2]
-        self.rotate = args.rotate
+        self.no_rotate = args.no_rotate
 
     def __getitem__(self, index):
         point_set = self.data[index][:self.n_points].float()
