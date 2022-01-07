@@ -56,11 +56,13 @@ def get_parser():
                         help='Evaluate the model')
     parser.add_argument('--model_path', type=str, default='',
                         metavar='N', help='Path to load model')
-    parser.add_argument('--dataset', type=str, default='easy', metavar='N',
+    parser.add_argument('--dataset', type=str, default='uniform', metavar='N',
                         choices=['lidar', 'uniform', 'overfit', 'easy', 'medium'],
                         help='Encoder to use, [lidar, uniform, overfit, easy, medium]')
     parser.add_argument('--no_rotate', action='store_false',
                         help='rotate point clouds during training')
+    parser.add_argument('--vae', action='store_true',
+                        help='use Variational autoencoders bottelneck')
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
     parser.add_argument('--no_cuda', action='store_true',
                          help='Enables CUDA training')
