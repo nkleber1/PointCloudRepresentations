@@ -59,8 +59,8 @@ def main():
 
     for i, pts in enumerate(loader):
         feat = model.encoder(pts)
-        np_feat = feat.cpu().detach().numpy()
-        name_file = 'point_feat_{}'.format(i + 1)
+        np_feat = feat.squeeze().cpu().detach().numpy()
+        name_file = 'r_map{}'.format(i + 1)
         path = os.path.join(save_dir, name_file)
         np.save(path, np_feat)
 
