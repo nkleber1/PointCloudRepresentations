@@ -20,6 +20,10 @@ def _break_up_pc(pc):
 class PointNet2CudaEncoder(pl.LightningModule):
     def __init__(self, args):
         super().__init__()
+        output_dim = args.feat_dims
+        if not args.no_vae:
+            output_dim = output_dim * 2
+
         self.SA_modules = nn.ModuleList()
 
         self.SA_modules.append(
@@ -47,8 +51,8 @@ class PointNet2CudaEncoder(pl.LightningModule):
             nn.Linear(1024, 512, bias=False),
             nn.BatchNorm1d(512),
             nn.ReLU(True),
-            nn.Linear(512, args.feat_dims, bias=False),
-            nn.BatchNorm1d(args.feat_dims)
+            nn.Linear(512, output_dim, bias=False),
+            nn.BatchNorm1d(output_dim)
         )
 
     def forward(self, pointcloud):

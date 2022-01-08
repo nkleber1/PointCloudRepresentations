@@ -9,6 +9,10 @@ import torch.nn.functional as F
 class PointNetEncoder(nn.Module):
     def __init__(self, args):
         super(PointNetEncoder, self).__init__()
+        output_dim = args.feat_dims
+        if not args.no_vae:
+            output_dim = output_dim * 2
+
         self.conv1 = nn.Conv1d(in_channels=2, out_channels=64, kernel_size=1)
         self.conv2 = nn.Conv1d(in_channels=64, out_channels=64, kernel_size=1)
         self.conv3 = nn.Conv1d(in_channels=64, out_channels=128, kernel_size=1)
@@ -17,7 +21,7 @@ class PointNetEncoder(nn.Module):
         self.mlp = nn.Sequential(
             nn.Conv1d(1024, args.feat_dims, 1),
             nn.ReLU(),
-            nn.Conv1d(args.feat_dims, args.feat_dims, 1),
+            nn.Conv1d(args.feat_dims, output_dim, 1),
         )
 
         if args.pooling == 'avg':

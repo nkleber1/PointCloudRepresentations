@@ -266,6 +266,10 @@ class PointNet2Encoder(nn.Module):
         super(PointNet2Encoder, self).__init__()
         # TODO unify what is meant by n_Points
         # We use half the size of the original since we do not have enough RAM!
+        output_dim = args.feat_dims
+        if not args.no_vae:
+            output_dim = output_dim * 2
+
         self.sa1 = PointNetSetAbstractionMsg(npoint=args.num_points, radius_list=[0.1, 0.2, 0.4], nsample_list=[16, 32, 128],
                                              in_channel=0, mlp_list=[[16, 16, 32], [32, 32, 64], [32, 48, 64]])
         self.sa2 = PointNetSetAbstractionMsg(npoint=128, radius_list=[0.2, 0.4, 0.8], nsample_list=[32, 64, 128],
@@ -275,7 +279,7 @@ class PointNet2Encoder(nn.Module):
         self.mlp = nn.Sequential(
             nn.Conv1d(1024, args.feat_dims, 1),
             nn.ReLU(),
-            nn.Conv1d(args.feat_dims, args.feat_dims, 1),
+            nn.Conv1d(args.feat_dims, output_dim, 1),
         )
 
     def forward(self, pts):
