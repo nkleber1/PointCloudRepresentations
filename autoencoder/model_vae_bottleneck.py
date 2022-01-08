@@ -5,8 +5,8 @@ import torch.nn as nn
 class VAEBottleneck(nn.Module):
     def __init__(self, args):
         super(VAEBottleneck, self).__init__()
-        self.mu = nn.Linear(args.feat_dims, args.feat_dims)
-        self.var = nn.Linear(args.feat_dims, args.feat_dims)
+        self.mu = nn.Linear(args.feat_dims*2, args.feat_dims)
+        self.var = nn.Linear(args.feat_dims*2, args.feat_dims)
 
     def forward(self, x):
         x = torch.flatten(x, start_dim=1)
