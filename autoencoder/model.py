@@ -29,7 +29,7 @@ class ReconstructionNet(nn.Module):
 
     def forward(self, input):
         feature = self.encoder(input)
-        if self.args.no_vae:
+        if not self.args.no_vae:
             feature = self.vae_bottleneck(feature)
         output = self.decoder(feature)
         return output, feature
