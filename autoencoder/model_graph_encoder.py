@@ -67,6 +67,11 @@ class GraphEncoder(nn.Module):
             self.k = 16
         else:
             self.k = args.k
+
+        output_dim = args.feat_dims
+        if not args.no_vae:
+            output_dim = output_dim*2
+
         self.mlp1 = nn.Sequential(
             nn.Conv1d(6, 64, 1),  # TODO 12 if 3D
             nn.ReLU(),
@@ -82,7 +87,7 @@ class GraphEncoder(nn.Module):
         self.mlp2 = nn.Sequential(
             nn.Conv1d(1024, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(512, args.feat_dims, 1),
+            nn.Conv1d(512, output_dim, 1),
         )
 
     def graph_layer(self, x, idx):
