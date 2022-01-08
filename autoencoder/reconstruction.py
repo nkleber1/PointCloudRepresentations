@@ -167,7 +167,7 @@ class Reconstruction(object):
 
             # save snapeshot
             if (epoch + 1) % self.snapshot_interval == 0:
-                self._snapshot(epoch + 1)
+                # self._snapshot(epoch + 1)
                 self._plot_reconstruction(epoch + 1)
                 if loss < best_loss:
                     best_loss = loss
@@ -183,9 +183,9 @@ class Reconstruction(object):
 
             # save tensorboard
             if self.writer:
-                self.writer.add_scalar('Train Loss', self.train_hist['loss'][-1], epoch)
-                self.writer.add_scalar('Train Loss (per point)', self.train_hist['loss_per_point'][-1], epoch)
-                self.writer.add_scalar('Learning Rate', self._get_lr(), epoch)
+                self.writer.add_scalar('Train/Train Loss', self.train_hist['loss'][-1], epoch)
+                self.writer.add_scalar('Train/Train Loss (per point)', self.train_hist['loss_per_point'][-1], epoch)
+                self.writer.add_scalar('Train/Learning Rate', self._get_lr(), epoch)
 
             self.lr_scheduler.step()
 
@@ -325,7 +325,7 @@ class Reconstruction(object):
         self.train_hist['eval_loss'].append(np.mean(loss_buf))
         print(f'Eval Epoch {epoch}: Loss {np.mean(loss_buf)}, time {eval_time:.4f}s')
         if self.writer:
-            self.writer.add_scalar('Eval Loss', self.train_hist['eval_loss'][-1], epoch)
+            self.writer.add_scalar('Eval/Eval Loss', self.train_hist['eval_loss'][-1], epoch)
         return np.mean(loss_buf)
 
 
