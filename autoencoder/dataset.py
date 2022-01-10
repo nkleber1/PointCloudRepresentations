@@ -22,6 +22,7 @@ class PointCloudDataset:
         elif args.dataset == 'medium':
             file = 'data/train_data/medium.npy'
         np_data = np.load(file)
+        self.args = args
         self.data = torch.from_numpy(np_data)
         self.n_clouds = np_data.shape[0]
         self.n_points = np_data.shape[1]
