@@ -39,7 +39,8 @@ class PointCloudDataset:
 
     def get_plot_data(self):
         plot_data = torch.unsqueeze(self.data[0], 0)
-        # plot_data.float()
+        if self.args.dataset == 'lidar':
+            plot_data.float()
         return plot_data
 
 
@@ -56,6 +57,7 @@ class PointCloudEvalDataset:
         elif args.dataset == 'medium':
             file = 'data/eval_data/medium.npy'
         np_data = np.load(file)
+        self.args = args
         self.data = torch.from_numpy(np_data)
         self.n_clouds = np_data.shape[0]
         self.n_points = np_data.shape[1]
@@ -70,5 +72,6 @@ class PointCloudEvalDataset:
 
     def get_plot_data(self):
         plot_data = torch.unsqueeze(self.data[0], 0)
-        # plot_data.float()
+        if self.args.dataset == 'lidar':
+            plot_data.float()
         return plot_data
