@@ -15,11 +15,11 @@ def get_parser():
     parser.add_argument('--overwrite', action='store_true',
                         help='Overwrites data from previous experiment with same name')
     parser.add_argument('--encoder', type=str, default='graph', metavar='N',
-                        choices=['graph', 'graph_double', 'pointnet++', 'pointnet2cuda', 'pointnet', 'dense'],
-                        help='Encoder architecture used, [graph, graph_double, pointnet++, pointnet, dense]')
+                        choices=['graph', 'graph_double', 'graph_s', 'pointnet++', 'pointnet2cuda', 'pointnet', 'dense'],
+                        help='Encoder architecture used, [graph, graph_s, graph_double, pointnet++, pointnet, dense]')
     parser.add_argument('--decoder', type=str, default='fold', metavar='N',
-                        choices=['fold', 'upsampling', 'dense'],
-                        help='Decoder architecture used, [fold, upsampling, dense]')
+                        choices=['fold', 'fold_s', 'upsampling', 'dense'],
+                        help='Decoder architecture used, [fold, fold_s, upsampling, dense]')
     parser.add_argument('--dropout', type=float, default=0.2,
                         help='dropout rate')
     parser.add_argument('--lr', type=float, default=0.01,

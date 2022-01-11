@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from . import VAEBottleneck, GraphEncoder, GraphDoubleEncoder, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, DenseDecoder  # ,PointNet2CudaEncoder
+from . import VAEBottleneck, GraphEncoder, GraphDoubleEncoder, GraphEncoderS, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, FoldDecoderS, DenseDecoder  # ,PointNet2CudaEncoder
 from .loss import ChamferLoss
 
 
@@ -9,6 +9,8 @@ class ReconstructionNet(nn.Module):
         super(ReconstructionNet, self).__init__()
         if args.encoder == 'graph':
             self.encoder = GraphEncoder(args)
+        if args.encoder == 'graph_s':
+            self.encoder = GraphEncoderS(args)
         if args.encoder == 'graph_double':
             self.encoder = GraphDoubleEncoder(args)
         elif args.encoder == 'pointnet++':
@@ -21,13 +23,17 @@ class ReconstructionNet(nn.Module):
             self.encoder = DenseEncoder(args)
         if args.decoder == 'fold':
             self.decoder = FoldDecoder(args)
+        if args.decoder == 'fold_s':
+            self.decoder = FoldDecoderS(args)
         elif args.decoder == 'upsampling':
             pass
         elif args.decoder == 'dense':
             self.decoder = DenseDecoder(args)
         self.loss = ChamferLoss()
         self.args = args
-        self.vae_bottleneck = VAEBottleneck(args)
+        self.vae_bottleneck = None
+        if not self.args.no_vae:
+            self.vae_bottleneck = VAEBottleneck(args)
 
     def forward(self, input):
         feature = self.encoder(input)
