@@ -16,7 +16,7 @@ def get_parser():
                         help='Overwrites data from previous experiment with same name')
     parser.add_argument('--encoder', type=str, default='graph', metavar='N',
                         choices=['graph', 'pointnet++', 'pointnet2cuda', 'pointnet', 'dense'],
-                        help='Encoder architecture used, [graph, pointnet++, pointnet, dense]')
+                        help='Encoder architecture used, [graph, graph_double, pointnet++, pointnet, dense]')
     parser.add_argument('--decoder', type=str, default='fold', metavar='N',
                         choices=['fold', 'upsampling', 'dense'],
                         help='Decoder architecture used, [fold, upsampling, dense]')

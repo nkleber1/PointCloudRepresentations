@@ -1,4 +1,5 @@
 from .model_graph_encoder import GraphEncoder
+from .model_graph_double_encoder import GraphDoubleEncoder
 from .model_pointnet2_encoder import PointNet2Encoder
 # from .model_pointnet2_cuda_encoder import PointNet2CudaEncoder
 from .model_pointnet_encoder import PointNetEncoder

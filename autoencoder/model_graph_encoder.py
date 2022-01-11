@@ -61,9 +61,11 @@ def local_maxpool(x, idx):
 
 
 class GraphEncoder(nn.Module):
-    def __init__(self, args):
+    def __init__(self, args, k=None):
         super(GraphEncoder, self).__init__()
-        if args.k == None:
+        if k:
+            self.k = k
+        elif args.k == None:
             self.k = 16
         else:
             self.k = args.k

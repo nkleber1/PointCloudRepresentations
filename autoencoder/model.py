@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from . import VAEBottleneck, GraphEncoder, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, DenseDecoder  # ,PointNet2CudaEncoder
+from . import VAEBottleneck, GraphEncoder, GraphDoubleEncoder, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, DenseDecoder  # ,PointNet2CudaEncoder
 from .loss import ChamferLoss
 
 
@@ -9,6 +9,8 @@ class ReconstructionNet(nn.Module):
         super(ReconstructionNet, self).__init__()
         if args.encoder == 'graph':
             self.encoder = GraphEncoder(args)
+        if args.encoder == 'graph_double':
+            self.encoder = GraphDoubleEncoder(args)
         elif args.encoder == 'pointnet++':
             self.encoder = PointNet2Encoder(args)
         elif args.encoder == 'pointnet2cuda':
