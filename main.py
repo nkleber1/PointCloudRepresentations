@@ -47,7 +47,7 @@ def get_parser():
     parser.add_argument('--eval_interval', type=int, default=100, metavar='N',
                         help='Evaluation interval')
     parser.add_argument('--shape', type=str, default='square', metavar='N',
-                        choices=['1d', 'diagonal', 'circle', 'square', 'little_square', 'gaussian'],
+                        choices=['plane', '1d', 'diagonal', 'circle', 'square', 'little_square', 'gaussian'],
                         help='Shape of points to input decoder, [1d, diagonal, circle, square, gaussian]')
     parser.add_argument('--pooling', type=str, default='avg', metavar='N',
                         choices=['avg', 'max'],
@@ -64,7 +64,7 @@ def get_parser():
     parser.add_argument('--no_vae', action='store_true',
                         help='use Variational autoencoders bottelneck')
     parser.add_argument('--gpu', type=str, help='Id of gpu device to be used', default='0')
-    parser.add_argument('--no_cuda', action='store_true',
+    parser.add_argument('--no_cuda', action='store_false',
                          help='Enables CUDA training')
     # parser.add_argument('--no_cuda', type=int, default=True,
     #                     help='Enables CUDA training')

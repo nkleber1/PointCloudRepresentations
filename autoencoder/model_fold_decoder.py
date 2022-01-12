@@ -8,6 +8,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 import math
+import itertools
 # TODO Make usable for all 1D, 2D, and 3D
 
 
@@ -37,7 +38,13 @@ class FoldDecoder(nn.Module):
 
     def build_grid(self, batch_size):
         n_points = self.args.num_points
-        if self.args.shape == '1d':
+        if self.args.shape == 'plane':
+            n = int(math.sqrt(n_points))
+            x = np.linspace(0, 1, n)
+            y = np.linspace(0, 1, n)
+            points = np.array(list(itertools.product(x, y)))
+            points = points.transpose(1, 0)
+        elif self.args.shape == '1d':
             points = np.linspace(0, 1, n_points)
             points = points[np.newaxis, ...]
         elif self.args.shape == 'diagonal':
@@ -83,6 +90,7 @@ class FoldDecoder(nn.Module):
         points = np.repeat(points[np.newaxis, ...], repeats=batch_size, axis=0)
         points = torch.tensor(points)
         return points.float()
+
 
     def forward(self, x):
         x = x.transpose(1, 2).repeat(1, 1, self.m)  # (batch_size, feat_dims, num_points)
