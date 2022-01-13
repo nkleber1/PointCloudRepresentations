@@ -58,7 +58,7 @@ class Reconstruction(object):
         self.tboard_dir = tensorboard_root
 
         # check arguments
-        if self.model_path == '':
+        if self.model_path == '' or args.curriculum:
             if not os.path.exists(self.model_dir):
                 os.makedirs(self.model_dir)
             elif args.overwrite:
