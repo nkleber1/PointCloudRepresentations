@@ -51,7 +51,7 @@ class PointCloudDataset:
 
     def get_plot_data(self):
         plot_data = torch.unsqueeze(self.data[0], 0)
-        if self.args.dataset == 'lidar':
+        if 'lidar' in self.args.dataset:
             plot_data = plot_data.float()
         return plot_data
 
@@ -93,6 +93,6 @@ class PointCloudEvalDataset:
 
     def get_plot_data(self):
         plot_data = torch.unsqueeze(self.data[0], 0)
-        if self.args.dataset == 'lidar':
+        if 'lidar' in self.args.dataset:
             plot_data = plot_data.float()
         return plot_data
