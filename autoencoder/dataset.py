@@ -32,6 +32,7 @@ class PointCloudDataset:
         elif args.dataset == 'medium':
             file = 'data/train_data/medium.npy'
         np_data = np.load(file)
+        np_data = np_data[np.random.choice(np_data.shape[0], args.num_points, replace=False)]
         self.args = args
         self.data = torch.from_numpy(np_data)
         self.n_clouds = np_data.shape[0]
@@ -76,6 +77,7 @@ class PointCloudEvalDataset:
         elif args.dataset == 'medium':
             file = 'data/eval_data/medium.npy'
         np_data = np.load(file)
+        np_data = np_data[np.random.choice(np_data.shape[0], args.num_points, replace=False)]
         self.args = args
         self.data = torch.from_numpy(np_data)
         self.n_clouds = np_data.shape[0]
@@ -83,7 +85,7 @@ class PointCloudEvalDataset:
         self.point_dim = np_data.shape[2]
 
     def __getitem__(self, index):
-        point_set = self.data[index][:self.n_points].float()
+        point_set = self.data[index].float()
         return point_set
 
     def __len__(self):
