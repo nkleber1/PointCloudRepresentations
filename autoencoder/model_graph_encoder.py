@@ -59,10 +59,9 @@ def local_maxpool(x, idx):
 
     return x
 
-
-class GraphEncoder(nn.Module):
+class BaseGraphEncoder(nn.Module):
     def __init__(self, args, k=None):
-        super(GraphEncoder, self).__init__()
+        super(BaseGraphEncoder, self).__init__()
         if k:
             self.k = k
         elif args.k == None:
@@ -70,10 +69,25 @@ class GraphEncoder(nn.Module):
         else:
             self.k = args.k
 
-        output_dim = args.feat_dims
+        self.output_dim = args.feat_dims
         if not args.no_vae:
-            output_dim = output_dim*2
+            self.output_dim = self.output_dim*2
 
+    def graph_layer(self, x, idx):
+        x = local_maxpool(x, idx)
+        x = self.linear1(x)
+        x = x.transpose(2, 1)
+        x = F.relu(self.conv1(x))
+        x = local_maxpool(x, idx)
+        x = self.linear2(x)
+        x = x.transpose(2, 1)
+        x = self.conv2(x)
+        return x
+
+
+class GraphEncoder(BaseGraphEncoder):
+    def __init__(self, args, k=None):
+        super(GraphEncoder, self).__init__(args)
         self.mlp1 = nn.Sequential(
             nn.Conv1d(6, 64, 1),  # TODO 12 if 3D
             nn.ReLU(),
@@ -89,19 +103,8 @@ class GraphEncoder(nn.Module):
         self.mlp2 = nn.Sequential(
             nn.Conv1d(1024, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(512, output_dim, 1),
+            nn.Conv1d(512, self.output_dim, 1),
         )
-
-    def graph_layer(self, x, idx):
-        x = local_maxpool(x, idx)
-        x = self.linear1(x)
-        x = x.transpose(2, 1)
-        x = F.relu(self.conv1(x))
-        x = local_maxpool(x, idx)
-        x = self.linear2(x)
-        x = x.transpose(2, 1)
-        x = self.conv2(x)
-        return x
 
     def forward(self, pts):
         pts = pts.transpose(2, 1)  # (batch_size, 2, num_points)
