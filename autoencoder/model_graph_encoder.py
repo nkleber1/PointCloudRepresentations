@@ -59,6 +59,7 @@ def local_maxpool(x, idx):
 
     return x
 
+
 class BaseGraphEncoder(nn.Module):
     def __init__(self, args, k=None):
         super(BaseGraphEncoder, self).__init__()
@@ -84,10 +85,21 @@ class BaseGraphEncoder(nn.Module):
         x = self.conv2(x)
         return x
 
+    def forward(self, pts):
+        pts = pts.transpose(2, 1)  # (batch_size, 2, num_points)
+        idx = knn(pts, k=self.k)
+        x = local_cov(pts, idx)  # (batch_size, 2, num_points) -> (batch_size, 6, num_points])
+        x = self.mlp1(x)  # (batch_size, 12, num_points) -> (batch_size, 64, num_points])
+        x = self.graph_layer(x, idx)  # (batch_size, 64, num_points) -> (batch_size, 1024, num_points)
+        x = torch.max(x, 2, keepdim=True)[0]  # (batch_size, 1024, num_points) -> (batch_size, 1024, 1)
+        x = self.mlp2(x)  # (batch_size, 1024, 1) -> (batch_size, feat_dims, 1)
+        feat = x.transpose(2, 1)  # (batch_size, feat_dims, 1) -> (batch_size, 1, feat_dims)
+        return feat  # (batch_size, 1, feat_dims)
+
 
 class GraphEncoder(BaseGraphEncoder):
     def __init__(self, args, k=None):
-        super(GraphEncoder, self).__init__(args)
+        super(GraphEncoder, self).__init__(args, k)
         self.mlp1 = nn.Sequential(
             nn.Conv1d(6, 64, 1),  # TODO 12 if 3D
             nn.ReLU(),
@@ -106,13 +118,46 @@ class GraphEncoder(BaseGraphEncoder):
             nn.Conv1d(512, self.output_dim, 1),
         )
 
+
+class GraphEncoderS(BaseGraphEncoder):
+    def __init__(self, args, k=None):
+        super(GraphEncoderS, self).__init__(args, k)
+        self.mlp1 = nn.Sequential(
+            nn.Conv1d(6, 32, 1),  # TODO 12 if 3D
+            nn.ReLU(),
+            nn.Conv1d(32, 32, 1),
+            nn.ReLU(),
+            nn.Conv1d(32, 32, 1),
+            nn.ReLU(),
+        )
+        self.linear1 = nn.Linear(32, 32)
+        self.conv1 = nn.Conv1d(32, 64, 1)
+        self.linear2 = nn.Linear(64, 64)
+        self.conv2 = nn.Conv1d(64, 512, 1)
+        self.mlp2 = nn.Sequential(
+            nn.Conv1d(512, 256, 1),
+            nn.ReLU(),
+            nn.Conv1d(256, self.output_dim, 1),
+        )
+
+
+class GraphDoubleEncoder(nn.Module):
+    def __init__(self, args):
+        super(GraphDoubleEncoder, self).__init__()
+        output_dim = args.feat_dims
+        if not args.no_vae:
+            output_dim = output_dim * 2
+
+        self.encoder1 = GraphEncoder(args, args.k)
+        self.encoder2 = GraphEncoder(args, args.k / 4)
+        self.mlp = nn.Sequential(
+            nn.Conv1d(output_dim * 2, output_dim, 1),
+            nn.ReLU(),
+        )
+
     def forward(self, pts):
-        pts = pts.transpose(2, 1)  # (batch_size, 2, num_points)
-        idx = knn(pts, k=self.k)
-        x = local_cov(pts, idx)  # (batch_size, 2, num_points) -> (batch_size, 6, num_points])
-        x = self.mlp1(x)  # (batch_size, 12, num_points) -> (batch_size, 64, num_points])
-        x = self.graph_layer(x, idx)  # (batch_size, 64, num_points) -> (batch_size, 1024, num_points)
-        x = torch.max(x, 2, keepdim=True)[0]  # (batch_size, 1024, num_points) -> (batch_size, 1024, 1)
-        x = self.mlp2(x)  # (batch_size, 1024, 1) -> (batch_size, feat_dims, 1)
-        feat = x.transpose(2, 1)  # (batch_size, feat_dims, 1) -> (batch_size, 1, feat_dims)
-        return feat  # (batch_size, 1, feat_dims)
+        feature1 = self.encoder1(pts)
+        feature2 = self.encoder1(pts)
+        feature = torch.cat((feature1, feature2), dim=2)
+        feature = feature.transpose(2, 1)
+        return self.mlp(feature)
