@@ -18,8 +18,8 @@ def get_parser():
                         choices=['graph', 'graph_double', 'graph_s', 'pointnet++', 'pointnet2cuda', 'pointnet', 'dense'],
                         help='Encoder architecture used, [graph, graph_s, graph_double, pointnet++, pointnet, dense]')
     parser.add_argument('--decoder', type=str, default='fold', metavar='N',
-                        choices=['fold', 'fold_s', 'upsampling', 'dense'],
-                        help='Decoder architecture used, [fold, fold_s, upsampling, dense]')
+                        choices=['fold', 'fold_s', 'fold_single', 'upsampling', 'dense'],
+                        help='Decoder architecture used, [fold, fold_s, fold_single, upsampling, dense]')
     parser.add_argument('--dropout', type=float, default=0.2,
                         help='dropout rate')
     parser.add_argument('--lr', type=float, default=0.01,

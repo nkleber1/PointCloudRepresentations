@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from . import VAEBottleneck, GraphEncoder, GraphDoubleEncoder, GraphEncoderS, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, FoldDecoderS, DenseDecoder  # ,PointNet2CudaEncoder
+from . import VAEBottleneck, GraphEncoder, GraphDoubleEncoder, GraphEncoderS, PointNet2Encoder, PointNetEncoder, DenseEncoder, FoldDecoder, FoldDecoderS, FoldSingleDecoder, DenseDecoder  # ,PointNet2CudaEncoder
 from .loss import ChamferLoss
 
 
@@ -25,6 +25,8 @@ class ReconstructionNet(nn.Module):
             self.decoder = FoldDecoder(args)
         if args.decoder == 'fold_s':
             self.decoder = FoldDecoderS(args)
+        if args.decoder == 'fold_single':
+            self.decoder = FoldSingleDecoder(args)
         elif args.decoder == 'upsampling':
             pass
         elif args.decoder == 'dense':
