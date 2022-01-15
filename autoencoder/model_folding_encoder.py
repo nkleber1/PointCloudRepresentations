@@ -17,7 +17,7 @@ class BaseFoldDecoder(nn.Module):
     def __init__(self, args):
         super(BaseFoldDecoder, self).__init__()
         self.args = args
-        if args.point_3d:
+        if '3d' in args.dataset:
             self.output_dim = 3
         else:
             self.output_dim = 2

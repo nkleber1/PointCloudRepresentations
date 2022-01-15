@@ -75,7 +75,7 @@ class BaseGraphEncoder(nn.Module):
             self.output_dim = self.output_dim*2
 
         self.input_dim = 6
-        if args.point_3d:
+        if '3d' in args.dataset:
             self.input_dim *= 2
 
     def graph_layer(self, x, idx):
