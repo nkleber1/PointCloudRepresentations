@@ -65,7 +65,7 @@ class BaseGraphEncoder(nn.Module):
         super(BaseGraphEncoder, self).__init__()
         if k:
             self.k = k
-        elif args.k == None:
+        elif args.k is None:
             self.k = 16
         else:
             self.k = args.k
@@ -73,6 +73,10 @@ class BaseGraphEncoder(nn.Module):
         self.output_dim = args.feat_dims
         if not args.no_vae:
             self.output_dim = self.output_dim*2
+
+        self.input_dim = 6
+        if args.point_3d:
+            self.input_dim *= 2
 
     def graph_layer(self, x, idx):
         x = local_maxpool(x, idx)
@@ -101,7 +105,7 @@ class GraphEncoder(BaseGraphEncoder):
     def __init__(self, args, k=None):
         super(GraphEncoder, self).__init__(args, k)
         self.mlp1 = nn.Sequential(
-            nn.Conv1d(6, 64, 1),  # TODO 12 if 3D
+            nn.Conv1d(self.input_dim, 64, 1),
             nn.ReLU(),
             nn.Conv1d(64, 64, 1),
             nn.ReLU(),
@@ -123,7 +127,7 @@ class GraphEncoderS(BaseGraphEncoder):
     def __init__(self, args, k=None):
         super(GraphEncoderS, self).__init__(args, k)
         self.mlp1 = nn.Sequential(
-            nn.Conv1d(6, 32, 1),  # TODO 12 if 3D
+            nn.Conv1d(self.input_dim, 32, 1),
             nn.ReLU(),
             nn.Conv1d(32, 32, 1),
             nn.ReLU(),

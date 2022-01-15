@@ -16,12 +16,15 @@ from abc import ABC, abstractmethod
 class BaseFoldDecoder(nn.Module):
     def __init__(self, args):
         super(BaseFoldDecoder, self).__init__()
-        self.m = args.num_points
         self.args = args
+        if args.point_3d:
+            self.output_dim = 3
+        else:
+            self.output_dim = 2
         if args.shape == '1d':
-            self.point_dim = 1
-        else:  # TODO eventually add case for 3D
-            self.point_dim = 2
+            self.grid_dim = 1
+        else:
+            self.grid_dim = 2
 
     def build_grid(self, batch_size):
         n_points = self.args.num_points
@@ -79,34 +82,33 @@ class BaseFoldDecoder(nn.Module):
         return points.float()
 
     def forward(self, x):
-        x = x.transpose(1, 2).repeat(1, 1, self.m)  # (batch_size, feat_dims, num_points)
-        points = self.build_grid(x.shape[0])   # (batch_size, 2, num_points) or (batch_size, 3, num_points)
+        x = x.transpose(1, 2).repeat(1, 1, self.args.num_points)  # (batch_size, feat_dims, num_points)
+        points = self.build_grid(x.shape[0])   # (batch_size, [1,2,3], num_points)
         if x.get_device() != -1:
             points = points.cuda(x.get_device())
-        cat1 = torch.cat((x, points),
-                         dim=1)  # (batch_size, feat_dims+2, num_points) or (batch_size, feat_dims+3, num_points)
-        folding_result1 = self.folding1(cat1)  # (batch_size, 3, num_points)
+        cat1 = torch.cat((x, points), dim=1)  # (batch_size, feat_dims+[1,2,3], num_points)
+        folding_result1 = self.folding1(cat1)  # (batch_size, [2,3], num_points)
         cat2 = torch.cat((x, folding_result1), dim=1)  # (batch_size, 514, num_points)
-        folding_result2 = self.folding2(cat2)  # (batch_size, 3, num_points)
-        return folding_result2.transpose(1, 2)  # (batch_size, num_points ,3)
+        folding_result2 = self.folding2(cat2)  # (batch_size, [2,3], num_points)
+        return folding_result2.transpose(1, 2)  # (batch_size, num_points, [2,3])
 
 
 class FoldDecoder(BaseFoldDecoder):
     def __init__(self, args):
         super(FoldDecoder, self).__init__(args)
         self.folding1 = nn.Sequential(
-            nn.Conv1d(args.feat_dims + self.point_dim, 512, 1),
+            nn.Conv1d(args.feat_dims + self.grid_dim, 512, 1),
             nn.ReLU(),
             nn.Conv1d(512, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(512, 2, 1),
+            nn.Conv1d(512, self.output_dim, 1),
         )
         self.folding2 = nn.Sequential(
-            nn.Conv1d(args.feat_dims + 2, 512, 1),
+            nn.Conv1d(args.feat_dims + self.output_dim, 512, 1),
             nn.ReLU(),
             nn.Conv1d(512, 512, 1),
             nn.ReLU(),
-            nn.Conv1d(512, 2, 1),  # changed to 2D
+            nn.Conv1d(512, self.output_dim, 1),
         )
 
 
@@ -114,18 +116,18 @@ class FoldDecoderS(BaseFoldDecoder):
     def __init__(self, args):
         super(FoldDecoderS, self).__init__(args)
         self.folding1 = nn.Sequential(
-            nn.Conv1d(args.feat_dims + self.point_dim, 256, 1),
+            nn.Conv1d(args.feat_dims + self.grid_dim, 256, 1),
             nn.ReLU(),
             nn.Conv1d(256, 256, 1),
             nn.ReLU(),
-            nn.Conv1d(256, 2, 1),
+            nn.Conv1d(256, self.output_dim, 1),
         )
         self.folding2 = nn.Sequential(
-            nn.Conv1d(args.feat_dims + 2, 256, 1),
+            nn.Conv1d(args.feat_dims + self.output_dim, 256, 1),
             nn.ReLU(),
             nn.Conv1d(256, 256, 1),
             nn.ReLU(),
-            nn.Conv1d(256, 2, 1),  # changed to 2D
+            nn.Conv1d(256, self.output_dim, 1),
         )
 
 
@@ -133,20 +135,19 @@ class FoldSingleDecoder(BaseFoldDecoder):
     def __init__(self, args):
         super(FoldSingleDecoder, self).__init__(args)
         self.folding1 = nn.Sequential(
-            nn.Conv1d(args.feat_dims + self.point_dim, 256, 1),
+            nn.Conv1d(args.feat_dims + self.grid_dim, 256, 1),
             nn.ReLU(),
             nn.Conv1d(256, 256, 1),
             nn.ReLU(),
-            nn.Conv1d(256, 2, 1),
+            nn.Conv1d(256, self.output_dim, 1),
         )
 
     def forward(self, x):
-        x = x.transpose(1, 2).repeat(1, 1, self.m)  # (batch_size, feat_dims, num_points)
-        points = self.build_grid(x.shape[0])   # (batch_size, 2, num_points) or (batch_size, 3, num_points)
+        x = x.transpose(1, 2).repeat(1, 1, self.args.num_points)
+        points = self.build_grid(x.shape[0])
         if x.get_device() != -1:
             points = points.cuda(x.get_device())
-        cat1 = torch.cat((x, points),
-                         dim=1)  # (batch_size, feat_dims+2, num_points) or (batch_size, feat_dims+3, num_points)
-        folding_result1 = self.folding1(cat1)  # (batch_size, 3, num_points)
-        return folding_result1.transpose(1, 2)  # (batch_size, num_points ,3)
+        cat1 = torch.cat((x, points), dim=1)
+        folding_result1 = self.folding1(cat1)
+        return folding_result1.transpose(1, 2)
 
