@@ -17,6 +17,8 @@ class PointCloudDataset:
             file = 'data/train_data/original_uni.npy'
         elif args.dataset == 'original_lidar':
             file = 'data/train_data/original_lidar.npy'
+        elif args.dataset == '3d':
+            file = 'data/train_data/original_3d.npy'
         elif args.dataset == 'uniform':
             file = 'data/train_data/uniform.npy'
         elif args.dataset == 'curriculum_uniform':
@@ -64,6 +66,8 @@ class PointCloudEvalDataset:
             file = 'data/eval_data/original_uni.npy'
         elif args.dataset == 'original_lidar':
             file = 'data/eval_data/original_lidar.npy'
+        elif args.dataset == '3d':
+            file = 'data/eval_data/original_3d_eval.npy'
         elif args.dataset == 'curriculum_uniform':
             file = 'data/eval_data/curriculum_uniform/level{}_eval.npy'.format(args.level)
         elif args.dataset == 'curriculum_lidar':

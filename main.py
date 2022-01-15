@@ -57,7 +57,7 @@ def get_parser():
     parser.add_argument('--model_path', type=str, default='',
                         metavar='N', help='Path to load model')
     parser.add_argument('--dataset', type=str, default='uniform', metavar='N',
-                        choices=['curriculum_uniform', 'curriculum_lidar', 'original_uni', 'original_lidar', 'lidar', 'uniform', 'overfit', 'easy', 'medium'],
+                        choices=['3d', 'curriculum_uniform', 'curriculum_lidar', 'original_uni', 'original_lidar', 'lidar', 'uniform', 'overfit', 'easy', 'medium'],
                         help='Encoder to use, [lidar, uniform, overfit, easy, medium]')
     parser.add_argument('--level', type=int, default=1, metavar='N',
                         help='select a level for curriculum learning')
