@@ -38,11 +38,20 @@ class ReconstructionNet(nn.Module):
             self.vae_bottleneck = VAEBottleneck(args)
 
     def forward(self, input):
-        feature = self.encoder(input)
-        if not self.args.no_vae:
-            feature = self.vae_bottleneck(feature)
-        output = self.decoder(feature)
+        feature, _, _ = self.encode(input)
+        output = self.decode(feature)
         return output, feature
+
+    def encode(self, input):
+        feature = self.encoder(input)
+        mu, std = None, None
+        if not self.args.no_vae:
+            feature, mu, std = self.vae_bottleneck(feature)
+        return feature, mu, std
+
+    def denode(self, feature):
+        output = self.decoder(feature)
+        return output
 
     def get_parameter(self):
         return list(self.encoder.parameters()) + list(self.decoder.parameters())
