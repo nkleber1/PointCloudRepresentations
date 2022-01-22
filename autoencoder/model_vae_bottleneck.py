@@ -20,4 +20,4 @@ class VAEBottleneck(nn.Module):
         # “Reparameterization” trick
         z = mu + eps * std
         z = torch.unsqueeze(z, dim=1)
-        return z
+        return z, mu, std
